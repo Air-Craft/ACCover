@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A6CB5AEC18F7ED3400C2709F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AEB18F7ED3400C2709F /* Foundation.framework */; };
+		A6CB5AEE18F7ED3400C2709F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AED18F7ED3400C2709F /* CoreGraphics.framework */; };
+		A6CB5AF018F7ED3400C2709F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AEF18F7ED3400C2709F /* UIKit.framework */; };
+		A6CB5AF218F7ED3400C2709F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AF118F7ED3400C2709F /* GLKit.framework */; };
+		A6CB5AF418F7ED3400C2709F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AF318F7ED3400C2709F /* OpenGLES.framework */; };
+		A6CB5AFA18F7ED3400C2709F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5AF818F7ED3400C2709F /* InfoPlist.strings */; };
+		A6CB5AFC18F7ED3400C2709F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5AFB18F7ED3400C2709F /* main.m */; };
+		A6CB5B0018F7ED3400C2709F /* ACAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5AFF18F7ED3400C2709F /* ACAppDelegate.m */; };
+		A6CB5B0318F7ED3400C2709F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5B0118F7ED3400C2709F /* Main.storyboard */; };
+		A6CB5B0518F7ED3400C2709F /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5B0418F7ED3400C2709F /* Shader.fsh */; };
+		A6CB5B0718F7ED3400C2709F /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5B0618F7ED3400C2709F /* Shader.vsh */; };
+		A6CB5B0A18F7ED3400C2709F /* ACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B0918F7ED3400C2709F /* ACViewController.m */; };
+		A6CB5B0C18F7ED3400C2709F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5B0B18F7ED3400C2709F /* Images.xcassets */; };
+		A6CB5B1318F7ED3400C2709F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5B1218F7ED3400C2709F /* XCTest.framework */; };
+		A6CB5B1418F7ED3400C2709F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AEB18F7ED3400C2709F /* Foundation.framework */; };
+		A6CB5B1518F7ED3400C2709F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AEF18F7ED3400C2709F /* UIKit.framework */; };
+		A6CB5B1D18F7ED3400C2709F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5B1B18F7ED3400C2709F /* InfoPlist.strings */; };
+		A6CB5B1F18F7ED3400C2709F /* AC_CoverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B1E18F7ED3400C2709F /* AC_CoverTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6CB5B1618F7ED3400C2709F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6CB5AE018F7ED3400C2709F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6CB5AE718F7ED3400C2709F;
+			remoteInfo = "AC Cover";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A6CB5AE818F7ED3400C2709F /* AC Cover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC Cover.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6CB5AEB18F7ED3400C2709F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A6CB5AED18F7ED3400C2709F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A6CB5AEF18F7ED3400C2709F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A6CB5AF118F7ED3400C2709F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		A6CB5AF318F7ED3400C2709F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		A6CB5AF718F7ED3400C2709F /* AC Cover-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AC Cover-Info.plist"; sourceTree = "<group>"; };
+		A6CB5AF918F7ED3400C2709F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A6CB5AFB18F7ED3400C2709F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A6CB5AFD18F7ED3400C2709F /* AC Cover-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AC Cover-Prefix.pch"; sourceTree = "<group>"; };
+		A6CB5AFE18F7ED3400C2709F /* ACAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACAppDelegate.h; sourceTree = "<group>"; };
+		A6CB5AFF18F7ED3400C2709F /* ACAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACAppDelegate.m; sourceTree = "<group>"; };
+		A6CB5B0218F7ED3400C2709F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A6CB5B0418F7ED3400C2709F /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		A6CB5B0618F7ED3400C2709F /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		A6CB5B0818F7ED3400C2709F /* ACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACViewController.h; sourceTree = "<group>"; };
+		A6CB5B0918F7ED3400C2709F /* ACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACViewController.m; sourceTree = "<group>"; };
+		A6CB5B0B18F7ED3400C2709F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A6CB5B1118F7ED3400C2709F /* AC CoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AC CoverTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6CB5B1218F7ED3400C2709F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A6CB5B1A18F7ED3400C2709F /* AC CoverTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AC CoverTests-Info.plist"; sourceTree = "<group>"; };
+		A6CB5B1C18F7ED3400C2709F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A6CB5B1E18F7ED3400C2709F /* AC_CoverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AC_CoverTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6CB5AE518F7ED3400C2709F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CB5AF418F7ED3400C2709F /* OpenGLES.framework in Frameworks */,
+				A6CB5AEE18F7ED3400C2709F /* CoreGraphics.framework in Frameworks */,
+				A6CB5AF018F7ED3400C2709F /* UIKit.framework in Frameworks */,
+				A6CB5AF218F7ED3400C2709F /* GLKit.framework in Frameworks */,
+				A6CB5AEC18F7ED3400C2709F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CB5B0E18F7ED3400C2709F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CB5B1318F7ED3400C2709F /* XCTest.framework in Frameworks */,
+				A6CB5B1518F7ED3400C2709F /* UIKit.framework in Frameworks */,
+				A6CB5B1418F7ED3400C2709F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6CB5ADF18F7ED3400C2709F = {
+			isa = PBXGroup;
+			children = (
+				A6CB5AF518F7ED3400C2709F /* AC Cover */,
+				A6CB5B1818F7ED3400C2709F /* AC CoverTests */,
+				A6CB5AEA18F7ED3400C2709F /* Frameworks */,
+				A6CB5AE918F7ED3400C2709F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6CB5AE918F7ED3400C2709F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6CB5AE818F7ED3400C2709F /* AC Cover.app */,
+				A6CB5B1118F7ED3400C2709F /* AC CoverTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6CB5AEA18F7ED3400C2709F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6CB5AEB18F7ED3400C2709F /* Foundation.framework */,
+				A6CB5AED18F7ED3400C2709F /* CoreGraphics.framework */,
+				A6CB5AEF18F7ED3400C2709F /* UIKit.framework */,
+				A6CB5AF118F7ED3400C2709F /* GLKit.framework */,
+				A6CB5AF318F7ED3400C2709F /* OpenGLES.framework */,
+				A6CB5B1218F7ED3400C2709F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6CB5AF518F7ED3400C2709F /* AC Cover */ = {
+			isa = PBXGroup;
+			children = (
+				A6CB5AFE18F7ED3400C2709F /* ACAppDelegate.h */,
+				A6CB5AFF18F7ED3400C2709F /* ACAppDelegate.m */,
+				A6CB5B0118F7ED3400C2709F /* Main.storyboard */,
+				A6CB5B0418F7ED3400C2709F /* Shader.fsh */,
+				A6CB5B0618F7ED3400C2709F /* Shader.vsh */,
+				A6CB5B0818F7ED3400C2709F /* ACViewController.h */,
+				A6CB5B0918F7ED3400C2709F /* ACViewController.m */,
+				A6CB5B0B18F7ED3400C2709F /* Images.xcassets */,
+				A6CB5AF618F7ED3400C2709F /* Supporting Files */,
+			);
+			path = "AC Cover";
+			sourceTree = "<group>";
+		};
+		A6CB5AF618F7ED3400C2709F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6CB5AF718F7ED3400C2709F /* AC Cover-Info.plist */,
+				A6CB5AF818F7ED3400C2709F /* InfoPlist.strings */,
+				A6CB5AFB18F7ED3400C2709F /* main.m */,
+				A6CB5AFD18F7ED3400C2709F /* AC Cover-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6CB5B1818F7ED3400C2709F /* AC CoverTests */ = {
+			isa = PBXGroup;
+			children = (
+				A6CB5B1E18F7ED3400C2709F /* AC_CoverTests.m */,
+				A6CB5B1918F7ED3400C2709F /* Supporting Files */,
+			);
+			path = "AC CoverTests";
+			sourceTree = "<group>";
+		};
+		A6CB5B1918F7ED3400C2709F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6CB5B1A18F7ED3400C2709F /* AC CoverTests-Info.plist */,
+				A6CB5B1B18F7ED3400C2709F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6CB5AE718F7ED3400C2709F /* AC Cover */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6CB5B2218F7ED3400C2709F /* Build configuration list for PBXNativeTarget "AC Cover" */;
+			buildPhases = (
+				A6CB5AE418F7ED3400C2709F /* Sources */,
+				A6CB5AE518F7ED3400C2709F /* Frameworks */,
+				A6CB5AE618F7ED3400C2709F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AC Cover";
+			productName = "AC Cover";
+			productReference = A6CB5AE818F7ED3400C2709F /* AC Cover.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6CB5B1018F7ED3400C2709F /* AC CoverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6CB5B2518F7ED3400C2709F /* Build configuration list for PBXNativeTarget "AC CoverTests" */;
+			buildPhases = (
+				A6CB5B0D18F7ED3400C2709F /* Sources */,
+				A6CB5B0E18F7ED3400C2709F /* Frameworks */,
+				A6CB5B0F18F7ED3400C2709F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6CB5B1718F7ED3400C2709F /* PBXTargetDependency */,
+			);
+			name = "AC CoverTests";
+			productName = "AC CoverTests";
+			productReference = A6CB5B1118F7ED3400C2709F /* AC CoverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6CB5AE018F7ED3400C2709F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Air Craft";
+				TargetAttributes = {
+					A6CB5B1018F7ED3400C2709F = {
+						TestTargetID = A6CB5AE718F7ED3400C2709F;
+					};
+				};
+			};
+			buildConfigurationList = A6CB5AE318F7ED3400C2709F /* Build configuration list for PBXProject "AC Cover" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6CB5ADF18F7ED3400C2709F;
+			productRefGroup = A6CB5AE918F7ED3400C2709F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6CB5AE718F7ED3400C2709F /* AC Cover */,
+				A6CB5B1018F7ED3400C2709F /* AC CoverTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6CB5AE618F7ED3400C2709F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CB5B0718F7ED3400C2709F /* Shader.vsh in Resources */,
+				A6CB5B0C18F7ED3400C2709F /* Images.xcassets in Resources */,
+				A6CB5B0518F7ED3400C2709F /* Shader.fsh in Resources */,
+				A6CB5AFA18F7ED3400C2709F /* InfoPlist.strings in Resources */,
+				A6CB5B0318F7ED3400C2709F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CB5B0F18F7ED3400C2709F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CB5B1D18F7ED3400C2709F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6CB5AE418F7ED3400C2709F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CB5B0018F7ED3400C2709F /* ACAppDelegate.m in Sources */,
+				A6CB5B0A18F7ED3400C2709F /* ACViewController.m in Sources */,
+				A6CB5AFC18F7ED3400C2709F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CB5B0D18F7ED3400C2709F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CB5B1F18F7ED3400C2709F /* AC_CoverTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6CB5B1718F7ED3400C2709F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6CB5AE718F7ED3400C2709F /* AC Cover */;
+			targetProxy = A6CB5B1618F7ED3400C2709F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A6CB5AF818F7ED3400C2709F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6CB5AF918F7ED3400C2709F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A6CB5B0118F7ED3400C2709F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6CB5B0218F7ED3400C2709F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A6CB5B1B18F7ED3400C2709F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6CB5B1C18F7ED3400C2709F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6CB5B2018F7ED3400C2709F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A6CB5B2118F7ED3400C2709F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6CB5B2318F7ED3400C2709F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AC Cover/AC Cover-Prefix.pch";
+				INFOPLIST_FILE = "AC Cover/AC Cover-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A6CB5B2418F7ED3400C2709F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AC Cover/AC Cover-Prefix.pch";
+				INFOPLIST_FILE = "AC Cover/AC Cover-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A6CB5B2618F7ED3400C2709F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AC Cover.app/AC Cover";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AC Cover/AC Cover-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AC CoverTests/AC CoverTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A6CB5B2718F7ED3400C2709F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AC Cover.app/AC Cover";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AC Cover/AC Cover-Prefix.pch";
+				INFOPLIST_FILE = "AC CoverTests/AC CoverTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6CB5AE318F7ED3400C2709F /* Build configuration list for PBXProject "AC Cover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CB5B2018F7ED3400C2709F /* Debug */,
+				A6CB5B2118F7ED3400C2709F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6CB5B2218F7ED3400C2709F /* Build configuration list for PBXNativeTarget "AC Cover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CB5B2318F7ED3400C2709F /* Debug */,
+				A6CB5B2418F7ED3400C2709F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A6CB5B2518F7ED3400C2709F /* Build configuration list for PBXNativeTarget "AC CoverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CB5B2618F7ED3400C2709F /* Debug */,
+				A6CB5B2718F7ED3400C2709F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6CB5AE018F7ED3400C2709F /* Project object */;
+}
