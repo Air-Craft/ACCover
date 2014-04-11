@@ -25,6 +25,8 @@
 		A6CB5B1518F7ED3400C2709F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AEF18F7ED3400C2709F /* UIKit.framework */; };
 		A6CB5B1D18F7ED3400C2709F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5B1B18F7ED3400C2709F /* InfoPlist.strings */; };
 		A6CB5B1F18F7ED3400C2709F /* AC_CoverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B1E18F7ED3400C2709F /* AC_CoverTests.m */; };
+		A6CB5B2A18F7EE5400C2709F /* AC_CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B2918F7EE5400C2709F /* AC_CoverView.m */; };
+		A6CB5B2D18F7F27500C2709F /* GLKView+AC_Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B2C18F7F27500C2709F /* GLKView+AC_Additions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,10 @@
 		A6CB5B1A18F7ED3400C2709F /* AC CoverTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AC CoverTests-Info.plist"; sourceTree = "<group>"; };
 		A6CB5B1C18F7ED3400C2709F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A6CB5B1E18F7ED3400C2709F /* AC_CoverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AC_CoverTests.m; sourceTree = "<group>"; };
+		A6CB5B2818F7EE5400C2709F /* AC_CoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AC_CoverView.h; path = Views/AC_CoverView.h; sourceTree = "<group>"; };
+		A6CB5B2918F7EE5400C2709F /* AC_CoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AC_CoverView.m; path = Views/AC_CoverView.m; sourceTree = "<group>"; };
+		A6CB5B2B18F7F27500C2709F /* GLKView+AC_Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GLKView+AC_Additions.h"; path = "Categories/GLKView+AC_Additions.h"; sourceTree = "<group>"; };
+		A6CB5B2C18F7F27500C2709F /* GLKView+AC_Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GLKView+AC_Additions.m"; path = "Categories/GLKView+AC_Additions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +137,12 @@
 				A6CB5B0618F7ED3400C2709F /* Shader.vsh */,
 				A6CB5B0818F7ED3400C2709F /* ACViewController.h */,
 				A6CB5B0918F7ED3400C2709F /* ACViewController.m */,
+				A6CB5B2818F7EE5400C2709F /* AC_CoverView.h */,
+				A6CB5B2918F7EE5400C2709F /* AC_CoverView.m */,
 				A6CB5B0B18F7ED3400C2709F /* Images.xcassets */,
 				A6CB5AF618F7ED3400C2709F /* Supporting Files */,
+				A6CB5B2B18F7F27500C2709F /* GLKView+AC_Additions.h */,
+				A6CB5B2C18F7F27500C2709F /* GLKView+AC_Additions.m */,
 			);
 			path = "AC Cover";
 			sourceTree = "<group>";
@@ -267,7 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6CB5B0018F7ED3400C2709F /* ACAppDelegate.m in Sources */,
+				A6CB5B2D18F7F27500C2709F /* GLKView+AC_Additions.m in Sources */,
 				A6CB5B0A18F7ED3400C2709F /* ACViewController.m in Sources */,
+				A6CB5B2A18F7EE5400C2709F /* AC_CoverView.m in Sources */,
 				A6CB5AFC18F7ED3400C2709F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +408,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AC Cover/AC Cover-Prefix.pch";
 				INFOPLIST_FILE = "AC Cover/AC Cover-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -409,6 +422,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AC Cover/AC Cover-Prefix.pch";
 				INFOPLIST_FILE = "AC Cover/AC Cover-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -473,6 +487,7 @@
 				A6CB5B2418F7ED3400C2709F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6CB5B2518F7ED3400C2709F /* Build configuration list for PBXNativeTarget "AC CoverTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +496,7 @@
 				A6CB5B2718F7ED3400C2709F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

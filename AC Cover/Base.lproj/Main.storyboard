@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="E7L-Rz-Ux0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="CtS-rA-C9T">
+        <!--View Controller-->
+        <scene sceneID="lOF-3H-hTc">
             <objects>
-                <glkViewController preferredFramesPerSecond="30" id="LVB-YS-i5n" customClass="ACViewController" sceneMemberID="viewController">
+                <viewController id="E7L-Rz-Ux0" customClass="ACViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Xaj-7Y-aV7"/>
-                        <viewControllerLayoutGuide type="bottom" id="Rbg-pb-c98"/>
+                        <viewControllerLayoutGuide type="top" id="RVf-um-QVY"/>
+                        <viewControllerLayoutGuide type="bottom" id="aQB-2Y-G99"/>
                     </layoutGuides>
-                    <glkView key="view" contentMode="scaleToFill" id="bdc-N1-crn">
+                    <view key="view" contentMode="scaleToFill" id="ChZ-gD-F7B" customClass="AC_CoverView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </glkView>
-                </glkViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vNI-zO-cfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137" y="69"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
