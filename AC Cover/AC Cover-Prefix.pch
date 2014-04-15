@@ -14,3 +14,35 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+
+/////////////////////////////////////////////////////////////////////////
+#pragma mark - Variable dump macros
+/////////////////////////////////////////////////////////////////////////
+
+/** @name  md1 Variable dump macros */
+
+// DLOG is almost a drop-in replacement for NSLog
+// DLOG();
+// DLOG(@"here");
+// DLOG(@"value: %d", x);
+// DLOGs(myNSString);
+// DLOGi(myInt);
+// DLOGvf("var name", myDoubleOrFloat)
+#ifdef DEBUG
+#	define DLOG(fmt, ...) NSLog((@"%s [L%d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#   define DLOGi(val) NSLog((@"%s [L%d] %i"), __PRETTY_FUNCTION__, __LINE__, (int)val);
+#   define DLOGf(val) NSLog((@"%s [L%d] %f"), __PRETTY_FUNCTION__, __LINE__, (float)val);
+#   define DLOGs(val) NSLog((@"%s [L%d] %@"), __PRETTY_FUNCTION__, __LINE__, val);
+#   define DLOGvi(varname, val) NSLog((@"%s [L%d] %s=%i"), __PRETTY_FUNCTION__, __LINE__, varname, (int)val);
+#   define DLOGvf(varname, val) NSLog((@"%s [L%d] %s=%f"), __PRETTY_FUNCTION__, __LINE__, varname, (float)val);
+#   define DLOGvs(varname, val) NSLog((@"%s [L%d] %s=%@"), __PRETTY_FUNCTION__, __LINE__, varname, val);
+#else
+#	define DLOG(...)
+#	define DLOGi(...)
+#	define DLOGf(...)
+#	define DLOGs(...)
+#	define DLOGvi(...)
+#	define DLOGvf(...)
+#	define DLOGvs(...)
+#endif
