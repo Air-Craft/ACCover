@@ -31,29 +31,29 @@ static const GLfloat Z = -2;
 // Uniform index.
 enum
 {
-    projectionMatrix,
-    modelViewMatrix,
-    normalMatrix,
+    M,      // Model-view-projection matrices
+    V,
+    P,
+    V_norm,
     shapeTex,
-    bumpTex,
-    modelHScale,
+    normTex,
     texYOffset,
     NUM_UNIFORMS
 };
-GLint uniforms[NUM_UNIFORMS];
+GLint _uniforms[NUM_UNIFORMS];
 
 
 
 GLfloat _glCubeVertexData[48] =
 {
     // Data layout for each line below is:
-    // positionX, positionY, positionZ,     normalX, normalY, normalZ,  texU, texV
-    W/2,  H, 0,      0.0f, 0.0f, 1.0f,      1, 1,
-    -W/2, H, 0,      0.0f, 0.0f, 1.0f,      0, 1,
-    W/2,  0, 0,      0.0f, 0.0f, 1.0f,      1, 0,
-    W/2,  0, 0,      0.0f, 0.0f, 1.0f,      1, 0,
-    -W/2, H, 0,      0.0f, 0.0f, 1.0f,      0, 1,
-    -W/2, 0, 0,      0.0f, 0.0f, 1.0f,      0, 0
+    // positionX, positionY, positionZ,    texU, texV
+    W/2,  H, 0,      1, 1,
+    -W/2, H, 0,      0, 1,
+    W/2,  0, 0,      1, 0,
+    W/2,  0, 0,      1, 0,
+    -W/2, H, 0,      0, 1,
+    -W/2, 0, 0,      0, 0
 };
 
 
@@ -67,11 +67,10 @@ GLfloat _glCubeVertexData[48] =
     GLuint _vertexArray;
     GLuint _vertexBuffer;
     
-    GLKMatrix4 _projectionMatrix;
-    GLKMatrix4 _modelViewMatrix;
-    GLKMatrix3 _normalMatrix;
+    GLKMatrix4 _viewMatrixBase;
+    
     GLKTextureInfo *_bladeShapeTex;
-    GLKTextureInfo *_bladeBumpTex;
+    GLKTextureInfo *_bladeNormTex;
     
     
     CADisplayLink *_updateTimer;
@@ -110,9 +109,9 @@ GLfloat _glCubeVertexData[48] =
     // LIGHTING & TRANFORMS SETUP
     /////////////////////////////////////////
 
-    float aspect = fabsf(self.bounds.size.width / self.bounds.size.height);
-    _projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(53.0f), aspect, 1.732f, 100.f);
-    _modelViewMatrix = GLKMatrix4MakeTranslation(0, 0, Z);
+    // Default to shifting the model back a bit as to be visible in the viewport created by projectionMatrix
+    _viewMatrixBase = GLKMatrix4MakeTranslation(0, 0, Z);
+    
     
     /////////////////////////////////////////
     // DATA & BUFFERS
@@ -127,13 +126,10 @@ GLfloat _glCubeVertexData[48] =
         
         // Set position data
         glEnableVertexAttribArray(GLKVertexAttribPosition);
-        glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*8, BUFFER_OFFSET(0));
-        
-        glEnableVertexAttribArray(GLKVertexAttribNormal);
-        glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*8, BUFFER_OFFSET(sizeof(GLfloat)*3));
+        glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*5, BUFFER_OFFSET(0));
         
         glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
-        glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*8, BUFFER_OFFSET(sizeof(GLfloat)*6));
+        glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*5, BUFFER_OFFSET(sizeof(GLfloat)*3));
     }
     glBindVertexArrayOES(0);
     
@@ -160,9 +156,22 @@ GLfloat _glCubeVertexData[48] =
                       error:&err];
 
     if (!_bladeShapeTex) {
-        [NSException raise:NSGenericException format:@"Error loading texture: %@", err];
+        [NSException raise:NSGenericException format:@"Error loading shape texture: %@", err];
     }
     
+    // Normal map
+    f = [[NSBundle mainBundle] pathForResource:@"tex-blade-normmap" ofType:@"png"];
+    _bladeNormTex = [GLKTextureLoader
+                        textureWithContentsOfFile:f
+                        options:@{
+                                  GLKTextureLoaderOriginBottomLeft: @YES,
+                                  GLKTextureLoaderApplyPremultiplication: @NO
+                                  }
+                        error:&err];
+    
+    if (!_bladeNormTex) {
+        [NSException raise:NSGenericException format:@"Error loading normal map texture: %@", err];
+    }
     
     /////////////////////////////////////////
     // UNIFORMS (that dont change)
@@ -170,11 +179,22 @@ GLfloat _glCubeVertexData[48] =
     glUseProgram(_program);
     {
         // @TODO move to setup
-        glUniformMatrix4fv(uniforms[projectionMatrix], 1, 0, _projectionMatrix.m);
+        float aspect = fabsf(self.bounds.size.width / self.bounds.size.height);
+        GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(53.0f), aspect, 1.732f, 100.f);
+
+        glUniformMatrix4fv(_uniforms[P], 1, 0, projectionMatrix.m);
+
+        // Shape tex
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(_bladeShapeTex.target, _bladeShapeTex.name);
         glEnable(_bladeShapeTex.target);
-        glUniform1i(uniforms[shapeTex], 0);
+        glUniform1i(_uniforms[shapeTex], 0);
+        
+        // Norm tex
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(_bladeNormTex.target, _bladeNormTex.name);
+        glEnable(_bladeNormTex.target);
+        glUniform1i(_uniforms[normTex], 1);
     }
     glUseProgram(0);
     
@@ -233,7 +253,6 @@ GLfloat _glCubeVertexData[48] =
         lastTime = t;
         return;
     }
-    NSTimeInterval delta_t = t - lastTime;
 
     float wave = sinf(2.f*M_PI/T * t);
     wave = MAX((wave * wave) - 0.2, 0.0);
@@ -241,37 +260,7 @@ GLfloat _glCubeVertexData[48] =
     _globalRetraction = wave;       // 0 = out, 1 = in
     
     
-    goto skip;
-    
-//    float aspect = fabsf(self.bounds.size.width / self.bounds.size.height);
-//    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
-    
-//    _effect.transform.projectionMatrix = projectionMatrix;
-    
-//    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -4.0f);
-//    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
-//    
-//    // Compute the model view matrix for the object rendered with GLKit
-//    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -1.5f);
-//    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 1.0f, 1.0f, 1.0f);
-//    modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
-//    
-//    _effect.transform.modelviewMatrix = modelViewMatrix;
-//    
-//    // Compute the model view matrix for the object rendered with ES2
-//    modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, 1.5f);
-//    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 1.0f, 1.0f, 1.0f);
-//    modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
-//    
-//    _normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(modelViewMatrix), NULL);
-//    
-//    _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, modelViewMatrix);
-//    
-//    _rotation += timeSinceLastUpdate * 0.5f;
-    
     lastTime = t;
-    
-skip:
     [self setNeedsDisplay];
 }
 
@@ -294,14 +283,14 @@ skip:
     
     
     // Derive/set uniforms for blade retraction
-    glUniform1f(uniforms[modelHScale], 1 - _globalRetraction);
+    GLKMatrix4 modelMatrix = GLKMatrix4MakeScale(1, 1 - _globalRetraction, 1);
+    glUniformMatrix4fv(_uniforms[M], 1, 0, modelMatrix.m);
     
     // Texture is a little tricker.
     float newH = H * (1 - _globalRetraction);
     float yOffsetNormed = (H - newH) / H;
-    glUniform1f(uniforms[texYOffset], yOffsetNormed);
+    glUniform1f(_uniforms[texYOffset], yOffsetNormed);
 
-    
     
     
     // For each blade...
@@ -310,19 +299,20 @@ skip:
         /////////////////////////////////////////
         // MV MATRIX
         /////////////////////////////////////////
-        // ...Rotate and tilt the model (via the MV matrix) and render once for each blade
+        // ...Rotate and tilt the model (via the V matrix) and render once for each blade
         
-        GLKMatrix4 mvMatrix = GLKMatrix4Identity;
+        GLKMatrix4 vMatrix = GLKMatrix4Identity;
 //        modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0, 0, i * 0.01);
-        mvMatrix = GLKMatrix4Rotate(_modelViewMatrix, BLADE_TILT, 0, 1.0, 0);
-        mvMatrix = GLKMatrix4Rotate(mvMatrix, -i * BLADE_SEPARATION - _globalRotation, 0, 0, 1.0);
-        glUniformMatrix4fv(uniforms[modelViewMatrix], 1, 0, mvMatrix.m);
+        vMatrix = GLKMatrix4Rotate(_viewMatrixBase, BLADE_TILT, 0, 1.0, 0);
+        vMatrix = GLKMatrix4Rotate(vMatrix, -i * BLADE_SEPARATION - _globalRotation, 0, 0, 1.0);
+        glUniformMatrix4fv(_uniforms[V], 1, 0, vMatrix.m);
 
         /////////////////////////////////////////
         // NORM MATRIX
         /////////////////////////////////////////
-        _normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(mvMatrix), NULL);
-        glUniformMatrix3fv(uniforms[normalMatrix], 1, 0, _normalMatrix.m);
+        
+        GLKMatrix3 normMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(vMatrix), NULL);
+        glUniformMatrix3fv(_uniforms[V_norm], 1, 0, normMatrix.m);
         
         glDrawArrays(GL_TRIANGLES, 0, 36);
     }
@@ -364,7 +354,6 @@ skip:
     // Bind attribute locations.
     // This needs to be done prior to linking.
     glBindAttribLocation(_program, GLKVertexAttribPosition, "a_position");
-    glBindAttribLocation(_program, GLKVertexAttribNormal, "a_normal");
     glBindAttribLocation(_program, GLKVertexAttribTexCoord0, "a_texcoord");
     
     // Link program.
@@ -385,15 +374,15 @@ skip:
         [NSException raise:NSGenericException format:@"Failed to link program: %d", _program];
         return;
     }
-    
+
     // Get uniform locations.
-    uniforms[modelViewMatrix] = glGetUniformLocation(_program, "modelViewMatrix");
-    uniforms[projectionMatrix] = glGetUniformLocation(_program, "projectionMatrix");
-    uniforms[normalMatrix] = glGetUniformLocation(_program, "normalMatrix");
-    uniforms[shapeTex] = glGetUniformLocation(_program, "shapeTex");
-    uniforms[bumpTex] = glGetUniformLocation(_program, "bumpTex");
-    uniforms[modelHScale] = glGetUniformLocation(_program, "modelHScale");
-    uniforms[texYOffset] = glGetUniformLocation(_program, "texYOffset");
+    _uniforms[M] = glGetUniformLocation(_program, "M");
+    _uniforms[V] = glGetUniformLocation(_program, "V");
+    _uniforms[P] = glGetUniformLocation(_program, "P");
+    _uniforms[V_norm] = glGetUniformLocation(_program, "V_norm");
+    _uniforms[shapeTex] = glGetUniformLocation(_program, "shapeTex");
+    _uniforms[normTex] = glGetUniformLocation(_program, "normTex");
+    _uniforms[texYOffset] = glGetUniformLocation(_program, "texYOffset");
     
     
     // Release vertex and fragment shaders.

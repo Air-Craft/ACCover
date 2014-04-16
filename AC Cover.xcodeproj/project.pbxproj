@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A662CA6E18FAA01700E5F4F4 /* tex-blade-shape.png in Resources */ = {isa = PBXBuildFile; fileRef = A662CA6D18FAA01700E5F4F4 /* tex-blade-shape.png */; };
 		A6AE52E818F840850081B4CE /* AC_CoverViewGLDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE52E718F840850081B4CE /* AC_CoverViewGLDelegate.m */; };
+		A6AE66A818FD8E1E00F8C649 /* tex-blade-normmap.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AE66A718FD8E1E00F8C649 /* tex-blade-normmap.png */; };
 		A6CB5AEC18F7ED3400C2709F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AEB18F7ED3400C2709F /* Foundation.framework */; };
 		A6CB5AEE18F7ED3400C2709F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AED18F7ED3400C2709F /* CoreGraphics.framework */; };
 		A6CB5AF018F7ED3400C2709F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AEF18F7ED3400C2709F /* UIKit.framework */; };
@@ -45,6 +46,7 @@
 		A662CA6D18FAA01700E5F4F4 /* tex-blade-shape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-shape.png"; sourceTree = "<group>"; };
 		A6AE52E618F840850081B4CE /* AC_CoverViewGLDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AC_CoverViewGLDelegate.h; path = Views/AC_CoverViewGLDelegate.h; sourceTree = "<group>"; };
 		A6AE52E718F840850081B4CE /* AC_CoverViewGLDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AC_CoverViewGLDelegate.m; path = Views/AC_CoverViewGLDelegate.m; sourceTree = "<group>"; };
+		A6AE66A718FD8E1E00F8C649 /* tex-blade-normmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-normmap.png"; sourceTree = "<group>"; };
 		A6CB5AE818F7ED3400C2709F /* AC Cover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC Cover.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CB5AEB18F7ED3400C2709F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A6CB5AED18F7ED3400C2709F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,6 +105,7 @@
 		A662CA6C18FAA01700E5F4F4 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				A6AE66A718FD8E1E00F8C649 /* tex-blade-normmap.png */,
 				A662CA6D18FAA01700E5F4F4 /* tex-blade-shape.png */,
 			);
 			path = Media;
@@ -283,6 +286,7 @@
 				A6CB5AFA18F7ED3400C2709F /* InfoPlist.strings in Resources */,
 				A662CA6E18FAA01700E5F4F4 /* tex-blade-shape.png in Resources */,
 				A6CB5B0318F7ED3400C2709F /* Main.storyboard in Resources */,
+				A6AE66A818FD8E1E00F8C649 /* tex-blade-normmap.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
