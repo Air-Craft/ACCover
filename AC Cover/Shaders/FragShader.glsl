@@ -15,7 +15,7 @@ uniform sampler2D shapeTex;
 uniform sampler2D normTex;
 
 uniform mediump mat4 V, P;
-uniform mediump mat3 V_norm;
+uniform mediump mat4 V_norm;
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -32,15 +32,17 @@ struct LightSource
     vec3 spotDirection;
 };
 const LightSource light0 = LightSource(
-    vec4(0.0,  1.2, -1, 1.0),
+    vec4(0.2,  1.2, -1.8, 1.0),
     vec4(1.0,  1.0,  1.0, 1.0),
     vec4(1.0,  1.0,  1.0, 1.0),
     0.0, 0.3, 0.1,
-    180.0, 0.0,
-    vec3(0.0, 0.0, 0.0)
+    180.0, 1.0,
+    vec3(0.0, -1.0, 0.0)
 );
 
-vec4 sceneAmbient = vec4(0.2, 0.2, 0.2, 1.0);
+// Even though the perspective tranform has an impled origin for the camera, we can fake it here to get a better reflection angle for the bevels.
+const vec3 cameraPos = vec3(0.0, 0.0, 3.0);
+const vec4 sceneAmbient = vec4(0.2, 0.2, 0.2, 1.0);
 
 struct Material
 {
@@ -53,7 +55,7 @@ Material frontMaterial = Material(
                                   vec4(0.2, 0.2, 0.2, 1.0),
                                   vec4(0.3, 0.3, 0.3, 1.0),
                                   vec4(0.870, 0.801, 0.756, 0.5),
-                                  50.0
+                                  90.0
                                   );
 
 
@@ -66,24 +68,25 @@ Material frontMaterial = Material(
 
 void main()
 {
-    // Get the normal and transform it through VP
+    // Get the normal from the tex map and convert to View coords
     vec4 encodedNormal = texture2D(normTex, v_texcoord);
     vec3 localNormal = 2.0 * encodedNormal.rgb - vec3(1.0);
-    vec3 normalDirection = normalize(V_norm*localNormal);
+    vec3 normalDirection = normalize(vec3(V_norm*vec4(localNormal, 1.0)));
     
 //    vec3 viewDirection = normalize(vec3(V_norm * vec4(0.0, 0.0, 0.0, 1.0) - v_position));
-    vec3 viewDirection = normalize(vec3(vec4(0.0, 0.0, 0.0, 1.0) - v_position));
+    // Camera's V transform is nil so leave it out.
+    vec3 viewDirection = normalize(cameraPos - vec3(v_position));
     vec3 lightDirection;
     float dist;
     float attenuation;
     
-    if (0.0 == light0.position.w) // uni-directional light? (e.g. sun)
-    {
-        attenuation = 1.0; // no attenuation
-        lightDirection = normalize(vec3(light0.position));
-    }
-    else // point light or spotlight (or other kind of light)
-    {
+//    if (0.0 == light0.position.w) // uni-directional light? (e.g. sun)
+//    {
+//        attenuation = 1.0; // no attenuation
+//        lightDirection = normalize(vec3(light0.position));
+//    }
+//    else // point light or spotlight (or other kind of light)
+     {
         vec3 positionToLightSource = vec3(light0.position - v_position);
         dist = length(positionToLightSource);
         lightDirection = normalize(positionToLightSource);
@@ -122,10 +125,5 @@ void main()
         * pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), frontMaterial.shininess);
     }
     
-    // Multiply lighting by the shape texture
-    gl_FragColor = texture2D(shapeTex, v_texcoord) * vec4(diffuseReflection, 1.0);
-    
-    
-    
-//    gl_FragColor = texture2D(shapeTex, v_texcoord) * vec4(ambientLighting + diffuseReflection + specularReflection, 1.0);
+    gl_FragColor = texture2D(shapeTex, v_texcoord) * vec4(ambientLighting + diffuseReflection + specularReflection, 1.0);
 }

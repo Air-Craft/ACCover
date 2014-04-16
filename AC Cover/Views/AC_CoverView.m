@@ -103,7 +103,7 @@ GLfloat _glCubeVertexData[48] =
     
     // Flags
     self.drawableDepthFormat = GLKViewDrawableDepthFormat24;
-
+//    self.drawableMultisample = GLKViewDrawableMultisample4X;
     
     /////////////////////////////////////////
     // LIGHTING & TRANFORMS SETUP
@@ -311,9 +311,11 @@ GLfloat _glCubeVertexData[48] =
         // NORM MATRIX
         /////////////////////////////////////////
         
-        GLKMatrix3 normMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(vMatrix), NULL);
-        glUniformMatrix3fv(_uniforms[V_norm], 1, 0, normMatrix.m);
-        
+//        GLKMatrix3 normMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(vMatrix), NULL);
+//        glUniformMatrix3fv(_uniforms[V_norm], 1, 0, normMatrix.m);
+        GLKMatrix4 normMatrix = GLKMatrix4InvertAndTranspose(vMatrix, NULL);
+        glUniformMatrix4fv(_uniforms[V_norm], 1, 0, normMatrix.m);
+       
         glDrawArrays(GL_TRIANGLES, 0, 36);
     }
     
