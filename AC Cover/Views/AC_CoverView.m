@@ -243,7 +243,7 @@ GLfloat _glCubeVertexData[48] =
 
 - (void)_update:(CADisplayLink *)sender
 {
-    const float T = 16;    // Animation period, retract and expand cycle
+    const float T = 4;    // Animation period, retract and expand cycle
     
     // Initialise time on first cycle
     static NSTimeInterval lastTime = -1.0;
