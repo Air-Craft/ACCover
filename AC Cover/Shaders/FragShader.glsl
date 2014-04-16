@@ -46,12 +46,12 @@ struct LightSource
     vec3 spotDirection;
 };
 const LightSource light0 = LightSource(
-    vec4(0.8,  2.2, -1.8, 1.0),
-    vec4(vec3(0.8), 1.0),
-    vec4(vec3(1.0), 1.0),
+    vec4(1.0, 3.0, -1.0, 1.0),
+    vec4(vec3(0.05), 1.0),
+    vec4(vec3(0.9), 1.0),
     0.0, 0.3, 0.1,
-    30.0, 1.0,
-    vec3(-0.2, -1.0, 0.0)
+    180.0, 3.0,
+    vec3(-1.0, -3.0, -0.5)
 );
 
 // Even though the perspective tranform has an impled origin for the camera, we can fake it here to get a better reflection angle for the bevels.
@@ -67,9 +67,9 @@ struct Material
     float shininess;    // exp in pow(). 0 = none (ambient),
 };
 const Material bladeSurface = Material(
-                              vec3(0.2),
-                              vec4(vec3(0.9), 1.0),
-                              vec4(vec3(0.5), 1.0),
+                              vec3(0.1),
+                              vec4(vec3(0.1), 1.0),
+                              vec4(vec3(1.0), 1.0),
                               vec4(vec3(0.0), 1.0),
                               3.0
                               );
@@ -78,7 +78,7 @@ const Material bladeBevel = Material(
                                vec4(vec3(0.0), 1.0),
                                vec4(vec3(0.0), 1.0),
                                vec4(vec3(1.0), 1.0),
-                               3.0
+                               2.0
                                );
 
 const float SURFACE_TEX_MULT = 0.4;  // Mix multiplier for shapeTex
@@ -154,7 +154,7 @@ void main()
     
     vec3 outColor;
     
-    if (bevel > 0.01) {
+    if (bevel > 0.001) {
         
         vec3 ambientLighting = vec3(sceneAmbient) * vec3(bladeBevel.ambient);
         

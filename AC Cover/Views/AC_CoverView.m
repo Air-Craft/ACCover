@@ -103,7 +103,7 @@ GLfloat _glCubeVertexData[48] =
     
     // Flags
     self.drawableDepthFormat = GLKViewDrawableDepthFormat24;
-//    self.drawableMultisample = GLKViewDrawableMultisample4X;
+    self.drawableMultisample = GLKViewDrawableMultisample4X;
     
     /////////////////////////////////////////
     // LIGHTING & TRANFORMS SETUP
@@ -180,7 +180,7 @@ GLfloat _glCubeVertexData[48] =
     {
         // @TODO move to setup
         float aspect = fabsf(self.bounds.size.width / self.bounds.size.height);
-        GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(53.0f), aspect, 1.732f, 100.f);
+        GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(43.0f), aspect, 1.732f, 100.f);
 
         glUniformMatrix4fv(_uniforms[P], 1, 0, projectionMatrix.m);
 
@@ -243,7 +243,7 @@ GLfloat _glCubeVertexData[48] =
 
 - (void)_update:(CADisplayLink *)sender
 {
-    const float T = 4;    // Animation period, retract and expand cycle
+    const float T = 8;    // Animation period, retract and expand cycle
     
     // Initialise time on first cycle
     static NSTimeInterval lastTime = -1.0;
@@ -256,7 +256,7 @@ GLfloat _glCubeVertexData[48] =
 
     float wave = sinf(2.f*M_PI/T * t);
     wave = MAX((wave * wave) - 0.2, 0.0);
-    _globalRotation = BLADE_MAX_ROTATION * wave;
+    _globalRotation = -BLADE_MAX_ROTATION * wave;
     _globalRetraction = wave;       // 0 = out, 1 = in
     
     
@@ -304,7 +304,7 @@ GLfloat _glCubeVertexData[48] =
         GLKMatrix4 vMatrix = GLKMatrix4Identity;
 //        modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0, 0, i * 0.01);
         vMatrix = GLKMatrix4Rotate(_viewMatrixBase, BLADE_TILT, 0, 1.0, 0);
-        vMatrix = GLKMatrix4Rotate(vMatrix, -i * BLADE_SEPARATION - _globalRotation, 0, 0, 1.0);
+        vMatrix = GLKMatrix4Rotate(vMatrix, i * BLADE_SEPARATION + _globalRotation + M_PI, 0, 0, 1.0);
         glUniformMatrix4fv(_uniforms[V], 1, 0, vMatrix.m);
 
         /////////////////////////////////////////
