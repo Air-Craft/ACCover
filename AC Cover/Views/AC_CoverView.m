@@ -255,7 +255,7 @@ GLfloat _glCubeVertexData[48] =
     }
 
     float wave = sinf(2.f*M_PI/T * t);
-    wave = MAX((wave * wave) - 0.2, 0.0);
+    wave = MAX((wave * wave) - 0.2, 0.0) * 1.25;
     _globalRotation = -BLADE_MAX_ROTATION * wave;
     _globalRetraction = wave;       // 0 = out, 1 = in
     
@@ -275,7 +275,7 @@ GLfloat _glCubeVertexData[48] =
 //    glEnable(GL_DEPTH_TEST);
     glEnable (GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glClearColor(0.05f, 0.05f, 0.0f, 1.0f);
+    glClearColor(0.12f, 0.10f, 0.12f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     glBindVertexArrayOES(_vertexArray);

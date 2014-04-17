@@ -7,12 +7,13 @@
 //
 
 @import UIKit;
+@import CoreMotion;
 
 @interface AC_CoverEmblemView : UIView
 
 
 /** Designated initialiser for fixed size view */
-+ (instancetype)newCoverEmblemView;
++ (instancetype)coverEmblemViewWithMotionManager:(CMMotionManager *)motionManger;
 
 
 @end
