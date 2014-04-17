@@ -7,25 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A62CB11318FFDD5B00B38B3A /* AC_CoverEmblemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A62CB11218FFDD5B00B38B3A /* AC_CoverEmblemView.m */; };
 		A662CA6E18FAA01700E5F4F4 /* tex-blade-shape.png in Resources */ = {isa = PBXBuildFile; fileRef = A662CA6D18FAA01700E5F4F4 /* tex-blade-shape.png */; };
 		A6AE52E818F840850081B4CE /* AC_CoverViewGLDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE52E718F840850081B4CE /* AC_CoverViewGLDelegate.m */; };
 		A6AE66A818FD8E1E00F8C649 /* tex-blade-normmap.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AE66A718FD8E1E00F8C649 /* tex-blade-normmap.png */; };
-		A6CB5AEC18F7ED3400C2709F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AEB18F7ED3400C2709F /* Foundation.framework */; };
-		A6CB5AEE18F7ED3400C2709F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AED18F7ED3400C2709F /* CoreGraphics.framework */; };
-		A6CB5AF018F7ED3400C2709F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AEF18F7ED3400C2709F /* UIKit.framework */; };
-		A6CB5AF218F7ED3400C2709F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AF118F7ED3400C2709F /* GLKit.framework */; };
-		A6CB5AF418F7ED3400C2709F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AF318F7ED3400C2709F /* OpenGLES.framework */; };
 		A6CB5AFA18F7ED3400C2709F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5AF818F7ED3400C2709F /* InfoPlist.strings */; };
 		A6CB5AFC18F7ED3400C2709F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5AFB18F7ED3400C2709F /* main.m */; };
 		A6CB5B0018F7ED3400C2709F /* ACAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5AFF18F7ED3400C2709F /* ACAppDelegate.m */; };
 		A6CB5B0318F7ED3400C2709F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5B0118F7ED3400C2709F /* Main.storyboard */; };
 		A6CB5B0518F7ED3400C2709F /* FragShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5B0418F7ED3400C2709F /* FragShader.glsl */; };
 		A6CB5B0718F7ED3400C2709F /* VertShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5B0618F7ED3400C2709F /* VertShader.glsl */; };
-		A6CB5B0A18F7ED3400C2709F /* ACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B0918F7ED3400C2709F /* ACViewController.m */; };
+		A6CB5B0A18F7ED3400C2709F /* AC_CoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B0918F7ED3400C2709F /* AC_CoverVC.m */; };
 		A6CB5B0C18F7ED3400C2709F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5B0B18F7ED3400C2709F /* Images.xcassets */; };
-		A6CB5B1318F7ED3400C2709F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5B1218F7ED3400C2709F /* XCTest.framework */; };
-		A6CB5B1418F7ED3400C2709F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AEB18F7ED3400C2709F /* Foundation.framework */; };
-		A6CB5B1518F7ED3400C2709F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CB5AEF18F7ED3400C2709F /* UIKit.framework */; };
 		A6CB5B1D18F7ED3400C2709F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5B1B18F7ED3400C2709F /* InfoPlist.strings */; };
 		A6CB5B1F18F7ED3400C2709F /* AC_CoverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B1E18F7ED3400C2709F /* AC_CoverTests.m */; };
 		A6CB5B2A18F7EE5400C2709F /* AC_CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B2918F7EE5400C2709F /* AC_CoverView.m */; };
@@ -43,16 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A62CB11118FFDD5B00B38B3A /* AC_CoverEmblemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AC_CoverEmblemView.h; path = Views/AC_CoverEmblemView.h; sourceTree = "<group>"; };
+		A62CB11218FFDD5B00B38B3A /* AC_CoverEmblemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AC_CoverEmblemView.m; path = Views/AC_CoverEmblemView.m; sourceTree = "<group>"; };
 		A662CA6D18FAA01700E5F4F4 /* tex-blade-shape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-shape.png"; sourceTree = "<group>"; };
 		A6AE52E618F840850081B4CE /* AC_CoverViewGLDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AC_CoverViewGLDelegate.h; path = Views/AC_CoverViewGLDelegate.h; sourceTree = "<group>"; };
 		A6AE52E718F840850081B4CE /* AC_CoverViewGLDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AC_CoverViewGLDelegate.m; path = Views/AC_CoverViewGLDelegate.m; sourceTree = "<group>"; };
 		A6AE66A718FD8E1E00F8C649 /* tex-blade-normmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-normmap.png"; sourceTree = "<group>"; };
 		A6CB5AE818F7ED3400C2709F /* AC Cover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC Cover.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6CB5AEB18F7ED3400C2709F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A6CB5AED18F7ED3400C2709F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A6CB5AEF18F7ED3400C2709F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A6CB5AF118F7ED3400C2709F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		A6CB5AF318F7ED3400C2709F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A6CB5AF718F7ED3400C2709F /* AC Cover-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AC Cover-Info.plist"; sourceTree = "<group>"; };
 		A6CB5AF918F7ED3400C2709F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A6CB5AFB18F7ED3400C2709F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,11 +52,10 @@
 		A6CB5B0218F7ED3400C2709F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6CB5B0418F7ED3400C2709F /* FragShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = FragShader.glsl; path = Shaders/FragShader.glsl; sourceTree = "<group>"; };
 		A6CB5B0618F7ED3400C2709F /* VertShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = VertShader.glsl; path = Shaders/VertShader.glsl; sourceTree = "<group>"; };
-		A6CB5B0818F7ED3400C2709F /* ACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACViewController.h; sourceTree = "<group>"; };
-		A6CB5B0918F7ED3400C2709F /* ACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACViewController.m; sourceTree = "<group>"; };
+		A6CB5B0818F7ED3400C2709F /* AC_CoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AC_CoverVC.h; sourceTree = "<group>"; };
+		A6CB5B0918F7ED3400C2709F /* AC_CoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AC_CoverVC.m; sourceTree = "<group>"; };
 		A6CB5B0B18F7ED3400C2709F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A6CB5B1118F7ED3400C2709F /* AC CoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AC CoverTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6CB5B1218F7ED3400C2709F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A6CB5B1A18F7ED3400C2709F /* AC CoverTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AC CoverTests-Info.plist"; sourceTree = "<group>"; };
 		A6CB5B1C18F7ED3400C2709F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A6CB5B1E18F7ED3400C2709F /* AC_CoverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AC_CoverTests.m; sourceTree = "<group>"; };
@@ -81,11 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6CB5AF418F7ED3400C2709F /* OpenGLES.framework in Frameworks */,
-				A6CB5AEE18F7ED3400C2709F /* CoreGraphics.framework in Frameworks */,
-				A6CB5AF018F7ED3400C2709F /* UIKit.framework in Frameworks */,
-				A6CB5AF218F7ED3400C2709F /* GLKit.framework in Frameworks */,
-				A6CB5AEC18F7ED3400C2709F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,9 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6CB5B1318F7ED3400C2709F /* XCTest.framework in Frameworks */,
-				A6CB5B1518F7ED3400C2709F /* UIKit.framework in Frameworks */,
-				A6CB5B1418F7ED3400C2709F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +99,8 @@
 				A6CB5B2918F7EE5400C2709F /* AC_CoverView.m */,
 				A6AE52E618F840850081B4CE /* AC_CoverViewGLDelegate.h */,
 				A6AE52E718F840850081B4CE /* AC_CoverViewGLDelegate.m */,
+				A62CB11118FFDD5B00B38B3A /* AC_CoverEmblemView.h */,
+				A62CB11218FFDD5B00B38B3A /* AC_CoverEmblemView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -127,7 +110,6 @@
 			children = (
 				A6CB5AF518F7ED3400C2709F /* AC Cover */,
 				A6CB5B1818F7ED3400C2709F /* AC CoverTests */,
-				A6CB5AEA18F7ED3400C2709F /* Frameworks */,
 				A6CB5AE918F7ED3400C2709F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,19 +123,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A6CB5AEA18F7ED3400C2709F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A6CB5AEB18F7ED3400C2709F /* Foundation.framework */,
-				A6CB5AED18F7ED3400C2709F /* CoreGraphics.framework */,
-				A6CB5AEF18F7ED3400C2709F /* UIKit.framework */,
-				A6CB5AF118F7ED3400C2709F /* GLKit.framework */,
-				A6CB5AF318F7ED3400C2709F /* OpenGLES.framework */,
-				A6CB5B1218F7ED3400C2709F /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		A6CB5AF518F7ED3400C2709F /* AC Cover */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,8 +132,8 @@
 				A6CB5B0118F7ED3400C2709F /* Main.storyboard */,
 				A6CB5B0418F7ED3400C2709F /* FragShader.glsl */,
 				A6CB5B0618F7ED3400C2709F /* VertShader.glsl */,
-				A6CB5B0818F7ED3400C2709F /* ACViewController.h */,
-				A6CB5B0918F7ED3400C2709F /* ACViewController.m */,
+				A6CB5B0818F7ED3400C2709F /* AC_CoverVC.h */,
+				A6CB5B0918F7ED3400C2709F /* AC_CoverVC.m */,
 				A6AE52E918F8408E0081B4CE /* Views */,
 				A6CB5B0B18F7ED3400C2709F /* Images.xcassets */,
 				A6CB5AF618F7ED3400C2709F /* Supporting Files */,
@@ -311,7 +280,8 @@
 				A6AE52E818F840850081B4CE /* AC_CoverViewGLDelegate.m in Sources */,
 				A6CB5B0018F7ED3400C2709F /* ACAppDelegate.m in Sources */,
 				A6CB5B2D18F7F27500C2709F /* GLKView+AC_Additions.m in Sources */,
-				A6CB5B0A18F7ED3400C2709F /* ACViewController.m in Sources */,
+				A6CB5B0A18F7ED3400C2709F /* AC_CoverVC.m in Sources */,
+				A62CB11318FFDD5B00B38B3A /* AC_CoverEmblemView.m in Sources */,
 				A6CB5B2A18F7EE5400C2709F /* AC_CoverView.m in Sources */,
 				A6CB5AFC18F7ED3400C2709F /* main.m in Sources */,
 			);

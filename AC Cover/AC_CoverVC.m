@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Air Craft. All rights reserved.
 //
 
-#import "ACViewController.h"
+#import "AC_CoverVC.h"
 #import "AC_CoverView.h"
 
 
-@implementation ACViewController
+@implementation AC_CoverVC
 
 - (void)viewDidLoad
 {
