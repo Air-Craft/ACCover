@@ -35,8 +35,9 @@ enum
     V,
     P,
     V_norm,
-    shapeTex,
-    normTex,
+    tex_color,
+    tex_specular,
+    tex_normal,
     texYOffset,
     NUM_UNIFORMS
 };
@@ -69,8 +70,9 @@ GLfloat _glCubeVertexData[48] =
     
     GLKMatrix4 _viewMatrixBase;
     
-    GLKTextureInfo *_bladeShapeTex;
-    GLKTextureInfo *_bladeNormTex;
+    GLKTextureInfo *_bladeTexColor;
+    GLKTextureInfo *_bladeTexNormal;
+    GLKTextureInfo *_bladeTexSpecular;
     
     
     CADisplayLink *_updateTimer;
@@ -146,8 +148,8 @@ GLfloat _glCubeVertexData[48] =
     /////////////////////////////////////////
     
     NSError *err;
-    NSString *f = [[NSBundle mainBundle] pathForResource:@"tex-blade-shape" ofType:@"png"];
-    _bladeShapeTex = [GLKTextureLoader
+    NSString *f = [[NSBundle mainBundle] pathForResource:@"tex-blade-color" ofType:@"png"];
+    _bladeTexColor = [GLKTextureLoader
                       textureWithContentsOfFile:f
                       options:@{
                                 GLKTextureLoaderOriginBottomLeft: @YES,
@@ -155,23 +157,38 @@ GLfloat _glCubeVertexData[48] =
                                 }
                       error:&err];
 
-    if (!_bladeShapeTex) {
+    if (!_bladeTexColor) {
         [NSException raise:NSGenericException format:@"Error loading shape texture: %@", err];
     }
     
     // Normal map
-    f = [[NSBundle mainBundle] pathForResource:@"tex-blade-normmap" ofType:@"png"];
-    _bladeNormTex = [GLKTextureLoader
-                        textureWithContentsOfFile:f
-                        options:@{
-                                  GLKTextureLoaderOriginBottomLeft: @YES,
-                                  GLKTextureLoaderApplyPremultiplication: @NO
-                                  }
-                        error:&err];
+    f = [[NSBundle mainBundle] pathForResource:@"tex-blade-norm" ofType:@"png"];
+    _bladeTexNormal = [GLKTextureLoader
+                       textureWithContentsOfFile:f
+                       options:@{
+                                 GLKTextureLoaderOriginBottomLeft: @YES,
+                                 GLKTextureLoaderApplyPremultiplication: @NO
+                                 }
+                       error:&err];
     
-    if (!_bladeNormTex) {
+    if (!_bladeTexNormal) {
         [NSException raise:NSGenericException format:@"Error loading normal map texture: %@", err];
     }
+    
+    
+    f = [[NSBundle mainBundle] pathForResource:@"tex-blade-spec" ofType:@"png"];
+    _bladeTexSpecular = [GLKTextureLoader
+                         textureWithContentsOfFile:f
+                         options:@{
+                                   GLKTextureLoaderOriginBottomLeft: @YES,
+                                   GLKTextureLoaderApplyPremultiplication: @NO
+                                   }
+                         error:&err];
+    
+    if (!_bladeTexSpecular) {
+        [NSException raise:NSGenericException format:@"Error loading shape texture: %@", err];
+    }
+    
     
     /////////////////////////////////////////
     // UNIFORMS (that dont change)
@@ -184,17 +201,23 @@ GLfloat _glCubeVertexData[48] =
 
         glUniformMatrix4fv(_uniforms[P], 1, 0, projectionMatrix.m);
 
-        // Shape tex
+        // Color tex
         glActiveTexture(GL_TEXTURE0);
-        glBindTexture(_bladeShapeTex.target, _bladeShapeTex.name);
-        glEnable(_bladeShapeTex.target);
-        glUniform1i(_uniforms[shapeTex], 0);
+        glBindTexture(_bladeTexColor.target, _bladeTexColor.name);
+        glEnable(_bladeTexColor.target);
+        glUniform1i(_uniforms[tex_color], 0);
         
         // Norm tex
         glActiveTexture(GL_TEXTURE1);
-        glBindTexture(_bladeNormTex.target, _bladeNormTex.name);
-        glEnable(_bladeNormTex.target);
-        glUniform1i(_uniforms[normTex], 1);
+        glBindTexture(_bladeTexNormal.target, _bladeTexNormal.name);
+        glEnable(_bladeTexNormal.target);
+        glUniform1i(_uniforms[tex_normal], 1);
+
+        // Norm tex
+        glActiveTexture(GL_TEXTURE2);
+        glBindTexture(_bladeTexNormal.target, _bladeTexNormal.name);
+        glEnable(_bladeTexNormal.target);
+        glUniform1i(_uniforms[tex_specular], 1);
     }
     glUseProgram(0);
     
@@ -275,8 +298,8 @@ GLfloat _glCubeVertexData[48] =
 //    glEnable(GL_DEPTH_TEST);
     glEnable (GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glClearColor(0.12f, 0.10f, 0.12f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClearColor(0.08f, 0.08f, 0.08f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
     
     glBindVertexArrayOES(_vertexArray);
     glUseProgram(_program);
@@ -382,8 +405,9 @@ GLfloat _glCubeVertexData[48] =
     _uniforms[V] = glGetUniformLocation(_program, "V");
     _uniforms[P] = glGetUniformLocation(_program, "P");
     _uniforms[V_norm] = glGetUniformLocation(_program, "V_norm");
-    _uniforms[shapeTex] = glGetUniformLocation(_program, "shapeTex");
-    _uniforms[normTex] = glGetUniformLocation(_program, "normTex");
+    _uniforms[tex_color] = glGetUniformLocation(_program, "tex_color");
+    _uniforms[tex_specular] = glGetUniformLocation(_program, "tex_specular");
+    _uniforms[tex_normal] = glGetUniformLocation(_program, "tex_normal");
     _uniforms[texYOffset] = glGetUniformLocation(_program, "texYOffset");
     
     

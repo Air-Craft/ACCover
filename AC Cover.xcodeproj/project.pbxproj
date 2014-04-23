@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		A62CB11318FFDD5B00B38B3A /* AC_CoverEmblemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A62CB11218FFDD5B00B38B3A /* AC_CoverEmblemView.m */; };
 		A62CB11619002A1800B38B3A /* UIColor+AC_Branding.m in Sources */ = {isa = PBXBuildFile; fileRef = A62CB11519002A1800B38B3A /* UIColor+AC_Branding.m */; };
-		A662CA6E18FAA01700E5F4F4 /* tex-blade-shape.png in Resources */ = {isa = PBXBuildFile; fileRef = A662CA6D18FAA01700E5F4F4 /* tex-blade-shape.png */; };
+		A6690CE7190814B000B5F62C /* tex-blade-norm.png in Resources */ = {isa = PBXBuildFile; fileRef = A6690CE4190814B000B5F62C /* tex-blade-norm.png */; };
+		A6690CE8190814B000B5F62C /* tex-blade-color.png in Resources */ = {isa = PBXBuildFile; fileRef = A6690CE5190814B000B5F62C /* tex-blade-color.png */; };
+		A6690CE9190814B000B5F62C /* tex-blade-spec.png in Resources */ = {isa = PBXBuildFile; fileRef = A6690CE6190814B000B5F62C /* tex-blade-spec.png */; };
 		A6AE52E818F840850081B4CE /* AC_CoverViewGLDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE52E718F840850081B4CE /* AC_CoverViewGLDelegate.m */; };
-		A6AE66A818FD8E1E00F8C649 /* tex-blade-normmap.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AE66A718FD8E1E00F8C649 /* tex-blade-normmap.png */; };
 		A6CB5AFA18F7ED3400C2709F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5AF818F7ED3400C2709F /* InfoPlist.strings */; };
 		A6CB5AFC18F7ED3400C2709F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5AFB18F7ED3400C2709F /* main.m */; };
 		A6CB5B0018F7ED3400C2709F /* ACAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5AFF18F7ED3400C2709F /* ACAppDelegate.m */; };
@@ -41,10 +42,11 @@
 		A62CB11218FFDD5B00B38B3A /* AC_CoverEmblemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AC_CoverEmblemView.m; path = Views/AC_CoverEmblemView.m; sourceTree = "<group>"; };
 		A62CB11419002A1800B38B3A /* UIColor+AC_Branding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+AC_Branding.h"; path = "Categories/UIColor+AC_Branding.h"; sourceTree = "<group>"; };
 		A62CB11519002A1800B38B3A /* UIColor+AC_Branding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+AC_Branding.m"; path = "Categories/UIColor+AC_Branding.m"; sourceTree = "<group>"; };
-		A662CA6D18FAA01700E5F4F4 /* tex-blade-shape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-shape.png"; sourceTree = "<group>"; };
+		A6690CE4190814B000B5F62C /* tex-blade-norm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-norm.png"; sourceTree = "<group>"; };
+		A6690CE5190814B000B5F62C /* tex-blade-color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-color.png"; sourceTree = "<group>"; };
+		A6690CE6190814B000B5F62C /* tex-blade-spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-spec.png"; sourceTree = "<group>"; };
 		A6AE52E618F840850081B4CE /* AC_CoverViewGLDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AC_CoverViewGLDelegate.h; path = Views/AC_CoverViewGLDelegate.h; sourceTree = "<group>"; };
 		A6AE52E718F840850081B4CE /* AC_CoverViewGLDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AC_CoverViewGLDelegate.m; path = Views/AC_CoverViewGLDelegate.m; sourceTree = "<group>"; };
-		A6AE66A718FD8E1E00F8C649 /* tex-blade-normmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-normmap.png"; sourceTree = "<group>"; };
 		A6CB5AE818F7ED3400C2709F /* AC Cover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC Cover.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CB5AF718F7ED3400C2709F /* AC Cover-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AC Cover-Info.plist"; sourceTree = "<group>"; };
 		A6CB5AF918F7ED3400C2709F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -100,8 +102,9 @@
 		A662CA6C18FAA01700E5F4F4 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				A6AE66A718FD8E1E00F8C649 /* tex-blade-normmap.png */,
-				A662CA6D18FAA01700E5F4F4 /* tex-blade-shape.png */,
+				A6690CE4190814B000B5F62C /* tex-blade-norm.png */,
+				A6690CE5190814B000B5F62C /* tex-blade-color.png */,
+				A6690CE6190814B000B5F62C /* tex-blade-spec.png */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -267,11 +270,12 @@
 			files = (
 				A6CB5B0718F7ED3400C2709F /* VertShader.glsl in Resources */,
 				A6CB5B0C18F7ED3400C2709F /* Images.xcassets in Resources */,
+				A6690CE8190814B000B5F62C /* tex-blade-color.png in Resources */,
+				A6690CE9190814B000B5F62C /* tex-blade-spec.png in Resources */,
+				A6690CE7190814B000B5F62C /* tex-blade-norm.png in Resources */,
 				A6CB5B0518F7ED3400C2709F /* FragShader.glsl in Resources */,
 				A6CB5AFA18F7ED3400C2709F /* InfoPlist.strings in Resources */,
-				A662CA6E18FAA01700E5F4F4 /* tex-blade-shape.png in Resources */,
 				A6CB5B0318F7ED3400C2709F /* Main.storyboard in Resources */,
-				A6AE66A818FD8E1E00F8C649 /* tex-blade-normmap.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

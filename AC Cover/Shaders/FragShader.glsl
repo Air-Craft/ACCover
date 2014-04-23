@@ -8,11 +8,7 @@
 
 /*
 OPTIMISATIONS:
-- Specular to use exp=1 for pow
-- MVP pre-mult (low priority)
-- singular hybrid lighting model
-- manual vignette plus lighting only on edges
-- try lowering precisions
+
  
  
 ATTACK PLAN:
@@ -25,8 +21,9 @@ precision mediump float;
 varying mediump vec2 v_texcoord;
 varying mediump vec4 v_position;
 
-uniform sampler2D shapeTex;
-uniform sampler2D normTex;
+uniform sampler2D tex_color;
+uniform sampler2D tex_specular;
+uniform sampler2D tex_normal;
 
 uniform mediump mat4 V, P;
 uniform mediump mat4 V_norm;
@@ -95,11 +92,11 @@ const float SURFACE_TEX_MULT = 0.4;  // Mix multiplier for shapeTex
 void main()
 {
     // Sample the shape tex
-    vec4 shapeTexColor = texture2D(shapeTex, v_texcoord);
+    vec4 baseColor = texture2D(tex_color, v_texcoord);
     
     
     // Get the normal from the tex map and convert to View coords
-    vec4 encodedNormal = texture2D(normTex, v_texcoord);
+    vec4 encodedNormal = texture2D(tex_normal, v_texcoord);
     vec3 localNormal = 2.0 * encodedNormal.rgb - vec3(1.0);
     vec3 normalDirection = normalize(vec3(V_norm*vec4(localNormal, 1.0)));
 
@@ -194,7 +191,7 @@ void main()
             * pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), bladeSurface.shininess);
         }
         
-        vec3 texMult = (SURFACE_TEX_MULT * (vec3(shapeTexColor) - 0.5) + 0.5);
+        vec3 texMult = (SURFACE_TEX_MULT * (vec3(baseColor) - 0.5) + 0.5);
         outColor = (texMult * bladeSurface.color) + (ambientLighting + diffuseReflection + specularReflection);
 
     }
@@ -207,5 +204,5 @@ void main()
     
 //                        + bevel * bladeMaterial.bevelColor;
     
-    gl_FragColor = vec4(outColor, shapeTexColor.a);
+    gl_FragColor = vec4(outColor, baseColor.a);
 }
