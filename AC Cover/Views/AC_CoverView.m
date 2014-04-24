@@ -17,9 +17,10 @@
 
 //---------------------------------------------------------------------
 
-static const GLfloat BLADE_SEPARATION = 30.f * M_PI / 180.f;
+static const GLfloat BLADE_SEPARATION = /*M_PI*0.667;*/30.f * M_PI / 180.f;
 static const NSUInteger BLADE_CNT = 2.0f * M_PI / BLADE_SEPARATION + 1;
 static const GLfloat BLADE_TILT = 0.f * M_PI / 180.0f;
+static const GLfloat BLADE_Z_OFFSET = -0.01;
 static const GLfloat BLADE_MAX_ROTATION = 60. * M_PI / 180.f;
 
 static const GLfloat W = 0.719;     // reflect texture image dimentions / 1000
@@ -204,20 +205,17 @@ GLfloat _glCubeVertexData[48] =
         // Color tex
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(_bladeTexColor.target, _bladeTexColor.name);
-        glEnable(_bladeTexColor.target);
         glUniform1i(_uniforms[tex_color], 0);
         
         // Norm tex
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(_bladeTexNormal.target, _bladeTexNormal.name);
-        glEnable(_bladeTexNormal.target);
         glUniform1i(_uniforms[tex_normal], 1);
 
-        // Norm tex
+        // Specular tex
         glActiveTexture(GL_TEXTURE2);
-        glBindTexture(_bladeTexNormal.target, _bladeTexNormal.name);
-        glEnable(_bladeTexNormal.target);
-        glUniform1i(_uniforms[tex_specular], 1);
+        glBindTexture(_bladeTexSpecular.target, _bladeTexSpecular.name);
+        glUniform1i(_uniforms[tex_specular], 2);
     }
     glUseProgram(0);
     
@@ -231,8 +229,6 @@ GLfloat _glCubeVertexData[48] =
     // Clear the context to be polite
     [EAGLContext setCurrentContext:nil];
 }
-
-
 
 //---------------------------------------------------------------------
 
@@ -258,6 +254,22 @@ GLfloat _glCubeVertexData[48] =
 
 //---------------------------------------------------------------------
 
+/////////////////////////////////////////////////////////////////////////
+#pragma mark - Properties
+/////////////////////////////////////////////////////////////////////////
+
+- (void)setRetraction:(float)retraction
+{
+    _retraction = retraction;
+    _globalRotation = -BLADE_MAX_ROTATION * _retraction;
+    _globalRetraction = _retraction;
+}
+
+//---------------------------------------------------------------------
+
+
+
+
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -266,6 +278,8 @@ GLfloat _glCubeVertexData[48] =
 
 - (void)_update:(CADisplayLink *)sender
 {
+    goto skip;
+    
     const float T = 8;    // Animation period, retract and expand cycle
     
     // Initialise time on first cycle
@@ -284,6 +298,8 @@ GLfloat _glCubeVertexData[48] =
     
     
     lastTime = t;
+    
+skip:
     [self setNeedsDisplay];
 }
 
@@ -307,9 +323,9 @@ GLfloat _glCubeVertexData[48] =
     
     // Derive/set uniforms for blade retraction
     GLKMatrix4 modelMatrix = GLKMatrix4MakeScale(1, 1 - _globalRetraction, 1);
-    glUniformMatrix4fv(_uniforms[M], 1, 0, modelMatrix.m);
+    // assigned below...
     
-    // Texture is a little tricker.
+    // Texture retraction, inverse mirrors the height scaling
     float newH = H * (1 - _globalRetraction);
     float yOffsetNormed = (H - newH) / H;
     glUniform1f(_uniforms[texYOffset], yOffsetNormed);
@@ -319,9 +335,12 @@ GLfloat _glCubeVertexData[48] =
     // For each blade...
     for (int i=0; i<BLADE_CNT; i++) {
         
-        /////////////////////////////////////////
-        // MV MATRIX
-        /////////////////////////////////////////
+        // M MATRIX
+        // Add a progessive Z offset for each
+        modelMatrix = GLKMatrix4Translate(modelMatrix, 0, 0, BLADE_Z_OFFSET * i);
+        glUniformMatrix4fv(_uniforms[M], 1, 0, modelMatrix.m);
+        
+        // V MATRIX
         // ...Rotate and tilt the model (via the V matrix) and render once for each blade
         
         GLKMatrix4 vMatrix = GLKMatrix4Identity;
@@ -330,6 +349,7 @@ GLfloat _glCubeVertexData[48] =
         vMatrix = GLKMatrix4Rotate(vMatrix, i * BLADE_SEPARATION + _globalRotation + M_PI, 0, 0, 1.0);
         glUniformMatrix4fv(_uniforms[V], 1, 0, vMatrix.m);
 
+        
         /////////////////////////////////////////
         // NORM MATRIX
         /////////////////////////////////////////

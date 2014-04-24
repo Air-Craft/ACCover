@@ -15,12 +15,41 @@
                     <view key="view" contentMode="scaleToFill" id="ChZ-gD-F7B" customClass="AC_CoverView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="l55-iT-iOl">
+                                <rect key="frame" x="4" y="535" width="312" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Slide"/>
+                                    <segment title="Light0"/>
+                                    <segment title="Light1"/>
+                                    <segment title="Face"/>
+                                    <segment title="Edge"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="219" translatesAutoresizingMaskIntoConstraints="NO" id="3gK-GF-QWO">
+                                <rect key="frame" x="5" y="460" width="219" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">T: 0.1, 0.2
+T: 0.1, 0.2
+T: 0.1, 0.2
+T: 0.1, 0.2</string>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="11"/>
+                                <color key="textColor" red="0.13514517247676849" green="1" blue="0.13445775210857391" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="_consoleLbl" destination="3gK-GF-QWO" id="OI2-xF-9FP"/>
+                        <outlet property="_paramSelector" destination="l55-iT-iOl" id="lWb-Wf-SNT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNI-zO-cfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="69"/>
+            <point key="canvasLocation" x="147" y="95"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

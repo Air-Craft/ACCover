@@ -14,8 +14,10 @@ OPTIMISATIONS:
 ATTACK PLAN:
 - material colour = 0.5
 -
- 
 */
+#define AC_CALIBRATE
+
+
 precision mediump float;
 
 varying mediump vec2 v_texcoord;
@@ -27,6 +29,20 @@ uniform sampler2D tex_normal;
 
 uniform mediump mat4 V, P;
 uniform mediump mat4 V_norm;
+
+
+#ifdef AC_CALIBRATE
+uniform lowp vec3 u_light0Pos;
+uniform lowp float u_light0Intensity;
+uniform lowp vec3 u_light1Pos;
+uniform lowp float u_light1Intensity;
+uniform lowp float u_faceDiffIntensity;
+uniform lowp float u_faceSpecIntensity;
+uniform lowp float u_edgeDiffIntensity;
+uniform lowp float u_edgeSpecIntensity;
+#else
+// define constants?
+#endif
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -204,5 +220,5 @@ void main()
     
 //                        + bevel * bladeMaterial.bevelColor;
     
-    gl_FragColor = vec4(outColor, baseColor.a);
+    gl_FragColor = vec4(outColor, baseColor.a); // + vec4(1.0, 1.0, 1.0, 0.5);
 }
