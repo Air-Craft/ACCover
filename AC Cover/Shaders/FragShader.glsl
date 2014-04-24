@@ -22,7 +22,7 @@ const lowp float SQRT_3 = 1.73205080757;
 const lowp float INV_SQRT_3 = 1.0/SQRT_3;
 
 
-precision mediump float;
+precision lowp float;
 
 varying mediump vec2 v_texcoord;
 varying mediump vec4 v_position;
@@ -36,14 +36,19 @@ uniform mediump mat4 V_norm;
 
 
 #ifdef AC_CALIBRATE
-uniform lowp vec3 u_light0Pos;
-uniform lowp float u_light0Intensity;
-uniform lowp vec3 u_light1Pos;
-uniform lowp float u_light1Intensity;
-uniform lowp float u_faceDiffIntensity;
-uniform lowp float u_faceSpecIntensity;
-uniform lowp float u_edgeDiffIntensity;
-uniform lowp float u_edgeSpecIntensity;
+uniform float u_attn_const = 0.0;
+uniform float u_attn_linear = 0.3;
+uniform float u_attn_quad = 0.1;
+uniform vec3 u_light0Pos = vec3(;
+uniform float u_light0Intensity;
+uniform vec3 u_light1Pos;
+uniform float u_light1Intensity;
+
+uniform float u_edgeFaceSplitFactor = 10.0;
+uniform float u_diffuseIntensity = 1.0;     // face only
+uniform float u_specularIntensity = 1.0;    // shared multipler for spec map reading
+uniform float u_shininess = 3.0;
+
 #else
 // define constants?
 #endif
@@ -53,51 +58,10 @@ uniform lowp float u_edgeSpecIntensity;
 #pragma mark - Lighting and materials
 /////////////////////////////////////////////////////////////////////////
 
-struct LightSource
-{
-    mediump vec4 position;
-    mediump vec4 diffuse;
-    mediump vec4 specular;
-    float constantAttenuation, linearAttenuation, quadraticAttenuation;
-};
-const LightSource light0 = LightSource(
-    vec4(1.0, 3.0, -1.0, 1.0),
-    vec4(vec3(0.05), 1.0),
-    vec4(vec3(0.9), 1.0),
-    0.0, 0.3, 0.1
-);
-
 // Even though the perspective tranform has an impled origin for the camera, we can fake it here to get a better reflection angle for the bevels.
-const vec3 cameraPos = vec3(0.0, 0.0, 3.0);
-const vec4 sceneAmbient = vec4(vec3(0.0), 1.0);
-
-struct Material
-{
-    vec3 color;
-    vec4 ambient;
-    vec4 diffuse;
-    vec4 specular;
-    float shininess;    // exp in pow(). 0 = none (ambient),
-};
-const Material bladeSurface = Material(
-                              vec3(0.1),
-                              vec4(vec3(0.1), 1.0),
-                              vec4(vec3(1.0), 1.0),
-                              vec4(vec3(0.0), 1.0),
-                              3.0
-                              );
-const Material bladeBevel = Material(
-                               vec3(0.0),
-                               vec4(vec3(0.0), 1.0),
-                               vec4(vec3(0.0), 1.0),
-                               vec4(vec3(1.0), 1.0),
-                               2.0
-                               );
-
-const float SURFACE_TEX_MULT = 0.4;  // Mix multiplier for shapeTex
-
-
-
+const vec3 CAMERA_POS = vec3(0.0, 0.0, 3.0);
+const vec4 DIFFUSE_COLOR = vec4(1.0, 1.0, 1.0, 0.0);    // Not really alpha=0 but they are added to the base color so we want alpha unaffected
+const vec4 SPECULAR_COLOR = vec4(1.0, 1.0, 1.0, 0.0);
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -125,28 +89,33 @@ void main()
     vec3 localNormal = 2.0 * encodedNormal.rgb - vec3(1.0);
     vec3 normalDirection = normalize(vec3(V_norm*vec4(localNormal, 1.0)));
 
+    // Face factor
+    // = the color intensity * scale amount to split the full black edge from the dark face
+    float faceFactor = min(1.0, length(baseColor.rgb) * u_edgeFaceSplitFactor);
+    
+    // Diffuse factor
+    float diffuseFactor = faceFactor * u_diffuseIntensity;  // face only
+    
     // Specular factor (intensity)
     vec4 encodedSpec = texture2D(tex_specular, v_texcoord);
-    float specularFactor = length(encodedSpec.xyz) * INV_SQRT_3;
+    float specularFactor = length(encodedSpec.xyz) * INV_SQRT_3 * u_specularIntensity;
     
-    // Diffuse factor (use the color scaled)
-    // * scale amount to split the full black edge from the dark face
-    float diffuseFactor = length(baseColor.xyz) * 10.0;
-    
-    
-    
+    // Full shininess for edge, almost none for face hopefully
+    float shinyFactor = max(0.0, 1.0 - diffuseFactor) * u_shininess;
+
 //    vec3 viewDirection = normalize(vec3(V_norm * vec4(0.0, 0.0, 0.0, 1.0) - v_position));
     // Camera's V transform is nil so leave it out.
-    vec3 viewDirection = normalize(cameraPos - vec3(v_position));
+    vec3 viewDirection = normalize(CAMERA_POS - vec3(v_position));
     
-    vec3 lightDirection;
-    float dist;
-    float attenuation;
     
     /////////////////////////////////////////
     // ATTENUATION
     /////////////////////////////////////////
-
+    
+    vec3 lightDirection;
+    float lightDistance;
+    float attenuation;
+    
 //    if (0.0 == light0.position.w) // uni-directional light? (e.g. sun)
 //    {
 //        attenuation = 1.0; // no attenuation
@@ -154,64 +123,32 @@ void main()
 //    }
 //    else // point light or spotlight (or other kind of light)
 //     {
-        vec3 positionToLightSource = vec3(light0.position - v_position);
-        dist = length(positionToLightSource);
+        vec3 positionToLightSource = vec3(u_light0Pos - v_position);
+        lightDistance = length(positionToLightSource);
         lightDirection = normalize(positionToLightSource);
-        attenuation = 1.0 / (light0.constantAttenuation
-                             + light0.linearAttenuation * dist
-                             + light0.quadraticAttenuation * dist * dist);
+        attenuation = 1.0 / (u_attn_const   // constant
+                             + u_attn_linear * lightDistance
+                             + u_attn_quad * lightDistance * lightDistance);
 //    }
     
     /////////////////////////////////////////
-    // LIGHTING COEFS
+    // DIFFUSE
     /////////////////////////////////////////
     
-    vec3 outColor;
+    vec4 outDiffuse = attenuation * diffuseFactor * max(0.0, dot(normalDirection, lightDirection)) * DIFFUSE_COLOR;
     
-    if (diffuseFactor < 0.01) {
-        
-        vec3 ambientLighting = vec3(sceneAmbient) * vec3(bladeBevel.ambient);
-        
-        vec3 diffuseReflection = attenuation
-        * vec3(light0.diffuse) * vec3(bladeBevel.diffuse)
-        * max(0.0, dot(normalDirection, lightDirection));
-        
-        vec3 specularReflection;
-        if (dot(normalDirection, lightDirection) < 0.0) // light source on the wrong side?
-        {
-            specularReflection = vec3(0.0, 0.0, 0.0); // no specular reflection
-        }
-        else // light source on the right side
-        {
-            specularReflection = attenuation * vec3(light0.specular) * vec3(bladeBevel.specular)
-            * pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), bladeBevel.shininess);
-        }
-        
-        outColor = bladeBevel.color + (ambientLighting + diffuseReflection + specularReflection);
-        
-    } else {
-        
-        vec3 ambientLighting = vec3(sceneAmbient) * vec3(bladeSurface.ambient);
-        
-        vec3 diffuseReflection = attenuation
-        * vec3(light0.diffuse) * vec3(bladeSurface.diffuse)
-        * max(0.0, dot(normalDirection, lightDirection));
-        
-        vec3 specularReflection;
-        if (dot(normalDirection, lightDirection) < 0.0) // light source on the wrong side?
-        {
-            specularReflection = vec3(0.0, 0.0, 0.0); // no specular reflection
-        }
-        else // light source on the right side
-        {
-            specularReflection = attenuation * vec3(light0.specular) * vec3(bladeSurface.specular)
-            * pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), bladeSurface.shininess);
-        }
-        
-        vec3 texMult = (SURFACE_TEX_MULT * (vec3(baseColor) - 0.5) + 0.5);
-        outColor = (texMult * bladeSurface.color) + (ambientLighting + diffuseReflection + specularReflection);
-
-    }
+    
+    /////////////////////////////////////////
+    // SPECULAR
+    /////////////////////////////////////////
+    
+    vec4 outSpecular =
+        attenuation * specularFactor *
+        pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), shinyFactor) *SPECULAR_COLOR;
+    
+    
+//    vec3 texMult = (SURFACE_TEX_MULT * (vec3(baseColor) - 0.5) + 0.5);
+//    outColor = (texMult * bladeSurface.color) + (ambientLighting + diffuseReflection + specularReflection);
     
     
     /////////////////////////////////////////
@@ -220,6 +157,6 @@ void main()
 
     
 //                        + bevel * bladeMaterial.bevelColor;
-    
-    gl_FragColor = vec4(outColor, baseColor.a); // + vec4(1.0, 1.0, 1.0, 0.5);
+    gl_FragColor = baseColor + outDiffuse + outSpecular;
+//    gl_FragColor = vec4(outColor, baseColor.a); // + vec4(1.0, 1.0, 1.0, 0.5);
 }

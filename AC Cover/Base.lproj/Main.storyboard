@@ -21,8 +21,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Slide"/>
-                                    <segment title="Light0"/>
-                                    <segment title="Light1"/>
+                                    <segment title="Attn"/>
+                                    <segment title="LightP"/>
+                                    <segment title="LightI"/>
                                     <segment title="Face"/>
                                     <segment title="Edge"/>
                                 </segments>

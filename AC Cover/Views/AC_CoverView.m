@@ -23,8 +23,8 @@ static const GLfloat BLADE_TILT = 0.f * M_PI / 180.0f;
 static const GLfloat BLADE_Z_OFFSET = -0.01;
 static const GLfloat BLADE_MAX_ROTATION = 60. * M_PI / 180.f;
 
-static const GLfloat W = 0.719;     // reflect texture image dimentions / 1000
-static const GLfloat H = 1.024;
+static const GLfloat W = 0.644;     // reflect texture image dimentions / 1000
+static const GLfloat H = 1.014;
 static const GLfloat Z = -2;
 
 //---------------------------------------------------------------------
@@ -311,10 +311,13 @@ skip:
 
     // @TODO Set context??  Hopefully not. Try to prevent dual GL contexts operating in order to save bandwidth
     
-//    glEnable(GL_DEPTH_TEST);
     glEnable (GL_BLEND);
+//    glEnable(GL_DEPTH_TEST);
+//    glEnable(GL_ALPHA_TEST);
+//    glAlphaFunc(GL_GREATER, 0.01);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glClearColor(0.08f, 0.08f, 0.08f, 1.0f);
+//    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glClear(GL_COLOR_BUFFER_BIT);
     
     glBindVertexArrayOES(_vertexArray);
