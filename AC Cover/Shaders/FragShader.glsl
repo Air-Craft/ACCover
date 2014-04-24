@@ -18,6 +18,10 @@ ATTACK PLAN:
 #define AC_CALIBRATE
 
 
+const lowp float SQRT_3 = 1.73205080757;
+const lowp float INV_SQRT_3 = 1.0/SQRT_3;
+
+
 precision mediump float;
 
 varying mediump vec2 v_texcoord;
@@ -55,16 +59,12 @@ struct LightSource
     mediump vec4 diffuse;
     mediump vec4 specular;
     float constantAttenuation, linearAttenuation, quadraticAttenuation;
-    float spotCutoff, spotExponent;
-    vec3 spotDirection;
 };
 const LightSource light0 = LightSource(
     vec4(1.0, 3.0, -1.0, 1.0),
     vec4(vec3(0.05), 1.0),
     vec4(vec3(0.9), 1.0),
-    0.0, 0.3, 0.1,
-    180.0, 3.0,
-    vec3(-1.0, -3.0, -0.5)
+    0.0, 0.3, 0.1
 );
 
 // Even though the perspective tranform has an impled origin for the camera, we can fake it here to get a better reflection angle for the bevels.
@@ -107,24 +107,38 @@ const float SURFACE_TEX_MULT = 0.4;  // Mix multiplier for shapeTex
 
 void main()
 {
-    // Sample the shape tex
+    // BASE COLOR
+    // if edge, then specular (3 color?), no diffuse
+    // if face then both
+    
+    // option 1: same lighting for all but with scaling factor for edge (based on spec map)
+    // option 2: branching or mix'ing
+    // lets try option 1 first
+    
+    // other options: REMEMBER we have alpha channels in the spec and norm maps to encode with!
+    
+    // Base Color (and shape via alpha)
     vec4 baseColor = texture2D(tex_color, v_texcoord);
     
-    
-    // Get the normal from the tex map and convert to View coords
+    // Normal: Get from the tex map and convert to View coords
     vec4 encodedNormal = texture2D(tex_normal, v_texcoord);
     vec3 localNormal = 2.0 * encodedNormal.rgb - vec3(1.0);
     vec3 normalDirection = normalize(vec3(V_norm*vec4(localNormal, 1.0)));
 
-    // Derive a coefficient used to separate out the beveled edge (fuzzily) for colouring/lighting techniques
-    //    float bevel = length(vec3(shapeTex)) *  shapeTex.a;
-    // Only the bevel has x/y components.  first coeff is jsut to get it up near one
-    float bevel = 1.3*length(vec2(localNormal));
-
+    // Specular factor (intensity)
+    vec4 encodedSpec = texture2D(tex_specular, v_texcoord);
+    float specularFactor = length(encodedSpec.xyz) * INV_SQRT_3;
+    
+    // Diffuse factor (use the color scaled)
+    // * scale amount to split the full black edge from the dark face
+    float diffuseFactor = length(baseColor.xyz) * 10.0;
+    
+    
     
 //    vec3 viewDirection = normalize(vec3(V_norm * vec4(0.0, 0.0, 0.0, 1.0) - v_position));
     // Camera's V transform is nil so leave it out.
     vec3 viewDirection = normalize(cameraPos - vec3(v_position));
+    
     vec3 lightDirection;
     float dist;
     float attenuation;
@@ -139,27 +153,14 @@ void main()
 //        lightDirection = normalize(vec3(light0.position));
 //    }
 //    else // point light or spotlight (or other kind of light)
-     {
+//     {
         vec3 positionToLightSource = vec3(light0.position - v_position);
         dist = length(positionToLightSource);
         lightDirection = normalize(positionToLightSource);
         attenuation = 1.0 / (light0.constantAttenuation
                              + light0.linearAttenuation * dist
                              + light0.quadraticAttenuation * dist * dist);
-        
-        if (light0.spotCutoff <= 90.0) // spotlight?
-        {
-            float clampedCosine = max(0.0, dot(-lightDirection, light0.spotDirection));
-            if (clampedCosine < cos(radians(light0.spotCutoff))) // outside of spotlight cone?
-            {
-                attenuation = 0.0;
-            }
-            else
-            {
-                attenuation = attenuation * pow(clampedCosine, light0.spotExponent);
-            }
-        }
-    }
+//    }
     
     /////////////////////////////////////////
     // LIGHTING COEFS
@@ -167,7 +168,7 @@ void main()
     
     vec3 outColor;
     
-    if (bevel > 0.001) {
+    if (diffuseFactor < 0.01) {
         
         vec3 ambientLighting = vec3(sceneAmbient) * vec3(bladeBevel.ambient);
         
