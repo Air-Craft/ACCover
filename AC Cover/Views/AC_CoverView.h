@@ -11,18 +11,18 @@
 
 @interface AC_CoverView : GLKView
 
+/////////////////////////////////////////////////////////////////////////
+#pragma mark - Calibration Extras
+/////////////////////////////////////////////////////////////////////////
+#ifdef AC_CALIBRATE
 
-// TEMP
 @property (nonatomic) float retraction;
-@property (nonatomic) CGPoint light0Position;
-@property (nonatomic) float light0Intensity;
-@property (nonatomic) CGPoint light1Position;
-@property (nonatomic) float light1Intensity;
-@property (nonatomic) float faceDiffuse;
-@property (nonatomic) float faceSpecular;
-@property (nonatomic) float edgeDiffuse;
-@property (nonatomic) float edgeSpecular;
 
+- (void)setUniform:(NSString *)theName withFloat:(float)theValue;
+- (void)setUniform:(NSString *)theName withVec4:(GLKVector4)theValue;
+
+
+#endif
 
 /** 
  Setup the GL context etc.

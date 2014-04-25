@@ -95,7 +95,7 @@ static const CGFloat _MAX_SHADOW_SIZE = 80;
     // Now shadow the cutout graphic to create an inner shadow
     CGContextSetShadowWithColor(ctx,
                                 innerShadowOffset,
-                                2,
+                                3,
                                 innerShadowColor.CGColor);
     [_emblemImg drawAtPoint:CGPointMake(_MAX_SHADOW_SIZE, _MAX_SHADOW_SIZE)];
     

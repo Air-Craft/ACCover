@@ -12,7 +12,7 @@
                         <viewControllerLayoutGuide type="top" id="RVf-um-QVY"/>
                         <viewControllerLayoutGuide type="bottom" id="aQB-2Y-G99"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ChZ-gD-F7B" customClass="AC_CoverView">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ChZ-gD-F7B" customClass="AC_CoverView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -24,27 +24,23 @@
                                     <segment title="Attn"/>
                                     <segment title="LightP"/>
                                     <segment title="LightI"/>
-                                    <segment title="Face"/>
-                                    <segment title="Edge"/>
+                                    <segment title="Shine"/>
+                                    <segment title=""/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="219" translatesAutoresizingMaskIntoConstraints="NO" id="3gK-GF-QWO">
-                                <rect key="frame" x="5" y="460" width="219" height="61"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEc-1b-8cP">
+                                <rect key="frame" x="11" y="457" width="231" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">T: 0.1, 0.2
-T: 0.1, 0.2
-T: 0.1, 0.2
-T: 0.1, 0.2</string>
+                                <color key="textColor" red="0.99978196620941162" green="0.96374779939651489" blue="0.040367048233747482" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="11"/>
-                                <color key="textColor" red="0.13514517247676849" green="1" blue="0.13445775210857391" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="_consoleLbl" destination="3gK-GF-QWO" id="OI2-xF-9FP"/>
+                        <outlet property="_console" destination="sEc-1b-8cP" id="FQx-rJ-mwM"/>
                         <outlet property="_paramSelector" destination="l55-iT-iOl" id="lWb-Wf-SNT"/>
                     </connections>
                 </viewController>

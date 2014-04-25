@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A629122C1909866800980912 /* cover_emblem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A629122A1909866800980912 /* cover_emblem@2x.png */; };
+		A629122D1909866800980912 /* cover_emblem.png in Resources */ = {isa = PBXBuildFile; fileRef = A629122B1909866800980912 /* cover_emblem.png */; };
 		A62CB11318FFDD5B00B38B3A /* AC_CoverEmblemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A62CB11218FFDD5B00B38B3A /* AC_CoverEmblemView.m */; };
 		A62CB11619002A1800B38B3A /* UIColor+AC_Branding.m in Sources */ = {isa = PBXBuildFile; fileRef = A62CB11519002A1800B38B3A /* UIColor+AC_Branding.m */; };
 		A6690CE7190814B000B5F62C /* tex-blade-norm.png in Resources */ = {isa = PBXBuildFile; fileRef = A6690CE4190814B000B5F62C /* tex-blade-norm.png */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A629122A1909866800980912 /* cover_emblem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cover_emblem@2x.png"; sourceTree = "<group>"; };
+		A629122B1909866800980912 /* cover_emblem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover_emblem.png; sourceTree = "<group>"; };
 		A62CB11118FFDD5B00B38B3A /* AC_CoverEmblemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AC_CoverEmblemView.h; path = Views/AC_CoverEmblemView.h; sourceTree = "<group>"; };
 		A62CB11218FFDD5B00B38B3A /* AC_CoverEmblemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AC_CoverEmblemView.m; path = Views/AC_CoverEmblemView.m; sourceTree = "<group>"; };
 		A62CB11419002A1800B38B3A /* UIColor+AC_Branding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+AC_Branding.h"; path = "Categories/UIColor+AC_Branding.h"; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 		A662CA6C18FAA01700E5F4F4 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				A629122A1909866800980912 /* cover_emblem@2x.png */,
+				A629122B1909866800980912 /* cover_emblem.png */,
 				A6690CE4190814B000B5F62C /* tex-blade-norm.png */,
 				A6690CE5190814B000B5F62C /* tex-blade-color.png */,
 				A6690CE6190814B000B5F62C /* tex-blade-spec.png */,
@@ -275,7 +281,9 @@
 				A6690CE7190814B000B5F62C /* tex-blade-norm.png in Resources */,
 				A6CB5B0518F7ED3400C2709F /* FragShader.glsl in Resources */,
 				A6CB5AFA18F7ED3400C2709F /* InfoPlist.strings in Resources */,
+				A629122C1909866800980912 /* cover_emblem@2x.png in Resources */,
 				A6CB5B0318F7ED3400C2709F /* Main.storyboard in Resources */,
+				A629122D1909866800980912 /* cover_emblem.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

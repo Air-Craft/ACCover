@@ -6,23 +6,13 @@
 //  Copyright (c) 2014 Air Craft. All rights reserved.
 //
 
-/*
-OPTIMISATIONS:
-
- 
- 
-ATTACK PLAN:
-- material colour = 0.5
--
-*/
 #define AC_CALIBRATE
 
+precision lowp float;
 
 const lowp float SQRT_3 = 1.73205080757;
 const lowp float INV_SQRT_3 = 1.0/SQRT_3;
 
-
-precision lowp float;
 
 varying mediump vec2 v_texcoord;
 varying mediump vec4 v_position;
@@ -36,21 +26,34 @@ uniform mediump mat4 V_norm;
 
 
 #ifdef AC_CALIBRATE
-uniform float u_attn_const = 0.0;
-uniform float u_attn_linear = 0.3;
-uniform float u_attn_quad = 0.1;
-uniform vec3 u_light0Pos = vec3(;
+uniform float u_attnConst;
+uniform float u_attnLinear;
+uniform float u_attnQuad;
+uniform vec4 u_light0Pos;
 uniform float u_light0Intensity;
-uniform vec3 u_light1Pos;
+uniform vec4 u_light1Pos;
 uniform float u_light1Intensity;
 
-uniform float u_edgeFaceSplitFactor = 10.0;
-uniform float u_diffuseIntensity = 1.0;     // face only
-uniform float u_specularIntensity = 1.0;    // shared multipler for spec map reading
-uniform float u_shininess = 3.0;
+uniform float u_edgeFaceSplitFactor;
+uniform float u_diffuseIntensity;     // face only
+uniform float u_specularIntensity;    // shared multipler for spec map reading
+uniform float u_shininess;
 
 #else
-// define constants?
+
+const float u_attnConst = 0.0;
+const float u_attnLinear = 0.3;
+const float u_attnQuad = 0.1;
+const vec4 u_light0Pos = vec4(1.0, 3.0, -1.0, 0.0);
+//const float u_light0Intensity;
+//const vec4 u_light1Pos;
+//const float u_light1Intensity;
+
+const float u_edgeFaceSplitFactor = 20.0;
+const float u_diffuseIntensity = 1.0;     // face only
+const float u_specularIntensity = 1.0;    // shared multipler for spec map reading
+const float u_shininess = 3.0;
+
 #endif
 
 
@@ -60,8 +63,8 @@ uniform float u_shininess = 3.0;
 
 // Even though the perspective tranform has an impled origin for the camera, we can fake it here to get a better reflection angle for the bevels.
 const vec3 CAMERA_POS = vec3(0.0, 0.0, 3.0);
-const vec4 DIFFUSE_COLOR = vec4(1.0, 1.0, 1.0, 0.0);    // Not really alpha=0 but they are added to the base color so we want alpha unaffected
-const vec4 SPECULAR_COLOR = vec4(1.0, 1.0, 1.0, 0.0);
+const vec4 DIFFUSE_COLOR = vec4(0.999, 0.987, 0.9, 0.0);    // Not really alpha=0 but they are added to the base color so we want alpha unaffected
+const vec4 SPECULAR_COLOR = vec4(0.999, 0.987, 0.9, 0.0);
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -101,7 +104,7 @@ void main()
     float specularFactor = length(encodedSpec.xyz) * INV_SQRT_3 * u_specularIntensity;
     
     // Full shininess for edge, almost none for face hopefully
-    float shinyFactor = max(0.0, 1.0 - diffuseFactor) * u_shininess;
+    float shinyFactor = max(0.0, 1.0 - faceFactor) * u_shininess;
 
 //    vec3 viewDirection = normalize(vec3(V_norm * vec4(0.0, 0.0, 0.0, 1.0) - v_position));
     // Camera's V transform is nil so leave it out.
@@ -126,10 +129,11 @@ void main()
         vec3 positionToLightSource = vec3(u_light0Pos - v_position);
         lightDistance = length(positionToLightSource);
         lightDirection = normalize(positionToLightSource);
-        attenuation = 1.0 / (u_attn_const   // constant
-                             + u_attn_linear * lightDistance
-                             + u_attn_quad * lightDistance * lightDistance);
+        attenuation = 1.0 / (u_attnConst   // constant
+                             + u_attnLinear * lightDistance
+                             + u_attnQuad * lightDistance * lightDistance);
 //    }
+
     
     /////////////////////////////////////////
     // DIFFUSE
@@ -156,7 +160,7 @@ void main()
     /////////////////////////////////////////
 
     
-//                        + bevel * bladeMaterial.bevelColor;
-    gl_FragColor = baseColor + outDiffuse + outSpecular;
-//    gl_FragColor = vec4(outColor, baseColor.a); // + vec4(1.0, 1.0, 1.0, 0.5);
+    gl_FragColor = baseColor*vec4(vec3(0.3), 1.0) + outDiffuse + outSpecular;
+    
+//    gl_FragColor = vec4(vec3(faceFactor), 1.0);
 }

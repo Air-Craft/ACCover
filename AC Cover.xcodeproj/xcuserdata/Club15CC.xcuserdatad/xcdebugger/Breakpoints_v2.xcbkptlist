@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AC Cover/Views/AC_CoverEmblemView.m"
-            timestampString = "419444213.759044"
+            filePath = "AC Cover/AC_CoverVC.m"
+            timestampString = "420113546.198599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-drawRect:"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "-_updateForTouch:withIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

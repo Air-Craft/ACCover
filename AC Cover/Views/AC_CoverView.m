@@ -9,6 +9,19 @@
 #import "AC_CoverView.h"
 #import "GLKView+AC_Additions.h"
 
+
+/////////////////////////////////////////////////////////////////////////
+#pragma mark - Calibration Extras
+/////////////////////////////////////////////////////////////////////////
+
+#ifdef AC_CALIBRATE
+
+static NSMutableDictionary *_dbgUniformsDict;
+
+#endif
+
+
+
 /////////////////////////////////////////////////////////////////////////
 #pragma mark - GL Data & Types
 /////////////////////////////////////////////////////////////////////////
@@ -91,6 +104,19 @@ GLfloat _glCubeVertexData[48] =
 
 - (void)setup
 {
+#ifdef AC_CALIBRATE
+    _dbgUniformsDict = [@{@"u_attnConst": @0,
+                       @"u_attnLinear": @0,
+                       @"u_attnQuad": @0,
+                       @"u_light0Pos": @0,
+                       @"u_edgeFaceSplitFactor": @0,
+                       @"u_diffuseIntensity": @0,
+                       @"u_specularIntensity": @0,
+                       @"u_shininess": @0
+                       } mutableCopy];
+#endif
+    
+    
     _globalRotation = 0;
     _globalRetraction = 0;
     
@@ -106,7 +132,7 @@ GLfloat _glCubeVertexData[48] =
     
     // Flags
     self.drawableDepthFormat = GLKViewDrawableDepthFormat24;
-    self.drawableMultisample = GLKViewDrawableMultisample4X;
+    self.drawableMultisample = GLKViewDrawableMultisampleNone;
     
     /////////////////////////////////////////
     // LIGHTING & TRANFORMS SETUP
@@ -267,9 +293,19 @@ GLfloat _glCubeVertexData[48] =
 
 //---------------------------------------------------------------------
 
+- (void)setUniform:(NSString *)theName withFloat:(float)theValue
+{
+    glUseProgram(_program);
+    glUniform1f([_dbgUniformsDict[theName] intValue], theValue);
+}
 
+//---------------------------------------------------------------------
 
-
+- (void)setUniform:(NSString *)theName withVec4:(GLKVector4)theValue
+{
+    glUseProgram(_program);
+    glUniform4fv([_dbgUniformsDict[theName] intValue], 1, theValue.v);
+}
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -433,6 +469,13 @@ skip:
     _uniforms[tex_normal] = glGetUniformLocation(_program, "tex_normal");
     _uniforms[texYOffset] = glGetUniformLocation(_program, "texYOffset");
     
+    
+#ifdef AC_CALIBRATE
+    // Get the debug uniforms
+    [_dbgUniformsDict enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
+        _dbgUniformsDict[key] = @(glGetUniformLocation(_program, key.UTF8String));
+    }];
+#endif
     
     // Release vertex and fragment shaders.
     if (vertShader) {
