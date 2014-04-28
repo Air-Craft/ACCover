@@ -20,6 +20,10 @@ varying mediump vec4 v_position;
 uniform sampler2D tex_color;
 uniform sampler2D tex_specular;
 uniform sampler2D tex_normal;
+uniform sampler2D tex_displacement;
+
+// Used to cutoff the tex drawing below the screen centrepoint
+uniform mediump float texYOffset;
 
 uniform mediump mat4 V, P;
 uniform mediump mat4 V_norm;
@@ -56,6 +60,8 @@ const float u_shininess = 3.0;
 
 #endif
 
+const vec4 u_colorMix = vec4(vec3(0.3), 1.0);
+const float u_displacementScale = 0.8;
 
 /////////////////////////////////////////////////////////////////////////
 #pragma mark - Lighting and materials
@@ -74,6 +80,11 @@ const vec4 SPECULAR_COLOR = vec4(0.999, 0.987, 0.9, 0.0);
 
 void main()
 {
+    
+    /////////////////////////////////////////
+    // TEXTURE MAPS & LIGHTING COEFFS
+    /////////////////////////////////////////
+    
     // BASE COLOR
     // if edge, then specular (3 color?), no diffuse
     // if face then both
@@ -84,14 +95,24 @@ void main()
     
     // other options: REMEMBER we have alpha channels in the spec and norm maps to encode with!
     
+    // Clamp tex drawing to only be "above" (wrt blade rotation) the screen centrepoint
+    vec2 texcoord = v_texcoord * step(texYOffset, v_texcoord.y);
+    
     // Base Color (and shape via alpha)
-    vec4 baseColor = texture2D(tex_color, v_texcoord);
+    vec4 baseColor = texture2D(tex_color, texcoord);
     
     // Normal: Get from the tex map and convert to View coords
-    vec4 encodedNormal = texture2D(tex_normal, v_texcoord);
+    vec4 encodedNormal = texture2D(tex_normal, texcoord);
     vec3 localNormal = 2.0 * encodedNormal.rgb - vec3(1.0);
     vec3 normalDirection = normalize(vec3(V_norm*vec4(localNormal, 1.0)));
 
+    // Displacement
+    const vec2 i = vec2(1.0, 0.0);
+    vec4 encodedDisp = texture2D(tex_displacement, texcoord);
+    float disp = mix(-0.5*u_displacementScale, 0.5*u_displacementScale, length(encodedDisp.rgb));
+    vec4 texpos = v_position - disp * i.yyxy;
+    
+    
     // Face factor
     // = the color intensity * scale amount to split the full black edge from the dark face
     float faceFactor = min(1.0, length(baseColor.rgb) * u_edgeFaceSplitFactor);
@@ -100,15 +121,15 @@ void main()
     float diffuseFactor = faceFactor * u_diffuseIntensity;  // face only
     
     // Specular factor (intensity)
-    vec4 encodedSpec = texture2D(tex_specular, v_texcoord);
-    float specularFactor = length(encodedSpec.xyz) * INV_SQRT_3 * u_specularIntensity;
+    vec4 encodedSpec = texture2D(tex_specular, texcoord);
+    float specularFactor = length(encodedSpec.xyz) * INV_SQRT_3 * u_specularIntensity * (1.0 - faceFactor);
     
     // Full shininess for edge, almost none for face hopefully
     float shinyFactor = max(0.0, 1.0 - faceFactor) * u_shininess;
 
-//    vec3 viewDirection = normalize(vec3(V_norm * vec4(0.0, 0.0, 0.0, 1.0) - v_position));
+//    vec3 viewDirection = normalize(vec3(V_norm * vec4(0.0, 0.0, 0.0, 1.0) - texpos));
     // Camera's V transform is nil so leave it out.
-    vec3 viewDirection = normalize(CAMERA_POS - vec3(v_position));
+    vec3 viewDirection = normalize(CAMERA_POS - vec3(texpos));
     
     
     /////////////////////////////////////////
@@ -126,7 +147,7 @@ void main()
 //    }
 //    else // point light or spotlight (or other kind of light)
 //     {
-        vec3 positionToLightSource = vec3(u_light0Pos - v_position);
+        vec3 positionToLightSource = vec3(u_light0Pos - texpos);
         lightDistance = length(positionToLightSource);
         lightDirection = normalize(positionToLightSource);
         attenuation = 1.0 / (u_attnConst   // constant
@@ -139,7 +160,8 @@ void main()
     // DIFFUSE
     /////////////////////////////////////////
     
-    vec4 outDiffuse = attenuation * diffuseFactor * max(0.0, dot(normalDirection, lightDirection)) * DIFFUSE_COLOR;
+    float angleAtten = max(0.0, dot(normalDirection, lightDirection));
+    vec4 outDiffuse = attenuation * diffuseFactor * angleAtten * DIFFUSE_COLOR;
     
     
     /////////////////////////////////////////
@@ -148,7 +170,7 @@ void main()
     
     vec4 outSpecular =
         attenuation * specularFactor *
-        pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), shinyFactor) *SPECULAR_COLOR;
+        pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), shinyFactor) * SPECULAR_COLOR;
     
     
 //    vec3 texMult = (SURFACE_TEX_MULT * (vec3(baseColor) - 0.5) + 0.5);
@@ -159,8 +181,15 @@ void main()
     // OUTPUT
     /////////////////////////////////////////
 
+    gl_FragColor = baseColor * u_colorMix + outDiffuse + outSpecular;
     
-    gl_FragColor = baseColor*vec4(vec3(0.3), 1.0) + outDiffuse + outSpecular;
-    
+//    gl_FragColor = vec4(vec3(angleAtten), 1.0);
+//    gl_FragColor = vec4(normalDirection.yyy+0.5, 1.0);
+//    gl_FragColor = vec4(vec3(angleAtten),baseColor.a);
+//    gl_FragColor = vec4(vec3(specularFactor), 1.0);
+//    gl_FragColor = vec4(vec3(texpos.z * -0.25), 1.0);
+//    gl_FragColor = vec4(abs(positionToLightSource.r), abs(positionToLightSource.g), abs(positionToLightSource.b), 1.0);
+//    gl_FragColor = vec4(1.0, 1.0, 1.0, -disp);
 //    gl_FragColor = vec4(vec3(faceFactor), 1.0);
+    
 }

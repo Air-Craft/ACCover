@@ -22,12 +22,12 @@ uniform mediump mat4 M, V, P;
 
 void main()
 {
-    v_texcoord = vec2(a_texcoord.x, clamp(a_texcoord.y + texYOffset, 0.0, 1.0));
+    v_texcoord = a_texcoord;
     
     // Scale the height as per the retraction coefficient.  Note this only works as-is because the model base is on y=0.
     
     // Frag's shader needs the model xformed position
-    v_position = V * M * a_position;
+    v_position = V * a_position;
     
-    gl_Position = P * V * M * a_position;
+    gl_Position = P * V * a_position;
 }

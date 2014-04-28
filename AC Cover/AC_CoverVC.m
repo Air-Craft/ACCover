@@ -12,9 +12,9 @@
 #import "AC_CoverView.h"
 #import "AC_CoverEmblemView.h"
 
-static float attnConst=0.80, attnLin=0.50, attnQuad=0.30;
-static float light0X=2.72, light0Y=3.98, light0Z=-0.30;
-static float diffInts=1.39, specInts=8.42, edgeFaceSplit=0.29;
+static float attnConst=0.0, attnLin=3.97, attnQuad=3.49;
+static float light0X=0.36,/*2.72,*/ light0Y=0.89,/*3.98,*/ light0Z=-1.20/*-0.30*/;
+static float diffInts=0.44, specInts=3.96, edgeFaceSplit=6.5;
 static float shine=4.10;
 
 

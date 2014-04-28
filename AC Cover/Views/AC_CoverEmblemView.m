@@ -71,8 +71,8 @@ static const CGFloat _MAX_SHADOW_SIZE = 80;
     CMQuaternion newRotation = _motionManager.deviceMotion.attitude.quaternion;
     
     CGSize outerShadowOffset = {
-        (newRotation.y - _initRotation.y) * 100,
-        (newRotation.x - _initRotation.x) * 100,
+        (newRotation.y - _initRotation.y) * 30,
+        (newRotation.x - _initRotation.x) * 30,
     };
     CGSize innerShadowOffset = {
         (newRotation.y - _initRotation.y) * 10,

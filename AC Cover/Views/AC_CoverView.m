@@ -30,11 +30,24 @@ static NSMutableDictionary *_dbgUniformsDict;
 
 //---------------------------------------------------------------------
 
-static const GLfloat BLADE_SEPARATION = /*M_PI*0.667;*/30.f * M_PI / 180.f;
+//DBG
+//static const GLfloat DBG_RETRACT_F = 0.0;
+//static const GLfloat BLADE_SEPARATION = M_PI_2;
+//static const GLfloat BLADE_ROTATION_OFFSET = 0.0;
+//static const NSUInteger BLADE_CNT = 2.0;
+//static const GLfloat BLADE_MAX_ROTATION = 2*M_PI;
+
+// REAL
+static const GLfloat DBG_RETRACT_F = 1.0;
+static const GLfloat BLADE_SEPARATION = 30.f * M_PI / 180.f;
+static const GLfloat BLADE_ROTATION_OFFSET = M_PI;
 static const NSUInteger BLADE_CNT = 2.0f * M_PI / BLADE_SEPARATION + 1;
-static const GLfloat BLADE_TILT = 0.f * M_PI / 180.0f;
-static const GLfloat BLADE_Z_OFFSET = -0.01;
 static const GLfloat BLADE_MAX_ROTATION = 60. * M_PI / 180.f;
+
+
+static const GLfloat BLADE_TILT = 0.f * M_PI / 180.0f;
+static const GLfloat BLADE_Z_OFFSET = -0.001;
+
 
 static const GLfloat W = 0.644;     // reflect texture image dimentions / 1000
 static const GLfloat H = 1.014;
@@ -52,6 +65,7 @@ enum
     tex_color,
     tex_specular,
     tex_normal,
+    tex_displacement,
     texYOffset,
     NUM_UNIFORMS
 };
@@ -87,6 +101,7 @@ GLfloat _glCubeVertexData[48] =
     GLKTextureInfo *_bladeTexColor;
     GLKTextureInfo *_bladeTexNormal;
     GLKTextureInfo *_bladeTexSpecular;
+    GLKTextureInfo *_bladeTexDisplacement;
     
     
     CADisplayLink *_updateTimer;
@@ -194,7 +209,7 @@ GLfloat _glCubeVertexData[48] =
                        textureWithContentsOfFile:f
                        options:@{
                                  GLKTextureLoaderOriginBottomLeft: @YES,
-                                 GLKTextureLoaderApplyPremultiplication: @NO
+                                 GLKTextureLoaderApplyPremultiplication: @YES
                                  }
                        error:&err];
     
@@ -212,7 +227,16 @@ GLfloat _glCubeVertexData[48] =
                                    }
                          error:&err];
     
-    if (!_bladeTexSpecular) {
+    f = [[NSBundle mainBundle] pathForResource:@"tex-blade-disp" ofType:@"png"];
+    _bladeTexDisplacement = [GLKTextureLoader
+                             textureWithContentsOfFile:f
+                             options:@{
+                                       GLKTextureLoaderOriginBottomLeft: @YES,
+                                       GLKTextureLoaderApplyPremultiplication: @NO
+                                       }
+                             error:&err];
+    
+    if (!_bladeTexDisplacement) {
         [NSException raise:NSGenericException format:@"Error loading shape texture: %@", err];
     }
     
@@ -242,6 +266,11 @@ GLfloat _glCubeVertexData[48] =
         glActiveTexture(GL_TEXTURE2);
         glBindTexture(_bladeTexSpecular.target, _bladeTexSpecular.name);
         glUniform1i(_uniforms[tex_specular], 2);
+
+        // Displacement tex
+        glActiveTexture(GL_TEXTURE2);
+        glBindTexture(_bladeTexDisplacement.target, _bladeTexDisplacement.name);
+        glUniform1i(_uniforms[tex_displacement], 3);
     }
     glUseProgram(0);
     
@@ -288,7 +317,7 @@ GLfloat _glCubeVertexData[48] =
 {
     _retraction = retraction;
     _globalRotation = -BLADE_MAX_ROTATION * _retraction;
-    _globalRetraction = _retraction;
+    _globalRetraction = _retraction * DBG_RETRACT_F;
 }
 
 //---------------------------------------------------------------------
@@ -361,7 +390,8 @@ skip:
     
     
     // Derive/set uniforms for blade retraction
-    GLKMatrix4 modelMatrix = GLKMatrix4MakeScale(1, 1 - _globalRetraction, 1);
+    GLKMatrix4 modelMatrix = GLKMatrix4Identity;
+//    GLKMatrix4MakeScale(1, 1 - _globalRetraction, 1);
     // assigned below...
     
     // Texture retraction, inverse mirrors the height scaling
@@ -382,10 +412,10 @@ skip:
         // V MATRIX
         // ...Rotate and tilt the model (via the V matrix) and render once for each blade
         
-        GLKMatrix4 vMatrix = GLKMatrix4Identity;
-//        modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0, 0, i * 0.01);
-        vMatrix = GLKMatrix4Rotate(_viewMatrixBase, BLADE_TILT, 0, 1.0, 0);
-        vMatrix = GLKMatrix4Rotate(vMatrix, i * BLADE_SEPARATION + _globalRotation + M_PI, 0, 0, 1.0);
+        GLKMatrix4 vMatrix = _viewMatrixBase;
+        vMatrix = GLKMatrix4Rotate(vMatrix, BLADE_TILT, 0, 1.0, 0);
+        vMatrix = GLKMatrix4Rotate(vMatrix, i * BLADE_SEPARATION + _globalRotation + BLADE_ROTATION_OFFSET, 0, 0, 1.0);
+        vMatrix = GLKMatrix4Translate(vMatrix, 0, -H * _globalRetraction, i * 0.01);
         glUniformMatrix4fv(_uniforms[V], 1, 0, vMatrix.m);
 
         
@@ -467,6 +497,7 @@ skip:
     _uniforms[tex_color] = glGetUniformLocation(_program, "tex_color");
     _uniforms[tex_specular] = glGetUniformLocation(_program, "tex_specular");
     _uniforms[tex_normal] = glGetUniformLocation(_program, "tex_normal");
+    _uniforms[tex_displacement] = glGetUniformLocation(_program, "tex_displacement");
     _uniforms[texYOffset] = glGetUniformLocation(_program, "texYOffset");
     
     
