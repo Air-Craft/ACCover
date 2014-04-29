@@ -36,6 +36,16 @@
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="11"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQG-QN-6SZ">
+                                <rect key="frame" x="11" y="0.0" width="46" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="_togglePanels" destination="E7L-Rz-Ux0" eventType="touchUpInside" id="2rs-lb-tSN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

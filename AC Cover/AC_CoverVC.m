@@ -27,6 +27,7 @@ static float shine=4.10;
     __weak IBOutlet UISegmentedControl *_paramSelector;
     __weak IBOutlet UITextView *_console;
 }
+- (IBAction)_togglePanels;
 
 @end
 
@@ -60,11 +61,11 @@ static float shine=4.10;
 
     [_emblemView setCenter:self.view.center];
     [self.view addSubview:_emblemView];
+    [_emblemView setNeedsDisplay];
     
     
     _updater = [CADisplayLink displayLinkWithTarget:self selector:@selector(_updateWithSender:)];
     [_updater addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-
 
     [self.view setMultipleTouchEnabled:YES];
     
@@ -92,10 +93,15 @@ static float shine=4.10;
 }
 #endif
 
+- (IBAction)_togglePanels
+{
+    _paramSelector.hidden = !_paramSelector.hidden;
+    _console.hidden = !_console.hidden;
+}
 
 - (void)_updateWithSender:(id)sender
 {
-    [_emblemView setNeedsDisplay];
+//    [_emblemView setNeedsDisplay];
 }
 
 
@@ -149,8 +155,8 @@ static float shine=4.10;
         case 1: // ATTENUATION
             // x = linear, y = quad
             if (touchIdx == 0) {
-                attnLin = nX*4;
-                attnQuad = nY*4;
+                attnLin = nX*20;
+                attnQuad = nY*20;
                 [coverView setUniform:@"u_attnLinear" withFloat:attnLin];
                 [coverView setUniform:@"u_attnQuad" withFloat:attnQuad];
                 

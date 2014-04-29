@@ -13,7 +13,7 @@
 #pragma mark - Consts
 /////////////////////////////////////////////////////////////////////////
 
-static const CGFloat _MAX_SHADOW_SIZE = 80;
+static const CGFloat _MAX_SHADOW_SIZE = 75;
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -63,22 +63,21 @@ static const CGFloat _MAX_SHADOW_SIZE = 80;
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    
-    UIColor *outerShadowColor = [UIColor.blackColor colorWithAlphaComponent:0.9];
+
+    UIColor *outerShadowColor = [UIColor.blackColor colorWithAlphaComponent:1.0];
     UIColor *innerShadowColor = [UIColor.blackColor colorWithAlphaComponent:0.6];
     
     // Calc the shadow attribs based on the delta rotation
     CMQuaternion newRotation = _motionManager.deviceMotion.attitude.quaternion;
     
     CGSize outerShadowOffset = {
-        (newRotation.y - _initRotation.y) * _MAX_SHADOW_SIZE,
-        (newRotation.x - _initRotation.x) * _MAX_SHADOW_SIZE,
+        0,//(newRotation.y - _initRotation.y) * _MAX_SHADOW_SIZE,
+        0,//_MAX_SHADOW_SIZE/2,//(newRotation.x - _initRotation.x) * _MAX_SHADOW_SIZE,
     };
     CGSize innerShadowOffset = {
         (newRotation.y - _initRotation.y) * 10,
         (newRotation.x - _initRotation.x) * 10,
     };
-    
     
     CGRect circBounds = {
         _MAX_SHADOW_SIZE + 5,
@@ -88,7 +87,7 @@ static const CGFloat _MAX_SHADOW_SIZE = 80;
     };
     UIBezierPath *pth = [UIBezierPath bezierPathWithOvalInRect:circBounds];
     [[UIColor ac_yellowColor] setFill];
-    CGContextSetShadowWithColor(ctx, outerShadowOffset, _MAX_SHADOW_SIZE, outerShadowColor.CGColor);
+    CGContextSetShadowWithColor(ctx, outerShadowOffset, _MAX_SHADOW_SIZE*1.0, outerShadowColor.CGColor);
     [pth fill];
     
     

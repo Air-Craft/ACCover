@@ -64,8 +64,8 @@ const float u_shininess = 3.0;
 
 #endif
 
-const vec4 u_colorMix = vec4(vec3(0.3), 1.0);
-const float u_displacementScale = 0.8;
+const vec4 u_colorMix = vec4(vec3(1.0), 1.0);
+const float u_displacementScale = 0.0;//0.8;
 
 /////////////////////////////////////////////////////////////////////////
 #pragma mark - Lighting and materials
@@ -73,8 +73,20 @@ const float u_displacementScale = 0.8;
 
 // Even though the perspective tranform has an impled origin for the camera, we can fake it here to get a better reflection angle for the bevels.
 const vec3 CAMERA_POS = vec3(0.0, 0.0, 3.0);
-const vec4 DIFFUSE_COLOR = vec4(0.999, 0.987, 0.9, 0.0);    // Not really alpha=0 but they are added to the base color so we want alpha unaffected
-const vec4 SPECULAR_COLOR = vec4(0.999, 0.987, 0.9, 0.0);
+
+// Light colours.
+// Not really alpha=0 but they are added to the base color so we want alpha unaffected
+//const vec4 DIFFUSE_COLOR = vec4(0.999, 0.987, 0.9, 0.0);
+//const vec4 SPECULAR_COLOR = vec4(0.999, 0.987, 0.9, 0.0);
+const vec4 grey = vec4(0.4, 0.4, 0.4, 0.0);
+const vec4 paleYellow = vec4(0.97, 0.96, 0.81, 0.0);
+const vec4 paleBlue = vec4(0.82, 0.98, 0.97, 0.0);
+const vec4 darkBlue = vec4(0.34, 0.40, 0.40, 0.0);
+const vec4 darkYellow = vec4(0.1, 0.1, 0.08, 0.0);
+const vec4 blueGreen = vec4(0.519, 0.997, 0.7, 0.0);
+const vec4 DIFFUSE_COLOR = grey;
+const vec4 SPECULAR_COLOR = paleYellow;
+
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -168,7 +180,7 @@ void main()
     float angleAttenSpec = pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), shinyFactor);
     
     vec4 outSpecular =
-        attenuation * specularFactor * angleAttenSpec
+        attenuation * 1.0 * specularFactor * angleAttenSpec
          * SPECULAR_COLOR;
     
     

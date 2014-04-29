@@ -44,8 +44,8 @@ static const NSUInteger BLADE_CNT = 2.0f * M_PI / BLADE_SEPARATION + 1;
 static const GLfloat BLADE_MAX_ROTATION = 60. * M_PI / 180.f;
 
 
-static const GLfloat BLADE_TILT = 0.f * M_PI / 180.0f;
-static const GLfloat BLADE_Z_OFFSET = -0.001;
+static const GLfloat BLADE_TILT = 0.5f * M_PI / 180.0f;
+static const GLfloat BLADE_Z_OFFSET = -0.00;
 
 
 static const GLfloat W = 0.644;     // reflect texture image dimentions / 1000
@@ -281,7 +281,7 @@ GLfloat _glCubeVertexData[48] =
         glUniform1i(_uniforms[tex_specular], 2);
 
         // Displacement tex
-        glActiveTexture(GL_TEXTURE2);
+        glActiveTexture(GL_TEXTURE3);
         glBindTexture(_bladeTexDisplacement.target, _bladeTexDisplacement.name);
         glUniform1i(_uniforms[tex_displacement], 3);
     }
@@ -477,9 +477,10 @@ skip:
         GLKMatrix4 normMatrix = GLKMatrix4InvertAndTranspose(vMatrix, NULL);
         glUniformMatrix4fv(_uniforms[V_norm], 1, 0, normMatrix.m);
        
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
     }
     
+    glBindVertexArrayOES(0);
 }
 
 
