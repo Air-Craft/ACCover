@@ -53,7 +53,7 @@ static float shine=4.10;
     _motionManager = [[CMMotionManager alloc] init];
     [_motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryCorrectedZVertical];
 
-    [(AC_CoverView *)self.view setup];
+    [(AC_CoverView *)self.view setupWithMotionManager:_motionManager];
 
     _emblemView = [AC_CoverEmblemView coverEmblemViewWithMotionManager:_motionManager];
     [_emblemView setMultipleTouchEnabled:YES];

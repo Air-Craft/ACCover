@@ -21,7 +21,6 @@ static NSMutableDictionary *_dbgUniformsDict;
 #endif
 
 
-
 /////////////////////////////////////////////////////////////////////////
 #pragma mark - GL Data & Types
 /////////////////////////////////////////////////////////////////////////
@@ -66,7 +65,9 @@ enum
     tex_specular,
     tex_normal,
     tex_displacement,
-    texYOffset,
+    u_texYOffset,
+    u_lightOffsetX,
+    u_lightOffsetY,
     NUM_UNIFORMS
 };
 GLint _uniforms[NUM_UNIFORMS];
@@ -103,6 +104,9 @@ GLfloat _glCubeVertexData[48] =
     GLKTextureInfo *_bladeTexSpecular;
     GLKTextureInfo *_bladeTexDisplacement;
     
+    CMMotionManager *_motionManager;
+    CMQuaternion _initRotation;
+    BOOL _hasInitRotation;
     
     CADisplayLink *_updateTimer;
     
@@ -117,7 +121,7 @@ GLfloat _glCubeVertexData[48] =
 #pragma mark - Life Cycle
 /////////////////////////////////////////////////////////////////////////
 
-- (void)setup
+- (void)setupWithMotionManager:(CMMotionManager *)motionManger
 {
 #ifdef AC_CALIBRATE
     _dbgUniformsDict = [@{@"u_attnConst": @0,
@@ -134,6 +138,15 @@ GLfloat _glCubeVertexData[48] =
     
     _globalRotation = 0;
     _globalRetraction = 0;
+    
+    
+    /////////////////////////////////////////
+    // CORE MOTION
+    /////////////////////////////////////////
+    
+    _motionManager = motionManger;
+    // too soon: _initRotation = motionManger.deviceMotion.attitude.quaternion;
+    
     
     /////////////////////////////////////////
     // CONTEXT SETUP
@@ -389,6 +402,37 @@ skip:
     glUseProgram(_program);
     
     
+    /////////////////////////////////////////
+    // GLOBAL UNIFORMS
+    /////////////////////////////////////////
+    
+    
+    // Lighting offset based on deviation from initial angular position
+    CMQuaternion newRotation = _motionManager.deviceMotion.attitude.quaternion;
+
+    // grab init rotation if first run
+    if (!_hasInitRotation) {
+        _initRotation = newRotation;
+        _hasInitRotation = YES;
+    }
+
+    
+    // rotation around X affects Y lighting position and vice versa
+    CGPoint lightingOffset = {
+//        (newRotation.y - 0.0) * 1.0/M_PI_4 * -2,
+//        (newRotation.x - M_PI/6.0) * 1.0/M_PI_4 * 2,
+        (newRotation.y - _initRotation.y) * 1.0/M_PI_4 * -0.8,
+        (newRotation.x - _initRotation.x) * 1.0/M_PI_4 * 1.5,
+    };
+
+    glUniform1f(_uniforms[u_lightOffsetX], lightingOffset.x);
+    glUniform1f(_uniforms[u_lightOffsetY], lightingOffset.y);
+    
+    
+    /////////////////////////////////////////
+    // DRAW BLADES
+    /////////////////////////////////////////
+
     // Derive/set uniforms for blade retraction
     GLKMatrix4 modelMatrix = GLKMatrix4Identity;
 //    GLKMatrix4MakeScale(1, 1 - _globalRetraction, 1);
@@ -397,25 +441,30 @@ skip:
     // Texture retraction, inverse mirrors the height scaling
     float newH = H * (1 - _globalRetraction);
     float yOffsetNormed = (H - newH) / H;
-    glUniform1f(_uniforms[texYOffset], yOffsetNormed);
+    glUniform1f(_uniforms[u_texYOffset], yOffsetNormed);
 
     
     
     // For each blade...
     for (int i=0; i<BLADE_CNT; i++) {
         
-        // M MATRIX
+        // M MATRIX (REDUNDANT!)
         // Add a progessive Z offset for each
         modelMatrix = GLKMatrix4Translate(modelMatrix, 0, 0, BLADE_Z_OFFSET * i);
         glUniformMatrix4fv(_uniforms[M], 1, 0, modelMatrix.m);
         
         // V MATRIX
-        // ...Rotate and tilt the model (via the V matrix) and render once for each blade
+        // First shift the blades to make them retract.  An X shift is needed to ensure the edges stay hidden.  This is intrinsically linked to the first line of the frag shader glsl.  A tiny Z shift ensures no unintended depth artifact when the blades overlap
+        // Rotation is then applied to position the blade in the view
+        GLfloat delY = -H * _globalRetraction;
+        GLfloat delX = MAX(0.0, _globalRetraction - 0.4) * -0.3;
+        GLfloat delZ = i * BLADE_Z_OFFSET;
+        GLfloat rot = i * BLADE_SEPARATION + _globalRotation + BLADE_ROTATION_OFFSET;
         
         GLKMatrix4 vMatrix = _viewMatrixBase;
         vMatrix = GLKMatrix4Rotate(vMatrix, BLADE_TILT, 0, 1.0, 0);
-        vMatrix = GLKMatrix4Rotate(vMatrix, i * BLADE_SEPARATION + _globalRotation + BLADE_ROTATION_OFFSET, 0, 0, 1.0);
-        vMatrix = GLKMatrix4Translate(vMatrix, 0, -H * _globalRetraction, i * 0.01);
+        vMatrix = GLKMatrix4Rotate(vMatrix, rot, 0, 0, 1.0);
+        vMatrix = GLKMatrix4Translate(vMatrix, delX, delY, delZ);
         glUniformMatrix4fv(_uniforms[V], 1, 0, vMatrix.m);
 
         
@@ -498,7 +547,10 @@ skip:
     _uniforms[tex_specular] = glGetUniformLocation(_program, "tex_specular");
     _uniforms[tex_normal] = glGetUniformLocation(_program, "tex_normal");
     _uniforms[tex_displacement] = glGetUniformLocation(_program, "tex_displacement");
-    _uniforms[texYOffset] = glGetUniformLocation(_program, "texYOffset");
+    _uniforms[u_texYOffset] = glGetUniformLocation(_program, "u_texYOffset");
+    _uniforms[u_lightOffsetX] = glGetUniformLocation(_program, "u_lightOffsetX");
+    _uniforms[u_lightOffsetY] = glGetUniformLocation(_program, "u_lightOffsetY");
+//    _uniforms[] = glGetUniformLocation(_program, "");
     
     
 #ifdef AC_CALIBRATE

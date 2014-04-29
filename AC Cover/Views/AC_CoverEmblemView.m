@@ -71,8 +71,8 @@ static const CGFloat _MAX_SHADOW_SIZE = 80;
     CMQuaternion newRotation = _motionManager.deviceMotion.attitude.quaternion;
     
     CGSize outerShadowOffset = {
-        (newRotation.y - _initRotation.y) * 30,
-        (newRotation.x - _initRotation.x) * 30,
+        (newRotation.y - _initRotation.y) * _MAX_SHADOW_SIZE,
+        (newRotation.x - _initRotation.x) * _MAX_SHADOW_SIZE,
     };
     CGSize innerShadowOffset = {
         (newRotation.y - _initRotation.y) * 10,
@@ -88,7 +88,7 @@ static const CGFloat _MAX_SHADOW_SIZE = 80;
     };
     UIBezierPath *pth = [UIBezierPath bezierPathWithOvalInRect:circBounds];
     [[UIColor ac_yellowColor] setFill];
-    CGContextSetShadowWithColor(ctx, outerShadowOffset, 30, outerShadowColor.CGColor);
+    CGContextSetShadowWithColor(ctx, outerShadowOffset, _MAX_SHADOW_SIZE, outerShadowColor.CGColor);
     [pth fill];
     
     

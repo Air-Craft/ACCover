@@ -13,9 +13,6 @@ attribute vec2 a_texcoord;
 varying highp vec2 v_texcoord;
 varying mediump vec4 v_position;
 
-// Used to simulate blade retraction
-uniform mediump float texYOffset;
-
 // Transform Matrices
 uniform mediump mat4 M, V, P;
 

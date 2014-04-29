@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 Air Craft. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <GLKit/GLKit.h>
+@import UIKit;
+@import CoreMotion;
+@import GLKit;
 
 @interface AC_CoverView : GLKView
 
@@ -29,6 +30,6 @@
  @throws Exception on context or other init error
  @todo Proper exception type
  */
-- (void)setup;
+- (void)setupWithMotionManager:(CMMotionManager *)motionManger;
 
 @end

@@ -23,7 +23,11 @@ uniform sampler2D tex_normal;
 uniform sampler2D tex_displacement;
 
 // Used to cutoff the tex drawing below the screen centrepoint
-uniform mediump float texYOffset;
+uniform mediump float u_texYOffset;
+
+// Offsets for main light position (linked to device motion)
+uniform float u_lightOffsetX;
+uniform float u_lightOffsetY;
 
 uniform mediump mat4 V, P;
 uniform mediump mat4 V_norm;
@@ -85,18 +89,10 @@ void main()
     // TEXTURE MAPS & LIGHTING COEFFS
     /////////////////////////////////////////
     
-    // BASE COLOR
-    // if edge, then specular (3 color?), no diffuse
-    // if face then both
-    
-    // option 1: same lighting for all but with scaling factor for edge (based on spec map)
-    // option 2: branching or mix'ing
-    // lets try option 1 first
-    
-    // other options: REMEMBER we have alpha channels in the spec and norm maps to encode with!
-    
-    // Clamp tex drawing to only be "above" (wrt blade rotation) the screen centrepoint
-    vec2 texcoord = v_texcoord * step(texYOffset, v_texcoord.y);
+    // Make the retraction by offsetting and clamping the tex drawing. Ensures that it only renders "above" (wrt blade rotation) the screen centrepoint
+    // retraction crop blend: 1 means pure crop from the top inward, 0 = pure retraction (you see the tex top rim).
+    const float retrCropBlend = 0.5;
+    vec2 texcoord = (v_texcoord - vec2(0.0, u_texYOffset*retrCropBlend)) * step(u_texYOffset, v_texcoord.y);
     
     // Base Color (and shape via alpha)
     vec4 baseColor = texture2D(tex_color, texcoord);
@@ -139,6 +135,7 @@ void main()
     vec3 lightDirection;
     float lightDistance;
     float attenuation;
+    vec4 lightPos = u_light0Pos + vec4(u_lightOffsetX, u_lightOffsetY, 0.0, 0.0);
     
 //    if (0.0 == light0.position.w) // uni-directional light? (e.g. sun)
 //    {
@@ -147,7 +144,7 @@ void main()
 //    }
 //    else // point light or spotlight (or other kind of light)
 //     {
-        vec3 positionToLightSource = vec3(u_light0Pos - texpos);
+        vec3 positionToLightSource = vec3(lightPos - texpos);
         lightDistance = length(positionToLightSource);
         lightDirection = normalize(positionToLightSource);
         attenuation = 1.0 / (u_attnConst   // constant
@@ -160,17 +157,19 @@ void main()
     // DIFFUSE
     /////////////////////////////////////////
     
-    float angleAtten = max(0.0, dot(normalDirection, lightDirection));
-    vec4 outDiffuse = attenuation * diffuseFactor * angleAtten * DIFFUSE_COLOR;
+    float angleAttenDiff = max(0.0, dot(normalDirection, lightDirection));
+    vec4 outDiffuse = attenuation * diffuseFactor * angleAttenDiff * DIFFUSE_COLOR;
     
     
     /////////////////////////////////////////
     // SPECULAR
     /////////////////////////////////////////
     
+    float angleAttenSpec = pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), shinyFactor);
+    
     vec4 outSpecular =
-        attenuation * specularFactor *
-        pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), shinyFactor) * SPECULAR_COLOR;
+        attenuation * specularFactor * angleAttenSpec
+         * SPECULAR_COLOR;
     
     
 //    vec3 texMult = (SURFACE_TEX_MULT * (vec3(baseColor) - 0.5) + 0.5);
