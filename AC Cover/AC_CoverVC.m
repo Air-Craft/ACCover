@@ -12,6 +12,26 @@
 #import "AC_CoverView.h"
 #import "AC_CoverEmblemView.h"
 
+
+/////////////////////////////////////////////////////////////////////////
+#pragma mark - Constants
+/////////////////////////////////////////////////////////////////////////
+
+static float _MAX_TILT_ANGLE = 0.25 * M_PI_4;
+static float _INIT_PITCH_TILT_ANGLE = 10 * M_PI/180;
+
+typedef struct {
+    float pitch;
+    float roll;
+} ACTiltOrientation;
+
+
+/////////////////////////////////////////////////////////////////////////
+#pragma mark - Debug/Calibation
+/////////////////////////////////////////////////////////////////////////
+
+
+
 static float attnConst=0.0, attnLin=3.97, attnQuad=3.49;
 static float light0X=0.36,/*2.72,*/ light0Y=0.89,/*3.98,*/ light0Z=-1.20/*-0.30*/;
 static float diffInts=0.44, specInts=3.96, edgeFaceSplit=6.5;
@@ -44,7 +64,7 @@ static float shine=4.10;
     
     NSMutableArray *_activeTouches;
     
-    CMQuaternion _initRotation;
+    ACTiltOrientation _initTilt;
 
 }
 
@@ -56,7 +76,10 @@ static float shine=4.10;
     
     _motionManager = [[CMMotionManager alloc] init];
     [_motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryCorrectedZVertical];
-    _initRotation = _motionManager.deviceMotion.attitude.quaternion;
+//    ACTiltOrientation t = { _INIT_PITCH_TILT_ANGLE, 0 };
+    CMAttitude *att = _motionManager.deviceMotion.attitude;
+    ACTiltOrientation tilt = {att.pitch, att.roll};
+    _initTilt = tilt;
     
     [(AC_CoverView *)self.view setupWithMotionManager:_motionManager];
 
@@ -106,16 +129,21 @@ static float shine=4.10;
 - (void)_updateWithSender:(id)sender
 {
     // Get the tilt offset and normalise/cap it to our MIN/MAX
-    CMQuaternion newRotation = _motionManager.deviceMotion.attitude.quaternion;
+    CMAttitude *att = _motionManager.deviceMotion.attitude;
+    ACTiltOrientation newTilt = { att.pitch, att.roll};
     
     CGPoint rotOffsetNormed = {
-        (newRotation.y - _initRotation.y) / (0.5 * M_PI_4),
-        (newRotation.x - _initRotation.x) / (0.5 * M_PI_4),
+        (newTilt.pitch - _initTilt.pitch) / (_MAX_TILT_ANGLE),
+        (newTilt.roll - _initTilt.roll) / (_MAX_TILT_ANGLE),
     };
     rotOffsetNormed.x = MIN(1.0, MAX(-1.0, rotOffsetNormed.x));
     rotOffsetNormed.y = MIN(1.0, MAX(-1.0, rotOffsetNormed.y));
+    NSLog(@"%.2f %.2f", rotOffsetNormed.x, rotOffsetNormed.y);
     
     _emblemView.relativeAngleOffset = rotOffsetNormed;
+    
+    AC_CoverView *coverView = (AC_CoverView *)self.view;
+    coverView.relativeAngleOffset = rotOffsetNormed;
     
 //    [_emblemView setNeedsDisplay];
 }

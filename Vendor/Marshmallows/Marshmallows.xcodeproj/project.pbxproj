@@ -1,0 +1,1326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A611575016565CD20042C85D /* MarshmallowMathTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = A611574F16565CD20042C85D /* MarshmallowMathTests.mm */; };
+		A61CB97915CEE0D00054DBCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CB97815CEE0D00054DBCE /* main.m */; };
+		A61CB97E15CEE3850054DBCE /* MUIMultiToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CB97B15CEE3850054DBCE /* MUIMultiToggleButton.m */; };
+		A61CB97F15CEE3850054DBCE /* MUIPushButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CB97D15CEE3850054DBCE /* MUIPushButton.m */; };
+		A636EDC0163011B00037F211 /* AUMAudioSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A636EDBF163011AF0037F211 /* AUMAudioSession.m */; };
+		A636EDC1163011B00037F211 /* AUMAudioSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A636EDBF163011AF0037F211 /* AUMAudioSession.m */; };
+		A63FF35C178735C900C2B674 /* NSDate+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A63FF35B178735C900C2B674 /* NSDate+Marshmallows.m */; };
+		A63FF35D1789D95200C2B674 /* NSDate+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A63FF35B178735C900C2B674 /* NSDate+Marshmallows.m */; };
+		A6434F8F161F4E2D00496EAC /* MCAtomicType.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6434F8E161F4E2D00496EAC /* MCAtomicType.mm */; };
+		A6434F97161F4E5B00496EAC /* AUMFilePlaybackGeneratorRCB.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6434F96161F4E5B00496EAC /* AUMFilePlaybackGeneratorRCB.mm */; };
+		A6434F98161F4E5B00496EAC /* AUMFilePlaybackGeneratorRCB.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6434F96161F4E5B00496EAC /* AUMFilePlaybackGeneratorRCB.mm */; };
+		A6434F9B161F50B200496EAC /* AUMAudioFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = A6434F9A161F50B100496EAC /* AUMAudioFileReader.m */; };
+		A6434F9C161F50B200496EAC /* AUMAudioFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = A6434F9A161F50B100496EAC /* AUMAudioFileReader.m */; };
+		A6434FA3161F532D00496EAC /* AUMRendererAudioSource.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6434FA2161F532D00496EAC /* AUMRendererAudioSource.mm */; };
+		A6434FA4161F532D00496EAC /* AUMRendererAudioSource.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6434FA2161F532D00496EAC /* AUMRendererAudioSource.mm */; };
+		A6434FA71622EB5F00496EAC /* NSInvocation+MMBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A6434FA61622EB5F00496EAC /* NSInvocation+MMBlocks.m */; };
+		A6434FA81622EB5F00496EAC /* NSInvocation+MMBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A6434FA61622EB5F00496EAC /* NSInvocation+MMBlocks.m */; };
+		A6434FAB16230F5100496EAC /* AUMCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = A6434FA916230F4F00496EAC /* AUMCircularBuffer.c */; };
+		A6434FAC16230F5100496EAC /* AUMCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = A6434FA916230F4F00496EAC /* AUMCircularBuffer.c */; };
+		A6447576163947D000E15871 /* NSURL+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6447575163947D000E15871 /* NSURL+Marshmallows.m */; };
+		A6447577163947D000E15871 /* NSURL+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6447575163947D000E15871 /* NSURL+Marshmallows.m */; };
+		A644757B1639563C00E15871 /* AUMUtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = A644757A1639563C00E15871 /* AUMUtilityFunctions.m */; };
+		A644757C1639563C00E15871 /* AUMUtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = A644757A1639563C00E15871 /* AUMUtilityFunctions.m */; };
+		A644CD2C1636D68900C34512 /* AUMFileRecordingProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = A644CD2B1636D68700C34512 /* AUMFileRecordingProcessor.mm */; };
+		A644CD2D1636D68900C34512 /* AUMFileRecordingProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = A644CD2B1636D68700C34512 /* AUMFileRecordingProcessor.mm */; };
+		A644CD301637DAA700C34512 /* AUMAtomicType.mm in Sources */ = {isa = PBXBuildFile; fileRef = A644CD2F1637DAA700C34512 /* AUMAtomicType.mm */; };
+		A644CD311637DAA700C34512 /* AUMAtomicType.mm in Sources */ = {isa = PBXBuildFile; fileRef = A644CD2F1637DAA700C34512 /* AUMAtomicType.mm */; };
+		A656818A1666674B00836EFF /* MCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = A65681891666674B00836EFF /* MCompatibility.m */; };
+		A656818B1666674B00836EFF /* MCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = A65681891666674B00836EFF /* MCompatibility.m */; };
+		A656818C1666674B00836EFF /* MCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = A65681891666674B00836EFF /* MCompatibility.m */; };
+		A660E184166A93D4005F38B8 /* Bach-Great-Organ-Works-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A660E183166A93D4005F38B8 /* Bach-Great-Organ-Works-1.mp3 */; };
+		A660E56E163D2E1800C4284A /* AUMTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B582B415DC125900D1CA05 /* AUMTypes.m */; };
+		A660E56F163D2E3100C4284A /* AUMGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B582AE15DC125900D1CA05 /* AUMGraph.m */; };
+		A660E570163D2E3100C4284A /* AUMRemoteIOUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B582B215DC125900D1CA05 /* AUMRemoteIOUnit.m */; };
+		A660E571163D2E3100C4284A /* AUMMultichannelMixerUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B582B015DC125900D1CA05 /* AUMMultichannelMixerUnit.m */; };
+		A660E572163D2E3100C4284A /* AUMFilePlaybackGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6B582AC15DC125900D1CA05 /* AUMFilePlaybackGenerator.mm */; };
+		A660E573163D2E5D00C4284A /* AUMUnitAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B582B615DC125900D1CA05 /* AUMUnitAbstract.m */; };
+		A664EFB615CEEB8900182FFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE28679114B36EC5001E11D7 /* Foundation.framework */; };
+		A664EFBB15CEEB8900182FFD /* MarshmallowsStaticLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A664EFBA15CEEB8900182FFD /* MarshmallowsStaticLib.h */; };
+		A664EFBD15CEEB8900182FFD /* MarshmallowsStaticLib.m in Sources */ = {isa = PBXBuildFile; fileRef = A664EFBC15CEEB8900182FFD /* MarshmallowsStaticLib.m */; };
+		A664EFC115CEEB9800182FFD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE42C29C14BDC20D0049319C /* QuartzCore.framework */; };
+		A664EFC215CEEB9D00182FFD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2867C214B37156001E11D7 /* GLKit.framework */; };
+		A664EFC315CEEB9D00182FFD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2867C314B37156001E11D7 /* OpenGLES.framework */; };
+		A664EFC415CEEBA800182FFD /* MMAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401E6151DD86100BDC2D2 /* MMAnimator.m */; };
+		A664EFC515CEEBA800182FFD /* MMAnimatorTimingBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401E8151DD86100BDC2D2 /* MMAnimatorTimingBlock.m */; };
+		A664EFC615CEEBA800182FFD /* MMSimpleAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401EA151DD86100BDC2D2 /* MMSimpleAnimator.m */; };
+		A664EFC715CEEBA800182FFD /* MMSimplePinnedAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401EC151DD86100BDC2D2 /* MMSimplePinnedAnimator.m */; };
+		A664EFC815CEEBA800182FFD /* MMGLK.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F0151DD86100BDC2D2 /* MMGLK.m */; };
+		A664EFC915CEEBA800182FFD /* MACrossfadeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F3151DD86100BDC2D2 /* MACrossfadeLayer.m */; };
+		A664EFCA15CEEBA800182FFD /* MAImageCrossfadeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F5151DD86100BDC2D2 /* MAImageCrossfadeLayer.m */; };
+		A664EFCB15CEEBA800182FFD /* MAImageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F7151DD86100BDC2D2 /* MAImageLayer.m */; };
+		A664EFCC15CEEBA800182FFD /* MWeakKeyMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401FC151DD86100BDC2D2 /* MWeakKeyMutableDictionary.m */; };
+		A664EFCD15CEEBA800182FFD /* NSArray+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401FE151DD86100BDC2D2 /* NSArray+Marshmallows.m */; };
+		A664EFCE15CEEBA800182FFD /* NSError+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840200151DD86100BDC2D2 /* NSError+Marshmallows.m */; };
+		A664EFD015CEEBA800182FFD /* MCMainThreadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840206151DD86100BDC2D2 /* MCMainThreadProxy.m */; };
+		A664EFD115CEEBA800182FFD /* MPerformanceThread.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE840208151DD86100BDC2D2 /* MPerformanceThread.mm */; };
+		A664EFD215CEEBA800182FFD /* MCThreadProxyAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84020A151DD86100BDC2D2 /* MCThreadProxyAbstract.m */; };
+		A664EFD315CEEBA800182FFD /* MDBulkLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84020F151DD86100BDC2D2 /* MDBulkLogger.m */; };
+		A664EFD415CEEBA800182FFD /* MPStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84021B151DD86100BDC2D2 /* MPStopwatch.m */; };
+		A664EFD515CEEBA800182FFD /* MUIMultiToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CB97B15CEE3850054DBCE /* MUIMultiToggleButton.m */; };
+		A664EFD615CEEBA800182FFD /* MUIPushButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CB97D15CEE3850054DBCE /* MUIPushButton.m */; };
+		A664EFD715CEEBA800182FFD /* MUICrossfadeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840220151DD86100BDC2D2 /* MUICrossfadeView.m */; };
+		A664EFD815CEEBA800182FFD /* UIColor+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840222151DD86100BDC2D2 /* UIColor+Marshmallows.m */; };
+		A664EFD915CEEBA800182FFD /* UIImage+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840224151DD86100BDC2D2 /* UIImage+Marshmallows.m */; };
+		A664EFDA15CEEBA800182FFD /* CEObjectiveCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840227151DD86100BDC2D2 /* CEObjectiveCRuntime.m */; };
+		A664EFDB15CEEBB400182FFD /* MDTimeProfiler.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE840211151DD86100BDC2D2 /* MDTimeProfiler.mm */; };
+		A664EFDC15CEEBB400182FFD /* MDTimeProfilerOC.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE840213151DD86100BDC2D2 /* MDTimeProfilerOC.mm */; };
+		A664EFDD15CEEBBB00182FFD /* MarshmallowMathFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = CE840216151DD86100BDC2D2 /* MarshmallowMathFunctions.c */; };
+		A664EFE615CEECB800182FFD /* MMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A664EFE515CEECB800182FFD /* MMAppDelegate.m */; };
+		A69F3A95165E2D2000116B0D /* MCachedModalStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F3A94165E2D2000116B0D /* MCachedModalStoryboardSegue.m */; };
+		A69F3A96165E2D2000116B0D /* MCachedModalStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F3A94165E2D2000116B0D /* MCachedModalStoryboardSegue.m */; };
+		A69F3A97165E2D2000116B0D /* MCachedModalStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F3A94165E2D2000116B0D /* MCachedModalStoryboardSegue.m */; };
+		A6ADEBE416330E7E00420769 /* AUMTesterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEBE316330E7E00420769 /* AUMTesterViewController.m */; };
+		A6AE6EA11637FFA400EC70AC /* SWHarp-Eb4-Medium.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6AE6EA01637FFA400EC70AC /* SWHarp-Eb4-Medium.wav */; };
+		A6B582B815DC125900D1CA05 /* AUMFilePlaybackGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6B582AC15DC125900D1CA05 /* AUMFilePlaybackGenerator.mm */; };
+		A6B582B915DC125900D1CA05 /* AUMGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B582AE15DC125900D1CA05 /* AUMGraph.m */; };
+		A6B582BA15DC125900D1CA05 /* AUMMultichannelMixerUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B582B015DC125900D1CA05 /* AUMMultichannelMixerUnit.m */; };
+		A6B582BB15DC125900D1CA05 /* AUMRemoteIOUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B582B215DC125900D1CA05 /* AUMRemoteIOUnit.m */; };
+		A6B582BC15DC125900D1CA05 /* AUMTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B582B415DC125900D1CA05 /* AUMTypes.m */; };
+		A6B582BD15DC125900D1CA05 /* AUMUnitAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B582B615DC125900D1CA05 /* AUMUnitAbstract.m */; };
+		A6BE0C6615D017D000E0F43D /* UIView+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BE0C6515D017D000E0F43D /* UIView+Marshmallows.m */; };
+		A6BE0C6715D017D000E0F43D /* UIView+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BE0C6515D017D000E0F43D /* UIView+Marshmallows.m */; };
+		A6CBD2B815D273F700A7933E /* MRUncaughtExceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD2B715D273F700A7933E /* MRUncaughtExceptions.m */; };
+		A6CBD2B915D273F700A7933E /* MRUncaughtExceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD2B715D273F700A7933E /* MRUncaughtExceptions.m */; };
+		A6CED30B187093E000CB0521 /* MStrongKeyMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CED30A187093E000CB0521 /* MStrongKeyMutableDictionary.m */; };
+		A6D69D3E15D52E44009828CF /* MUIDraggablePane.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D69D3D15D52E44009828CF /* MUIDraggablePane.m */; };
+		A6D69D3F15D52E44009828CF /* MUIDraggablePane.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D69D3D15D52E44009828CF /* MUIDraggablePane.m */; };
+		A6D7D1271637DF6F0097BE06 /* NSString+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7D1261637DF6F0097BE06 /* NSString+Marshmallows.m */; };
+		A6D7D1281637DF6F0097BE06 /* NSString+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7D1261637DF6F0097BE06 /* NSString+Marshmallows.m */; };
+		A6D7D12B1637F04D0097BE06 /* AUMTesterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6D7D12A1637F04D0097BE06 /* AUMTesterView.xib */; };
+		A6D881651630373500D11296 /* SWHarp-C3-Medium.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6D881641630373500D11296 /* SWHarp-C3-Medium.wav */; };
+		A6D8816916303BE300D11296 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D8816816303BE300D11296 /* AVFoundation.framework */; };
+		A6D8816B16303BEE00D11296 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D8816A16303BEE00D11296 /* Accelerate.framework */; };
+		A6D947AB15DAA02D002B42E0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D947A915DAA02D002B42E0 /* AudioToolbox.framework */; };
+		A6D947AC15DAA02D002B42E0 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D947AA15DAA02D002B42E0 /* CoreAudio.framework */; };
+		A6D947AD15DAA033002B42E0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D947A915DAA02D002B42E0 /* AudioToolbox.framework */; };
+		A6D947AE15DAA033002B42E0 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D947AA15DAA02D002B42E0 /* CoreAudio.framework */; };
+		A6FA09EA162D67D00094C279 /* MarshmallowDebug.c in Sources */ = {isa = PBXBuildFile; fileRef = A6FA09E9162D67D00094C279 /* MarshmallowDebug.c */; };
+		A6FA09EB162D67D00094C279 /* MarshmallowDebug.c in Sources */ = {isa = PBXBuildFile; fileRef = A6FA09E9162D67D00094C279 /* MarshmallowDebug.c */; };
+		A6FA09F2162DA5850094C279 /* AUMException.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FA09F1162DA5850094C279 /* AUMException.m */; };
+		A6FA09F3162DA5850094C279 /* AUMException.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FA09F1162DA5850094C279 /* AUMException.m */; };
+		CE28679014B36EC5001E11D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE28678F14B36EC5001E11D7 /* UIKit.framework */; };
+		CE28679214B36EC5001E11D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE28679114B36EC5001E11D7 /* Foundation.framework */; };
+		CE28679414B36EC5001E11D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE28679314B36EC5001E11D7 /* CoreGraphics.framework */; };
+		CE2867A814B36EC5001E11D7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2867A714B36EC5001E11D7 /* SenTestingKit.framework */; };
+		CE2867ED14B378AD001E11D7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2867C214B37156001E11D7 /* GLKit.framework */; };
+		CE2867EE14B378AD001E11D7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2867C314B37156001E11D7 /* OpenGLES.framework */; };
+		CE28688014BA0D6C001E11D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE28687914BA0D6C001E11D7 /* InfoPlist.strings */; };
+		CE28688614BA0FEF001E11D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE28679114B36EC5001E11D7 /* Foundation.framework */; };
+		CE28688714BA0FFA001E11D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE28678F14B36EC5001E11D7 /* UIKit.framework */; };
+		CE2868A614BA1063001E11D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE28689B14BA1063001E11D7 /* InfoPlist.strings */; };
+		CE2868AA14BA1063001E11D7 /* GradientChrome.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2868A314BA1063001E11D7 /* GradientChrome.png */; };
+		CE2868AB14BA1063001E11D7 /* UIImageMMPixelDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2868A514BA1063001E11D7 /* UIImageMMPixelDataTests.m */; };
+		CE2868AC14BA10D1001E11D7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2867C314B37156001E11D7 /* OpenGLES.framework */; };
+		CE2868AD14BA10D2001E11D7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2867C214B37156001E11D7 /* GLKit.framework */; };
+		CE2868AE14BA10DF001E11D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE28679314B36EC5001E11D7 /* CoreGraphics.framework */; };
+		CE42C29D14BDC20D0049319C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE42C29C14BDC20D0049319C /* QuartzCore.framework */; };
+		CE42C2B414BDDF000049319C /* MMAnimatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE42C2B314BDDF000049319C /* MMAnimatorTests.m */; };
+		CE42C2B514BDE2540049319C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE42C29C14BDC20D0049319C /* QuartzCore.framework */; };
+		CE840228151DD86100BDC2D2 /* MMAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401E6151DD86100BDC2D2 /* MMAnimator.m */; };
+		CE840229151DD86100BDC2D2 /* MMAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401E6151DD86100BDC2D2 /* MMAnimator.m */; };
+		CE84022A151DD86100BDC2D2 /* MMAnimatorTimingBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401E8151DD86100BDC2D2 /* MMAnimatorTimingBlock.m */; };
+		CE84022B151DD86100BDC2D2 /* MMAnimatorTimingBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401E8151DD86100BDC2D2 /* MMAnimatorTimingBlock.m */; };
+		CE84022C151DD86100BDC2D2 /* MMSimpleAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401EA151DD86100BDC2D2 /* MMSimpleAnimator.m */; };
+		CE84022D151DD86100BDC2D2 /* MMSimpleAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401EA151DD86100BDC2D2 /* MMSimpleAnimator.m */; };
+		CE84022E151DD86100BDC2D2 /* MMSimplePinnedAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401EC151DD86100BDC2D2 /* MMSimplePinnedAnimator.m */; };
+		CE84022F151DD86100BDC2D2 /* MMSimplePinnedAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401EC151DD86100BDC2D2 /* MMSimplePinnedAnimator.m */; };
+		CE840230151DD86100BDC2D2 /* MMGLK.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F0151DD86100BDC2D2 /* MMGLK.m */; };
+		CE840231151DD86100BDC2D2 /* MMGLK.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F0151DD86100BDC2D2 /* MMGLK.m */; };
+		CE840232151DD86100BDC2D2 /* MACrossfadeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F3151DD86100BDC2D2 /* MACrossfadeLayer.m */; };
+		CE840233151DD86100BDC2D2 /* MACrossfadeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F3151DD86100BDC2D2 /* MACrossfadeLayer.m */; };
+		CE840234151DD86100BDC2D2 /* MAImageCrossfadeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F5151DD86100BDC2D2 /* MAImageCrossfadeLayer.m */; };
+		CE840235151DD86100BDC2D2 /* MAImageCrossfadeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F5151DD86100BDC2D2 /* MAImageCrossfadeLayer.m */; };
+		CE840236151DD86100BDC2D2 /* MAImageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F7151DD86100BDC2D2 /* MAImageLayer.m */; };
+		CE840237151DD86100BDC2D2 /* MAImageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401F7151DD86100BDC2D2 /* MAImageLayer.m */; };
+		CE840238151DD86100BDC2D2 /* MWeakKeyMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401FC151DD86100BDC2D2 /* MWeakKeyMutableDictionary.m */; };
+		CE840239151DD86100BDC2D2 /* MWeakKeyMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401FC151DD86100BDC2D2 /* MWeakKeyMutableDictionary.m */; };
+		CE84023A151DD86100BDC2D2 /* NSArray+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401FE151DD86100BDC2D2 /* NSArray+Marshmallows.m */; };
+		CE84023B151DD86100BDC2D2 /* NSArray+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8401FE151DD86100BDC2D2 /* NSArray+Marshmallows.m */; };
+		CE84023C151DD86100BDC2D2 /* NSError+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840200151DD86100BDC2D2 /* NSError+Marshmallows.m */; };
+		CE84023D151DD86100BDC2D2 /* NSError+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840200151DD86100BDC2D2 /* NSError+Marshmallows.m */; };
+		CE840240151DD86100BDC2D2 /* MCMainThreadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840206151DD86100BDC2D2 /* MCMainThreadProxy.m */; };
+		CE840241151DD86100BDC2D2 /* MCMainThreadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840206151DD86100BDC2D2 /* MCMainThreadProxy.m */; };
+		CE840242151DD86100BDC2D2 /* MPerformanceThread.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE840208151DD86100BDC2D2 /* MPerformanceThread.mm */; };
+		CE840243151DD86100BDC2D2 /* MPerformanceThread.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE840208151DD86100BDC2D2 /* MPerformanceThread.mm */; };
+		CE840244151DD86100BDC2D2 /* MCThreadProxyAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84020A151DD86100BDC2D2 /* MCThreadProxyAbstract.m */; };
+		CE840245151DD86100BDC2D2 /* MCThreadProxyAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84020A151DD86100BDC2D2 /* MCThreadProxyAbstract.m */; };
+		CE840246151DD86100BDC2D2 /* MDBulkLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84020F151DD86100BDC2D2 /* MDBulkLogger.m */; };
+		CE840247151DD86100BDC2D2 /* MDBulkLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84020F151DD86100BDC2D2 /* MDBulkLogger.m */; };
+		CE840248151DD86100BDC2D2 /* MDTimeProfiler.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE840211151DD86100BDC2D2 /* MDTimeProfiler.mm */; };
+		CE840249151DD86100BDC2D2 /* MDTimeProfiler.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE840211151DD86100BDC2D2 /* MDTimeProfiler.mm */; };
+		CE84024A151DD86100BDC2D2 /* MDTimeProfilerOC.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE840213151DD86100BDC2D2 /* MDTimeProfilerOC.mm */; };
+		CE84024B151DD86100BDC2D2 /* MDTimeProfilerOC.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE840213151DD86100BDC2D2 /* MDTimeProfilerOC.mm */; };
+		CE84024C151DD86100BDC2D2 /* MarshmallowMathFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = CE840216151DD86100BDC2D2 /* MarshmallowMathFunctions.c */; };
+		CE84024D151DD86100BDC2D2 /* MarshmallowMathFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = CE840216151DD86100BDC2D2 /* MarshmallowMathFunctions.c */; };
+		CE84024E151DD86100BDC2D2 /* MPStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84021B151DD86100BDC2D2 /* MPStopwatch.m */; };
+		CE84024F151DD86100BDC2D2 /* MPStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84021B151DD86100BDC2D2 /* MPStopwatch.m */; };
+		CE840250151DD86100BDC2D2 /* MUICrossfadeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840220151DD86100BDC2D2 /* MUICrossfadeView.m */; };
+		CE840251151DD86100BDC2D2 /* MUICrossfadeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840220151DD86100BDC2D2 /* MUICrossfadeView.m */; };
+		CE840252151DD86100BDC2D2 /* UIColor+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840222151DD86100BDC2D2 /* UIColor+Marshmallows.m */; };
+		CE840253151DD86100BDC2D2 /* UIColor+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840222151DD86100BDC2D2 /* UIColor+Marshmallows.m */; };
+		CE840254151DD86100BDC2D2 /* UIImage+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840224151DD86100BDC2D2 /* UIImage+Marshmallows.m */; };
+		CE840255151DD86100BDC2D2 /* UIImage+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840224151DD86100BDC2D2 /* UIImage+Marshmallows.m */; };
+		CE840256151DD86100BDC2D2 /* CEObjectiveCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840227151DD86100BDC2D2 /* CEObjectiveCRuntime.m */; };
+		CE840257151DD86100BDC2D2 /* CEObjectiveCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840227151DD86100BDC2D2 /* CEObjectiveCRuntime.m */; };
+		CE84025A151DDDE900BDC2D2 /* MPStopwatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE840259151DDDE900BDC2D2 /* MPStopwatchTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE28688414BA0D78001E11D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE28678214B36EC5001E11D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE28678A14B36EC5001E11D7;
+			remoteInfo = Marshmallows;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A664EFB315CEEB8900182FFD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				A664EFBB15CEEB8900182FFD /* MarshmallowsStaticLib.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A611574E16565CD20042C85D /* MarshmallowMathTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowMathTests.h; sourceTree = "<group>"; };
+		A611574F16565CD20042C85D /* MarshmallowMathTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MarshmallowMathTests.mm; sourceTree = "<group>"; };
+		A61CB97815CEE0D00054DBCE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A61CB97A15CEE3850054DBCE /* MUIMultiToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUIMultiToggleButton.h; sourceTree = "<group>"; };
+		A61CB97B15CEE3850054DBCE /* MUIMultiToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUIMultiToggleButton.m; sourceTree = "<group>"; };
+		A61CB97C15CEE3850054DBCE /* MUIPushButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUIPushButton.h; sourceTree = "<group>"; };
+		A61CB97D15CEE3850054DBCE /* MUIPushButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUIPushButton.m; sourceTree = "<group>"; };
+		A636EDBE163011AF0037F211 /* AUMAudioSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMAudioSession.h; sourceTree = "<group>"; };
+		A636EDBF163011AF0037F211 /* AUMAudioSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUMAudioSession.m; sourceTree = "<group>"; };
+		A63FF35A178735C900C2B674 /* NSDate+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Marshmallows.h"; sourceTree = "<group>"; };
+		A63FF35B178735C900C2B674 /* NSDate+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Marshmallows.m"; sourceTree = "<group>"; };
+		A6434F8D161F4E2D00496EAC /* MCAtomicType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAtomicType.h; sourceTree = "<group>"; };
+		A6434F8E161F4E2D00496EAC /* MCAtomicType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MCAtomicType.mm; sourceTree = "<group>"; };
+		A6434F95161F4E5B00496EAC /* AUMFilePlaybackGeneratorRCB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMFilePlaybackGeneratorRCB.h; sourceTree = "<group>"; };
+		A6434F96161F4E5B00496EAC /* AUMFilePlaybackGeneratorRCB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AUMFilePlaybackGeneratorRCB.mm; sourceTree = "<group>"; };
+		A6434F99161F50AF00496EAC /* AUMAudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMAudioFileReader.h; sourceTree = "<group>"; };
+		A6434F9A161F50B100496EAC /* AUMAudioFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUMAudioFileReader.m; sourceTree = "<group>"; };
+		A6434FA1161F532C00496EAC /* AUMRendererAudioSource.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = AUMRendererAudioSource.h; sourceTree = "<group>"; };
+		A6434FA2161F532D00496EAC /* AUMRendererAudioSource.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AUMRendererAudioSource.mm; sourceTree = "<group>"; };
+		A6434FA51622EB5F00496EAC /* NSInvocation+MMBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+MMBlocks.h"; sourceTree = "<group>"; };
+		A6434FA61622EB5F00496EAC /* NSInvocation+MMBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+MMBlocks.m"; sourceTree = "<group>"; };
+		A6434FA916230F4F00496EAC /* AUMCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AUMCircularBuffer.c; sourceTree = "<group>"; };
+		A6434FAA16230F5000496EAC /* AUMCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMCircularBuffer.h; sourceTree = "<group>"; };
+		A6447574163947CF00E15871 /* NSURL+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Marshmallows.h"; sourceTree = "<group>"; };
+		A6447575163947D000E15871 /* NSURL+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Marshmallows.m"; sourceTree = "<group>"; };
+		A64475791639563C00E15871 /* AUMUtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMUtilityFunctions.h; sourceTree = "<group>"; };
+		A644757A1639563C00E15871 /* AUMUtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUMUtilityFunctions.m; sourceTree = "<group>"; };
+		A644CD291636CA3D00C34512 /* AUMRendererProtocolAbstract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMRendererProtocolAbstract.h; sourceTree = "<group>"; };
+		A644CD2A1636D68600C34512 /* AUMFileRecordingProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMFileRecordingProcessor.h; sourceTree = "<group>"; };
+		A644CD2B1636D68700C34512 /* AUMFileRecordingProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AUMFileRecordingProcessor.mm; sourceTree = "<group>"; };
+		A644CD2E1637DAA700C34512 /* AUMAtomicType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMAtomicType.h; sourceTree = "<group>"; };
+		A644CD2F1637DAA700C34512 /* AUMAtomicType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AUMAtomicType.mm; sourceTree = "<group>"; };
+		A65681881666674B00836EFF /* MCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCompatibility.h; path = MarshmallowMisc/MCompatibility.h; sourceTree = "<group>"; };
+		A65681891666674B00836EFF /* MCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCompatibility.m; path = MarshmallowMisc/MCompatibility.m; sourceTree = "<group>"; };
+		A6568190166668E000836EFF /* MarshmallowMisc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MarshmallowMisc.h; path = MarshmallowMisc/MarshmallowMisc.h; sourceTree = "<group>"; };
+		A660E183166A93D4005F38B8 /* Bach-Great-Organ-Works-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bach-Great-Organ-Works-1.mp3"; sourceTree = "<group>"; };
+		A664EFB515CEEB8900182FFD /* libMarshmallowsStaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMarshmallowsStaticLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A664EFB915CEEB8900182FFD /* MarshmallowsStaticLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarshmallowsStaticLib-Prefix.pch"; sourceTree = "<group>"; };
+		A664EFBA15CEEB8900182FFD /* MarshmallowsStaticLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarshmallowsStaticLib.h; sourceTree = "<group>"; };
+		A664EFBC15CEEB8900182FFD /* MarshmallowsStaticLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarshmallowsStaticLib.m; sourceTree = "<group>"; };
+		A664EFE415CEECB800182FFD /* MMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAppDelegate.h; sourceTree = "<group>"; };
+		A664EFE515CEECB800182FFD /* MMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAppDelegate.m; sourceTree = "<group>"; };
+		A69F3A93165E2D2000116B0D /* MCachedModalStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCachedModalStoryboardSegue.h; sourceTree = "<group>"; };
+		A69F3A94165E2D2000116B0D /* MCachedModalStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCachedModalStoryboardSegue.m; sourceTree = "<group>"; };
+		A6ADEBE316330E7E00420769 /* AUMTesterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUMTesterViewController.m; sourceTree = "<group>"; };
+		A6AE6EA01637FFA400EC70AC /* SWHarp-Eb4-Medium.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "SWHarp-Eb4-Medium.wav"; sourceTree = "<group>"; };
+		A6AE6EA316385ED200EC70AC /* AUMGeneratorRendererProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMGeneratorRendererProtocol.h; sourceTree = "<group>"; };
+		A6AE6EA416385F9100EC70AC /* AUMCapturerRendererProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMCapturerRendererProtocol.h; sourceTree = "<group>"; };
+		A6AE6EA516385FF900EC70AC /* AUMProcessorRendererProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMProcessorRendererProtocol.h; sourceTree = "<group>"; };
+		A6B582A915DC125900D1CA05 /* AudioMarshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioMarshmallows.h; sourceTree = "<group>"; };
+		A6B582AB15DC125900D1CA05 /* AUMFilePlaybackGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMFilePlaybackGenerator.h; sourceTree = "<group>"; };
+		A6B582AC15DC125900D1CA05 /* AUMFilePlaybackGenerator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AUMFilePlaybackGenerator.mm; sourceTree = "<group>"; };
+		A6B582AD15DC125900D1CA05 /* AUMGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMGraph.h; sourceTree = "<group>"; };
+		A6B582AE15DC125900D1CA05 /* AUMGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUMGraph.m; sourceTree = "<group>"; };
+		A6B582AF15DC125900D1CA05 /* AUMMultichannelMixerUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMMultichannelMixerUnit.h; sourceTree = "<group>"; };
+		A6B582B015DC125900D1CA05 /* AUMMultichannelMixerUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUMMultichannelMixerUnit.m; sourceTree = "<group>"; };
+		A6B582B115DC125900D1CA05 /* AUMRemoteIOUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMRemoteIOUnit.h; sourceTree = "<group>"; };
+		A6B582B215DC125900D1CA05 /* AUMRemoteIOUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUMRemoteIOUnit.m; sourceTree = "<group>"; };
+		A6B582B315DC125900D1CA05 /* AUMTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMTypes.h; sourceTree = "<group>"; };
+		A6B582B415DC125900D1CA05 /* AUMTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUMTypes.m; sourceTree = "<group>"; };
+		A6B582B515DC125900D1CA05 /* AUMUnitAbstract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMUnitAbstract.h; sourceTree = "<group>"; };
+		A6B582B615DC125900D1CA05 /* AUMUnitAbstract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUMUnitAbstract.m; sourceTree = "<group>"; };
+		A6B582B715DC125900D1CA05 /* AUMUnitProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMUnitProtocol.h; sourceTree = "<group>"; };
+		A6BE0C6415D017D000E0F43D /* UIView+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Marshmallows.h"; sourceTree = "<group>"; };
+		A6BE0C6515D017D000E0F43D /* UIView+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Marshmallows.m"; sourceTree = "<group>"; };
+		A6CBD2B515D273F700A7933E /* MarshmallowRecovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowRecovery.h; sourceTree = "<group>"; };
+		A6CBD2B615D273F700A7933E /* MRUncaughtExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRUncaughtExceptions.h; sourceTree = "<group>"; };
+		A6CBD2B715D273F700A7933E /* MRUncaughtExceptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRUncaughtExceptions.m; sourceTree = "<group>"; };
+		A6CED309187093E000CB0521 /* MStrongKeyMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MStrongKeyMutableDictionary.h; sourceTree = "<group>"; };
+		A6CED30A187093E000CB0521 /* MStrongKeyMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MStrongKeyMutableDictionary.m; sourceTree = "<group>"; };
+		A6D69D3C15D52E44009828CF /* MUIDraggablePane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUIDraggablePane.h; sourceTree = "<group>"; };
+		A6D69D3D15D52E44009828CF /* MUIDraggablePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUIDraggablePane.m; sourceTree = "<group>"; };
+		A6D69D4115D531D3009828CF /* MUITypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUITypes.h; sourceTree = "<group>"; };
+		A6D7D1251637DF6F0097BE06 /* NSString+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Marshmallows.h"; sourceTree = "<group>"; };
+		A6D7D1261637DF6F0097BE06 /* NSString+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Marshmallows.m"; sourceTree = "<group>"; };
+		A6D7D12A1637F04D0097BE06 /* AUMTesterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUMTesterView.xib; sourceTree = "<group>"; };
+		A6D7D12C1637F0EE0097BE06 /* AUMTesterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMTesterViewController.h; sourceTree = "<group>"; };
+		A6D881641630373500D11296 /* SWHarp-C3-Medium.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "SWHarp-C3-Medium.wav"; sourceTree = "<group>"; };
+		A6D8816816303BE300D11296 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A6D8816A16303BEE00D11296 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A6D947A915DAA02D002B42E0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A6D947AA15DAA02D002B42E0 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		A6D947BD15DBE6D9002B42E0 /* NSArray+NSDictionary+Subscripting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NSDictionary+Subscripting.h"; sourceTree = "<group>"; };
+		A6FA09E7162D678D0094C279 /* MarshmallowDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowDebug.h; sourceTree = "<group>"; };
+		A6FA09E9162D67D00094C279 /* MarshmallowDebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MarshmallowDebug.c; sourceTree = "<group>"; };
+		A6FA09F0162DA5840094C279 /* AUMException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMException.h; sourceTree = "<group>"; };
+		A6FA09F1162DA5850094C279 /* AUMException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUMException.m; sourceTree = "<group>"; };
+		A6FA09F4162DAB160094C279 /* AUMErrorChecking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMErrorChecking.h; sourceTree = "<group>"; };
+		CE28678B14B36EC5001E11D7 /* Marshmallows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marshmallows.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE28678F14B36EC5001E11D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CE28679114B36EC5001E11D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE28679314B36EC5001E11D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE2867A614B36EC5001E11D7 /* MarshmallowsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarshmallowsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2867A714B36EC5001E11D7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		CE2867C214B37156001E11D7 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		CE2867C314B37156001E11D7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		CE28687A14BA0D6C001E11D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE28687C14BA0D6C001E11D7 /* Marshmallows-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Marshmallows-Info.plist"; sourceTree = "<group>"; };
+		CE28687D14BA0D6C001E11D7 /* Marshmallows-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Marshmallows-Prefix.pch"; sourceTree = "<group>"; };
+		CE28689C14BA1063001E11D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE28689E14BA1063001E11D7 /* MarshmallowsTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MarshmallowsTests-Info.plist"; sourceTree = "<group>"; };
+		CE28689F14BA1063001E11D7 /* MarshmallowsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowsTests.h; sourceTree = "<group>"; };
+		CE2868A314BA1063001E11D7 /* GradientChrome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradientChrome.png; sourceTree = "<group>"; };
+		CE2868A414BA1063001E11D7 /* UIImageMMPixelDataTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageMMPixelDataTests.h; sourceTree = "<group>"; };
+		CE2868A514BA1063001E11D7 /* UIImageMMPixelDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageMMPixelDataTests.m; sourceTree = "<group>"; };
+		CE42C29C14BDC20D0049319C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CE42C2B214BDDF000049319C /* MMAnimatorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAnimatorTests.h; sourceTree = "<group>"; };
+		CE42C2B314BDDF000049319C /* MMAnimatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAnimatorTests.m; sourceTree = "<group>"; };
+		CE8401E5151DD86100BDC2D2 /* MMAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAnimator.h; sourceTree = "<group>"; };
+		CE8401E6151DD86100BDC2D2 /* MMAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAnimator.m; sourceTree = "<group>"; };
+		CE8401E7151DD86100BDC2D2 /* MMAnimatorTimingBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAnimatorTimingBlock.h; sourceTree = "<group>"; };
+		CE8401E8151DD86100BDC2D2 /* MMAnimatorTimingBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAnimatorTimingBlock.m; sourceTree = "<group>"; };
+		CE8401E9151DD86100BDC2D2 /* MMSimpleAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSimpleAnimator.h; sourceTree = "<group>"; };
+		CE8401EA151DD86100BDC2D2 /* MMSimpleAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSimpleAnimator.m; sourceTree = "<group>"; };
+		CE8401EB151DD86100BDC2D2 /* MMSimplePinnedAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSimplePinnedAnimator.h; sourceTree = "<group>"; };
+		CE8401EC151DD86100BDC2D2 /* MMSimplePinnedAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSimplePinnedAnimator.m; sourceTree = "<group>"; };
+		CE8401EF151DD86100BDC2D2 /* MMGLK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMGLK.h; sourceTree = "<group>"; };
+		CE8401F0151DD86100BDC2D2 /* MMGLK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMGLK.m; sourceTree = "<group>"; };
+		CE8401F2151DD86100BDC2D2 /* MACrossfadeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACrossfadeLayer.h; sourceTree = "<group>"; };
+		CE8401F3151DD86100BDC2D2 /* MACrossfadeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACrossfadeLayer.m; sourceTree = "<group>"; };
+		CE8401F4151DD86100BDC2D2 /* MAImageCrossfadeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAImageCrossfadeLayer.h; sourceTree = "<group>"; };
+		CE8401F5151DD86100BDC2D2 /* MAImageCrossfadeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAImageCrossfadeLayer.m; sourceTree = "<group>"; };
+		CE8401F6151DD86100BDC2D2 /* MAImageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAImageLayer.h; sourceTree = "<group>"; };
+		CE8401F7151DD86100BDC2D2 /* MAImageLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAImageLayer.m; sourceTree = "<group>"; };
+		CE8401F8151DD86100BDC2D2 /* MarshmallowAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowAnimation.h; sourceTree = "<group>"; };
+		CE8401FA151DD86100BDC2D2 /* MarshmallowCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowCocoa.h; sourceTree = "<group>"; };
+		CE8401FB151DD86100BDC2D2 /* MWeakKeyMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWeakKeyMutableDictionary.h; sourceTree = "<group>"; };
+		CE8401FC151DD86100BDC2D2 /* MWeakKeyMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWeakKeyMutableDictionary.m; sourceTree = "<group>"; };
+		CE8401FD151DD86100BDC2D2 /* NSArray+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Marshmallows.h"; sourceTree = "<group>"; };
+		CE8401FE151DD86100BDC2D2 /* NSArray+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Marshmallows.m"; sourceTree = "<group>"; };
+		CE8401FF151DD86100BDC2D2 /* NSError+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Marshmallows.h"; sourceTree = "<group>"; };
+		CE840200151DD86100BDC2D2 /* NSError+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Marshmallows.m"; sourceTree = "<group>"; };
+		CE840204151DD86100BDC2D2 /* MarshmallowConcurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowConcurrency.h; sourceTree = "<group>"; };
+		CE840205151DD86100BDC2D2 /* MCMainThreadProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMainThreadProxy.h; sourceTree = "<group>"; };
+		CE840206151DD86100BDC2D2 /* MCMainThreadProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMainThreadProxy.m; sourceTree = "<group>"; };
+		CE840207151DD86100BDC2D2 /* MPerformanceThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPerformanceThread.h; sourceTree = "<group>"; };
+		CE840208151DD86100BDC2D2 /* MPerformanceThread.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPerformanceThread.mm; sourceTree = "<group>"; };
+		CE840209151DD86100BDC2D2 /* MCThreadProxyAbstract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCThreadProxyAbstract.h; sourceTree = "<group>"; };
+		CE84020A151DD86100BDC2D2 /* MCThreadProxyAbstract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCThreadProxyAbstract.m; sourceTree = "<group>"; };
+		CE84020B151DD86100BDC2D2 /* MThreadProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MThreadProtocol.h; sourceTree = "<group>"; };
+		CE84020D151DD86100BDC2D2 /* MarshmallowDiagnostics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowDiagnostics.h; sourceTree = "<group>"; };
+		CE84020E151DD86100BDC2D2 /* MDBulkLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBulkLogger.h; sourceTree = "<group>"; };
+		CE84020F151DD86100BDC2D2 /* MDBulkLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBulkLogger.m; sourceTree = "<group>"; };
+		CE840210151DD86100BDC2D2 /* MDTimeProfiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTimeProfiler.h; sourceTree = "<group>"; };
+		CE840211151DD86100BDC2D2 /* MDTimeProfiler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MDTimeProfiler.mm; sourceTree = "<group>"; };
+		CE840212151DD86100BDC2D2 /* MDTimeProfilerOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTimeProfilerOC.h; sourceTree = "<group>"; };
+		CE840213151DD86100BDC2D2 /* MDTimeProfilerOC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MDTimeProfilerOC.mm; sourceTree = "<group>"; };
+		CE840215151DD86100BDC2D2 /* MarshmallowMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowMath.h; sourceTree = "<group>"; };
+		CE840216151DD86100BDC2D2 /* MarshmallowMathFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MarshmallowMathFunctions.c; sourceTree = "<group>"; };
+		CE840217151DD86100BDC2D2 /* MarshmallowMathFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowMathFunctions.h; sourceTree = "<group>"; };
+		CE840219151DD86100BDC2D2 /* MarshmallowProfiling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowProfiling.h; sourceTree = "<group>"; };
+		CE84021A151DD86100BDC2D2 /* MPStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPStopwatch.h; sourceTree = "<group>"; };
+		CE84021B151DD86100BDC2D2 /* MPStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPStopwatch.m; sourceTree = "<group>"; };
+		CE84021C151DD86100BDC2D2 /* Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marshmallows.h; sourceTree = "<group>"; };
+		CE84021E151DD86100BDC2D2 /* MarshmallowUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowUIKit.h; sourceTree = "<group>"; };
+		CE84021F151DD86100BDC2D2 /* MUICrossfadeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUICrossfadeView.h; sourceTree = "<group>"; };
+		CE840220151DD86100BDC2D2 /* MUICrossfadeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUICrossfadeView.m; sourceTree = "<group>"; };
+		CE840221151DD86100BDC2D2 /* UIColor+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Marshmallows.h"; sourceTree = "<group>"; };
+		CE840222151DD86100BDC2D2 /* UIColor+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Marshmallows.m"; sourceTree = "<group>"; };
+		CE840223151DD86100BDC2D2 /* UIImage+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Marshmallows.h"; sourceTree = "<group>"; };
+		CE840224151DD86100BDC2D2 /* UIImage+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Marshmallows.m"; sourceTree = "<group>"; };
+		CE840226151DD86100BDC2D2 /* CEObjectiveCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEObjectiveCRuntime.h; sourceTree = "<group>"; };
+		CE840227151DD86100BDC2D2 /* CEObjectiveCRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEObjectiveCRuntime.m; sourceTree = "<group>"; };
+		CE840258151DDDE900BDC2D2 /* MPStopwatchTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPStopwatchTests.h; sourceTree = "<group>"; };
+		CE840259151DDDE900BDC2D2 /* MPStopwatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPStopwatchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A664EFB215CEEB8900182FFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6D947AD15DAA033002B42E0 /* AudioToolbox.framework in Frameworks */,
+				A6D947AE15DAA033002B42E0 /* CoreAudio.framework in Frameworks */,
+				A664EFC215CEEB9D00182FFD /* GLKit.framework in Frameworks */,
+				A664EFC315CEEB9D00182FFD /* OpenGLES.framework in Frameworks */,
+				A664EFC115CEEB9800182FFD /* QuartzCore.framework in Frameworks */,
+				A664EFB615CEEB8900182FFD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE28678814B36EC5001E11D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6D8816B16303BEE00D11296 /* Accelerate.framework in Frameworks */,
+				A6D8816916303BE300D11296 /* AVFoundation.framework in Frameworks */,
+				A6D947AB15DAA02D002B42E0 /* AudioToolbox.framework in Frameworks */,
+				A6D947AC15DAA02D002B42E0 /* CoreAudio.framework in Frameworks */,
+				CE42C29D14BDC20D0049319C /* QuartzCore.framework in Frameworks */,
+				CE28679214B36EC5001E11D7 /* Foundation.framework in Frameworks */,
+				CE2867ED14B378AD001E11D7 /* GLKit.framework in Frameworks */,
+				CE2867EE14B378AD001E11D7 /* OpenGLES.framework in Frameworks */,
+				CE28679014B36EC5001E11D7 /* UIKit.framework in Frameworks */,
+				CE28679414B36EC5001E11D7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE2867A214B36EC5001E11D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE42C2B514BDE2540049319C /* QuartzCore.framework in Frameworks */,
+				CE28688614BA0FEF001E11D7 /* Foundation.framework in Frameworks */,
+				CE2868AC14BA10D1001E11D7 /* OpenGLES.framework in Frameworks */,
+				CE2868AE14BA10DF001E11D7 /* CoreGraphics.framework in Frameworks */,
+				CE2867A814B36EC5001E11D7 /* SenTestingKit.framework in Frameworks */,
+				CE2868AD14BA10D2001E11D7 /* GLKit.framework in Frameworks */,
+				CE28688714BA0FFA001E11D7 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6434F94161F4E5B00496EAC /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				A644CD2E1637DAA700C34512 /* AUMAtomicType.h */,
+				A644CD2F1637DAA700C34512 /* AUMAtomicType.mm */,
+				A6FA09F4162DAB160094C279 /* AUMErrorChecking.h */,
+				A6434F95161F4E5B00496EAC /* AUMFilePlaybackGeneratorRCB.h */,
+				A6434F96161F4E5B00496EAC /* AUMFilePlaybackGeneratorRCB.mm */,
+				A6434FA1161F532C00496EAC /* AUMRendererAudioSource.h */,
+				A6434FA2161F532D00496EAC /* AUMRendererAudioSource.mm */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		A656818E1666685200836EFF /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		A656818F1666685E00836EFF /* MarshmallowMisc */ = {
+			isa = PBXGroup;
+			children = (
+				A65681881666674B00836EFF /* MCompatibility.h */,
+				A65681891666674B00836EFF /* MCompatibility.m */,
+				A6568190166668E000836EFF /* MarshmallowMisc.h */,
+			);
+			name = MarshmallowMisc;
+			sourceTree = "<group>";
+		};
+		A664EFB715CEEB8900182FFD /* MarshmallowsStaticLib */ = {
+			isa = PBXGroup;
+			children = (
+				A664EFBA15CEEB8900182FFD /* MarshmallowsStaticLib.h */,
+				A664EFBC15CEEB8900182FFD /* MarshmallowsStaticLib.m */,
+				A664EFB815CEEB8900182FFD /* Supporting Files */,
+			);
+			path = MarshmallowsStaticLib;
+			sourceTree = "<group>";
+		};
+		A664EFB815CEEB8900182FFD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A664EFB915CEEB8900182FFD /* MarshmallowsStaticLib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6B582A815DC125900D1CA05 /* AudioMarshmallows */ = {
+			isa = PBXGroup;
+			children = (
+				A6434F94161F4E5B00496EAC /* Private */,
+				A6B582A915DC125900D1CA05 /* AudioMarshmallows.h */,
+				A6B582B315DC125900D1CA05 /* AUMTypes.h */,
+				A6B582B415DC125900D1CA05 /* AUMTypes.m */,
+				A64475791639563C00E15871 /* AUMUtilityFunctions.h */,
+				A644757A1639563C00E15871 /* AUMUtilityFunctions.m */,
+				A636EDBE163011AF0037F211 /* AUMAudioSession.h */,
+				A636EDBF163011AF0037F211 /* AUMAudioSession.m */,
+				A6434F99161F50AF00496EAC /* AUMAudioFileReader.h */,
+				A6434F9A161F50B100496EAC /* AUMAudioFileReader.m */,
+				A6434FA916230F4F00496EAC /* AUMCircularBuffer.c */,
+				A6434FAA16230F5000496EAC /* AUMCircularBuffer.h */,
+				A6FA09F0162DA5840094C279 /* AUMException.h */,
+				A6FA09F1162DA5850094C279 /* AUMException.m */,
+				A6B582AD15DC125900D1CA05 /* AUMGraph.h */,
+				A6B582AE15DC125900D1CA05 /* AUMGraph.m */,
+				A6B582B715DC125900D1CA05 /* AUMUnitProtocol.h */,
+				A6B582B515DC125900D1CA05 /* AUMUnitAbstract.h */,
+				A6B582B615DC125900D1CA05 /* AUMUnitAbstract.m */,
+				A6B582B115DC125900D1CA05 /* AUMRemoteIOUnit.h */,
+				A6B582B215DC125900D1CA05 /* AUMRemoteIOUnit.m */,
+				A6B582AF15DC125900D1CA05 /* AUMMultichannelMixerUnit.h */,
+				A6B582B015DC125900D1CA05 /* AUMMultichannelMixerUnit.m */,
+				A644CD291636CA3D00C34512 /* AUMRendererProtocolAbstract.h */,
+				A6AE6EA316385ED200EC70AC /* AUMGeneratorRendererProtocol.h */,
+				A6AE6EA416385F9100EC70AC /* AUMCapturerRendererProtocol.h */,
+				A6AE6EA516385FF900EC70AC /* AUMProcessorRendererProtocol.h */,
+				A6B582AB15DC125900D1CA05 /* AUMFilePlaybackGenerator.h */,
+				A6B582AC15DC125900D1CA05 /* AUMFilePlaybackGenerator.mm */,
+				A644CD2A1636D68600C34512 /* AUMFileRecordingProcessor.h */,
+				A644CD2B1636D68700C34512 /* AUMFileRecordingProcessor.mm */,
+			);
+			path = AudioMarshmallows;
+			sourceTree = "<group>";
+		};
+		A6CBD2B415D273F700A7933E /* MarshmallowRecovery */ = {
+			isa = PBXGroup;
+			children = (
+				A6CBD2B515D273F700A7933E /* MarshmallowRecovery.h */,
+				A6CBD2B615D273F700A7933E /* MRUncaughtExceptions.h */,
+				A6CBD2B715D273F700A7933E /* MRUncaughtExceptions.m */,
+			);
+			path = MarshmallowRecovery;
+			sourceTree = "<group>";
+		};
+		CE28678014B36EC5001E11D7 = {
+			isa = PBXGroup;
+			children = (
+				A6D8816A16303BEE00D11296 /* Accelerate.framework */,
+				A6D8816816303BE300D11296 /* AVFoundation.framework */,
+				CE28687814BA0D6C001E11D7 /* Project */,
+				CE28688814BA105B001E11D7 /* Source */,
+				A656818E1666685200836EFF /* New Group */,
+				CE28689A14BA1063001E11D7 /* Tests */,
+				A664EFB715CEEB8900182FFD /* MarshmallowsStaticLib */,
+				CE28678E14B36EC5001E11D7 /* Frameworks */,
+				CE28678C14B36EC5001E11D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE28678C14B36EC5001E11D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE28678B14B36EC5001E11D7 /* Marshmallows.app */,
+				CE2867A614B36EC5001E11D7 /* MarshmallowsTests.octest */,
+				A664EFB515CEEB8900182FFD /* libMarshmallowsStaticLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE28678E14B36EC5001E11D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6D947A915DAA02D002B42E0 /* AudioToolbox.framework */,
+				A6D947AA15DAA02D002B42E0 /* CoreAudio.framework */,
+				CE42C29C14BDC20D0049319C /* QuartzCore.framework */,
+				CE2867C314B37156001E11D7 /* OpenGLES.framework */,
+				CE2867C214B37156001E11D7 /* GLKit.framework */,
+				CE28678F14B36EC5001E11D7 /* UIKit.framework */,
+				CE28679114B36EC5001E11D7 /* Foundation.framework */,
+				CE28679314B36EC5001E11D7 /* CoreGraphics.framework */,
+				CE2867A714B36EC5001E11D7 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE28687814BA0D6C001E11D7 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				A660E183166A93D4005F38B8 /* Bach-Great-Organ-Works-1.mp3 */,
+				A6AE6EA01637FFA400EC70AC /* SWHarp-Eb4-Medium.wav */,
+				A6D881641630373500D11296 /* SWHarp-C3-Medium.wav */,
+				A664EFE415CEECB800182FFD /* MMAppDelegate.h */,
+				A664EFE515CEECB800182FFD /* MMAppDelegate.m */,
+				CE28687914BA0D6C001E11D7 /* InfoPlist.strings */,
+				CE28687C14BA0D6C001E11D7 /* Marshmallows-Info.plist */,
+				CE28687D14BA0D6C001E11D7 /* Marshmallows-Prefix.pch */,
+				A61CB97815CEE0D00054DBCE /* main.m */,
+				A6D7D12C1637F0EE0097BE06 /* AUMTesterViewController.h */,
+				A6ADEBE316330E7E00420769 /* AUMTesterViewController.m */,
+				A6D7D12A1637F04D0097BE06 /* AUMTesterView.xib */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		CE28688814BA105B001E11D7 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A6B582A815DC125900D1CA05 /* AudioMarshmallows */,
+				CE8401E4151DD86100BDC2D2 /* Animator */,
+				CE8401EE151DD86100BDC2D2 /* GLKit */,
+				CE8401F1151DD86100BDC2D2 /* MarshmallowAnimation */,
+				CE8401F9151DD86100BDC2D2 /* MarshmallowCocoa */,
+				CE840203151DD86100BDC2D2 /* MarshmallowConcurrency */,
+				CE84020C151DD86100BDC2D2 /* MarshmallowDiagnostics */,
+				CE840214151DD86100BDC2D2 /* MarshmallowMath */,
+				A656818F1666685E00836EFF /* MarshmallowMisc */,
+				CE840218151DD86100BDC2D2 /* MarshmallowProfiling */,
+				CE84021C151DD86100BDC2D2 /* Marshmallows.h */,
+				A6FA09E7162D678D0094C279 /* MarshmallowDebug.h */,
+				A6FA09E9162D67D00094C279 /* MarshmallowDebug.c */,
+				A6CBD2B415D273F700A7933E /* MarshmallowRecovery */,
+				CE84021D151DD86100BDC2D2 /* MarshmallowUIKit */,
+				CE840225151DD86100BDC2D2 /* ObjC */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		CE28689A14BA1063001E11D7 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CE28689B14BA1063001E11D7 /* InfoPlist.strings */,
+				CE28689E14BA1063001E11D7 /* MarshmallowsTests-Info.plist */,
+				CE28689F14BA1063001E11D7 /* MarshmallowsTests.h */,
+				CE42C2B214BDDF000049319C /* MMAnimatorTests.h */,
+				CE42C2B314BDDF000049319C /* MMAnimatorTests.m */,
+				CE2868A214BA1063001E11D7 /* TestResources */,
+				CE2868A414BA1063001E11D7 /* UIImageMMPixelDataTests.h */,
+				CE2868A514BA1063001E11D7 /* UIImageMMPixelDataTests.m */,
+				CE840258151DDDE900BDC2D2 /* MPStopwatchTests.h */,
+				CE840259151DDDE900BDC2D2 /* MPStopwatchTests.m */,
+				A611574E16565CD20042C85D /* MarshmallowMathTests.h */,
+				A611574F16565CD20042C85D /* MarshmallowMathTests.mm */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		CE2868A214BA1063001E11D7 /* TestResources */ = {
+			isa = PBXGroup;
+			children = (
+				CE2868A314BA1063001E11D7 /* GradientChrome.png */,
+			);
+			path = TestResources;
+			sourceTree = "<group>";
+		};
+		CE8401E4151DD86100BDC2D2 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				CE8401E5151DD86100BDC2D2 /* MMAnimator.h */,
+				CE8401E6151DD86100BDC2D2 /* MMAnimator.m */,
+				CE8401E7151DD86100BDC2D2 /* MMAnimatorTimingBlock.h */,
+				CE8401E8151DD86100BDC2D2 /* MMAnimatorTimingBlock.m */,
+				CE8401E9151DD86100BDC2D2 /* MMSimpleAnimator.h */,
+				CE8401EA151DD86100BDC2D2 /* MMSimpleAnimator.m */,
+				CE8401EB151DD86100BDC2D2 /* MMSimplePinnedAnimator.h */,
+				CE8401EC151DD86100BDC2D2 /* MMSimplePinnedAnimator.m */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		CE8401EE151DD86100BDC2D2 /* GLKit */ = {
+			isa = PBXGroup;
+			children = (
+				CE8401EF151DD86100BDC2D2 /* MMGLK.h */,
+				CE8401F0151DD86100BDC2D2 /* MMGLK.m */,
+			);
+			path = GLKit;
+			sourceTree = "<group>";
+		};
+		CE8401F1151DD86100BDC2D2 /* MarshmallowAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				CE8401F2151DD86100BDC2D2 /* MACrossfadeLayer.h */,
+				CE8401F3151DD86100BDC2D2 /* MACrossfadeLayer.m */,
+				CE8401F4151DD86100BDC2D2 /* MAImageCrossfadeLayer.h */,
+				CE8401F5151DD86100BDC2D2 /* MAImageCrossfadeLayer.m */,
+				CE8401F6151DD86100BDC2D2 /* MAImageLayer.h */,
+				CE8401F7151DD86100BDC2D2 /* MAImageLayer.m */,
+				CE8401F8151DD86100BDC2D2 /* MarshmallowAnimation.h */,
+			);
+			path = MarshmallowAnimation;
+			sourceTree = "<group>";
+		};
+		CE8401F9151DD86100BDC2D2 /* MarshmallowCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				CE8401FA151DD86100BDC2D2 /* MarshmallowCocoa.h */,
+				CE8401FB151DD86100BDC2D2 /* MWeakKeyMutableDictionary.h */,
+				CE8401FC151DD86100BDC2D2 /* MWeakKeyMutableDictionary.m */,
+				A6CED309187093E000CB0521 /* MStrongKeyMutableDictionary.h */,
+				A6CED30A187093E000CB0521 /* MStrongKeyMutableDictionary.m */,
+				A6D947BD15DBE6D9002B42E0 /* NSArray+NSDictionary+Subscripting.h */,
+				CE8401FD151DD86100BDC2D2 /* NSArray+Marshmallows.h */,
+				CE8401FE151DD86100BDC2D2 /* NSArray+Marshmallows.m */,
+				CE8401FF151DD86100BDC2D2 /* NSError+Marshmallows.h */,
+				CE840200151DD86100BDC2D2 /* NSError+Marshmallows.m */,
+				A6434FA51622EB5F00496EAC /* NSInvocation+MMBlocks.h */,
+				A6434FA61622EB5F00496EAC /* NSInvocation+MMBlocks.m */,
+				A6D7D1251637DF6F0097BE06 /* NSString+Marshmallows.h */,
+				A6D7D1261637DF6F0097BE06 /* NSString+Marshmallows.m */,
+				A6447574163947CF00E15871 /* NSURL+Marshmallows.h */,
+				A6447575163947D000E15871 /* NSURL+Marshmallows.m */,
+				A63FF35A178735C900C2B674 /* NSDate+Marshmallows.h */,
+				A63FF35B178735C900C2B674 /* NSDate+Marshmallows.m */,
+			);
+			path = MarshmallowCocoa;
+			sourceTree = "<group>";
+		};
+		CE840203151DD86100BDC2D2 /* MarshmallowConcurrency */ = {
+			isa = PBXGroup;
+			children = (
+				A6434F8D161F4E2D00496EAC /* MCAtomicType.h */,
+				A6434F8E161F4E2D00496EAC /* MCAtomicType.mm */,
+				CE840204151DD86100BDC2D2 /* MarshmallowConcurrency.h */,
+				CE840205151DD86100BDC2D2 /* MCMainThreadProxy.h */,
+				CE840206151DD86100BDC2D2 /* MCMainThreadProxy.m */,
+				CE840207151DD86100BDC2D2 /* MPerformanceThread.h */,
+				CE840208151DD86100BDC2D2 /* MPerformanceThread.mm */,
+				CE840209151DD86100BDC2D2 /* MCThreadProxyAbstract.h */,
+				CE84020A151DD86100BDC2D2 /* MCThreadProxyAbstract.m */,
+				CE84020B151DD86100BDC2D2 /* MThreadProtocol.h */,
+			);
+			path = MarshmallowConcurrency;
+			sourceTree = "<group>";
+		};
+		CE84020C151DD86100BDC2D2 /* MarshmallowDiagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				CE84020D151DD86100BDC2D2 /* MarshmallowDiagnostics.h */,
+				CE84020E151DD86100BDC2D2 /* MDBulkLogger.h */,
+				CE84020F151DD86100BDC2D2 /* MDBulkLogger.m */,
+				CE840210151DD86100BDC2D2 /* MDTimeProfiler.h */,
+				CE840211151DD86100BDC2D2 /* MDTimeProfiler.mm */,
+				CE840212151DD86100BDC2D2 /* MDTimeProfilerOC.h */,
+				CE840213151DD86100BDC2D2 /* MDTimeProfilerOC.mm */,
+			);
+			path = MarshmallowDiagnostics;
+			sourceTree = "<group>";
+		};
+		CE840214151DD86100BDC2D2 /* MarshmallowMath */ = {
+			isa = PBXGroup;
+			children = (
+				CE840215151DD86100BDC2D2 /* MarshmallowMath.h */,
+				CE840216151DD86100BDC2D2 /* MarshmallowMathFunctions.c */,
+				CE840217151DD86100BDC2D2 /* MarshmallowMathFunctions.h */,
+			);
+			path = MarshmallowMath;
+			sourceTree = "<group>";
+		};
+		CE840218151DD86100BDC2D2 /* MarshmallowProfiling */ = {
+			isa = PBXGroup;
+			children = (
+				CE840219151DD86100BDC2D2 /* MarshmallowProfiling.h */,
+				CE84021A151DD86100BDC2D2 /* MPStopwatch.h */,
+				CE84021B151DD86100BDC2D2 /* MPStopwatch.m */,
+			);
+			path = MarshmallowProfiling;
+			sourceTree = "<group>";
+		};
+		CE84021D151DD86100BDC2D2 /* MarshmallowUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				CE84021E151DD86100BDC2D2 /* MarshmallowUIKit.h */,
+				A6D69D4115D531D3009828CF /* MUITypes.h */,
+				A61CB97A15CEE3850054DBCE /* MUIMultiToggleButton.h */,
+				A61CB97B15CEE3850054DBCE /* MUIMultiToggleButton.m */,
+				A61CB97C15CEE3850054DBCE /* MUIPushButton.h */,
+				A61CB97D15CEE3850054DBCE /* MUIPushButton.m */,
+				CE84021F151DD86100BDC2D2 /* MUICrossfadeView.h */,
+				CE840220151DD86100BDC2D2 /* MUICrossfadeView.m */,
+				CE840221151DD86100BDC2D2 /* UIColor+Marshmallows.h */,
+				CE840222151DD86100BDC2D2 /* UIColor+Marshmallows.m */,
+				A6BE0C6415D017D000E0F43D /* UIView+Marshmallows.h */,
+				A6BE0C6515D017D000E0F43D /* UIView+Marshmallows.m */,
+				CE840223151DD86100BDC2D2 /* UIImage+Marshmallows.h */,
+				CE840224151DD86100BDC2D2 /* UIImage+Marshmallows.m */,
+				A6D69D3C15D52E44009828CF /* MUIDraggablePane.h */,
+				A6D69D3D15D52E44009828CF /* MUIDraggablePane.m */,
+				A69F3A93165E2D2000116B0D /* MCachedModalStoryboardSegue.h */,
+				A69F3A94165E2D2000116B0D /* MCachedModalStoryboardSegue.m */,
+			);
+			path = MarshmallowUIKit;
+			sourceTree = "<group>";
+		};
+		CE840225151DD86100BDC2D2 /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				CE840226151DD86100BDC2D2 /* CEObjectiveCRuntime.h */,
+				CE840227151DD86100BDC2D2 /* CEObjectiveCRuntime.m */,
+			);
+			path = ObjC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A664EFB415CEEB8900182FFD /* MarshmallowsStaticLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A664EFBE15CEEB8900182FFD /* Build configuration list for PBXNativeTarget "MarshmallowsStaticLib" */;
+			buildPhases = (
+				A664EFB115CEEB8900182FFD /* Sources */,
+				A664EFB215CEEB8900182FFD /* Frameworks */,
+				A664EFB315CEEB8900182FFD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarshmallowsStaticLib;
+			productName = MarshmallowsStaticLib;
+			productReference = A664EFB515CEEB8900182FFD /* libMarshmallowsStaticLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CE28678A14B36EC5001E11D7 /* Marshmallows */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE2867B814B36EC5001E11D7 /* Build configuration list for PBXNativeTarget "Marshmallows" */;
+			buildPhases = (
+				CE28678714B36EC5001E11D7 /* Sources */,
+				CE28678814B36EC5001E11D7 /* Frameworks */,
+				CE28678914B36EC5001E11D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Marshmallows;
+			productName = Marshmallows;
+			productReference = CE28678B14B36EC5001E11D7 /* Marshmallows.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE2867A514B36EC5001E11D7 /* MarshmallowsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE2867BB14B36EC5001E11D7 /* Build configuration list for PBXNativeTarget "MarshmallowsTests" */;
+			buildPhases = (
+				CE2867A114B36EC5001E11D7 /* Sources */,
+				CE2867A214B36EC5001E11D7 /* Frameworks */,
+				CE2867A314B36EC5001E11D7 /* Resources */,
+				CE2867A414B36EC5001E11D7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE28688514BA0D78001E11D7 /* PBXTargetDependency */,
+			);
+			name = MarshmallowsTests;
+			productName = MarshmallowsTests;
+			productReference = CE2867A614B36EC5001E11D7 /* MarshmallowsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE28678214B36EC5001E11D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = CE28678514B36EC5001E11D7 /* Build configuration list for PBXProject "Marshmallows" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE28678014B36EC5001E11D7;
+			productRefGroup = CE28678C14B36EC5001E11D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE28678A14B36EC5001E11D7 /* Marshmallows */,
+				CE2867A514B36EC5001E11D7 /* MarshmallowsTests */,
+				A664EFB415CEEB8900182FFD /* MarshmallowsStaticLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE28678914B36EC5001E11D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE28688014BA0D6C001E11D7 /* InfoPlist.strings in Resources */,
+				A6D881651630373500D11296 /* SWHarp-C3-Medium.wav in Resources */,
+				A6D7D12B1637F04D0097BE06 /* AUMTesterView.xib in Resources */,
+				A6AE6EA11637FFA400EC70AC /* SWHarp-Eb4-Medium.wav in Resources */,
+				A660E184166A93D4005F38B8 /* Bach-Great-Organ-Works-1.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE2867A314B36EC5001E11D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE2868A614BA1063001E11D7 /* InfoPlist.strings in Resources */,
+				CE2868AA14BA1063001E11D7 /* GradientChrome.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE2867A414B36EC5001E11D7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A664EFB115CEEB8900182FFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A63FF35D1789D95200C2B674 /* NSDate+Marshmallows.m in Sources */,
+				A660E573163D2E5D00C4284A /* AUMUnitAbstract.m in Sources */,
+				A660E56F163D2E3100C4284A /* AUMGraph.m in Sources */,
+				A660E570163D2E3100C4284A /* AUMRemoteIOUnit.m in Sources */,
+				A660E571163D2E3100C4284A /* AUMMultichannelMixerUnit.m in Sources */,
+				A660E572163D2E3100C4284A /* AUMFilePlaybackGenerator.mm in Sources */,
+				A660E56E163D2E1800C4284A /* AUMTypes.m in Sources */,
+				A664EFDD15CEEBBB00182FFD /* MarshmallowMathFunctions.c in Sources */,
+				A664EFDB15CEEBB400182FFD /* MDTimeProfiler.mm in Sources */,
+				A664EFDC15CEEBB400182FFD /* MDTimeProfilerOC.mm in Sources */,
+				A664EFC415CEEBA800182FFD /* MMAnimator.m in Sources */,
+				A664EFC515CEEBA800182FFD /* MMAnimatorTimingBlock.m in Sources */,
+				A664EFC615CEEBA800182FFD /* MMSimpleAnimator.m in Sources */,
+				A664EFC715CEEBA800182FFD /* MMSimplePinnedAnimator.m in Sources */,
+				A664EFC815CEEBA800182FFD /* MMGLK.m in Sources */,
+				A664EFC915CEEBA800182FFD /* MACrossfadeLayer.m in Sources */,
+				A664EFCA15CEEBA800182FFD /* MAImageCrossfadeLayer.m in Sources */,
+				A664EFCB15CEEBA800182FFD /* MAImageLayer.m in Sources */,
+				A664EFCC15CEEBA800182FFD /* MWeakKeyMutableDictionary.m in Sources */,
+				A664EFCD15CEEBA800182FFD /* NSArray+Marshmallows.m in Sources */,
+				A664EFCE15CEEBA800182FFD /* NSError+Marshmallows.m in Sources */,
+				A664EFD015CEEBA800182FFD /* MCMainThreadProxy.m in Sources */,
+				A664EFD115CEEBA800182FFD /* MPerformanceThread.mm in Sources */,
+				A664EFD215CEEBA800182FFD /* MCThreadProxyAbstract.m in Sources */,
+				A664EFD315CEEBA800182FFD /* MDBulkLogger.m in Sources */,
+				A664EFD415CEEBA800182FFD /* MPStopwatch.m in Sources */,
+				A664EFD515CEEBA800182FFD /* MUIMultiToggleButton.m in Sources */,
+				A664EFD615CEEBA800182FFD /* MUIPushButton.m in Sources */,
+				A664EFD715CEEBA800182FFD /* MUICrossfadeView.m in Sources */,
+				A664EFD815CEEBA800182FFD /* UIColor+Marshmallows.m in Sources */,
+				A664EFD915CEEBA800182FFD /* UIImage+Marshmallows.m in Sources */,
+				A664EFDA15CEEBA800182FFD /* CEObjectiveCRuntime.m in Sources */,
+				A664EFBD15CEEB8900182FFD /* MarshmallowsStaticLib.m in Sources */,
+				A6BE0C6715D017D000E0F43D /* UIView+Marshmallows.m in Sources */,
+				A6CBD2B915D273F700A7933E /* MRUncaughtExceptions.m in Sources */,
+				A6D69D3F15D52E44009828CF /* MUIDraggablePane.m in Sources */,
+				A6434F98161F4E5B00496EAC /* AUMFilePlaybackGeneratorRCB.mm in Sources */,
+				A6434F9C161F50B200496EAC /* AUMAudioFileReader.m in Sources */,
+				A6434FA4161F532D00496EAC /* AUMRendererAudioSource.mm in Sources */,
+				A6434FA81622EB5F00496EAC /* NSInvocation+MMBlocks.m in Sources */,
+				A6434FAC16230F5100496EAC /* AUMCircularBuffer.c in Sources */,
+				A6FA09EB162D67D00094C279 /* MarshmallowDebug.c in Sources */,
+				A6FA09F3162DA5850094C279 /* AUMException.m in Sources */,
+				A636EDC1163011B00037F211 /* AUMAudioSession.m in Sources */,
+				A644CD2D1636D68900C34512 /* AUMFileRecordingProcessor.mm in Sources */,
+				A644CD311637DAA700C34512 /* AUMAtomicType.mm in Sources */,
+				A6D7D1281637DF6F0097BE06 /* NSString+Marshmallows.m in Sources */,
+				A6447577163947D000E15871 /* NSURL+Marshmallows.m in Sources */,
+				A644757C1639563C00E15871 /* AUMUtilityFunctions.m in Sources */,
+				A69F3A97165E2D2000116B0D /* MCachedModalStoryboardSegue.m in Sources */,
+				A656818C1666674B00836EFF /* MCompatibility.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE28678714B36EC5001E11D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE840228151DD86100BDC2D2 /* MMAnimator.m in Sources */,
+				CE84022A151DD86100BDC2D2 /* MMAnimatorTimingBlock.m in Sources */,
+				CE84022C151DD86100BDC2D2 /* MMSimpleAnimator.m in Sources */,
+				A6CED30B187093E000CB0521 /* MStrongKeyMutableDictionary.m in Sources */,
+				CE84022E151DD86100BDC2D2 /* MMSimplePinnedAnimator.m in Sources */,
+				CE840230151DD86100BDC2D2 /* MMGLK.m in Sources */,
+				CE840232151DD86100BDC2D2 /* MACrossfadeLayer.m in Sources */,
+				CE840234151DD86100BDC2D2 /* MAImageCrossfadeLayer.m in Sources */,
+				CE840236151DD86100BDC2D2 /* MAImageLayer.m in Sources */,
+				CE840238151DD86100BDC2D2 /* MWeakKeyMutableDictionary.m in Sources */,
+				CE84023A151DD86100BDC2D2 /* NSArray+Marshmallows.m in Sources */,
+				CE84023C151DD86100BDC2D2 /* NSError+Marshmallows.m in Sources */,
+				CE840240151DD86100BDC2D2 /* MCMainThreadProxy.m in Sources */,
+				CE840242151DD86100BDC2D2 /* MPerformanceThread.mm in Sources */,
+				CE840244151DD86100BDC2D2 /* MCThreadProxyAbstract.m in Sources */,
+				CE840246151DD86100BDC2D2 /* MDBulkLogger.m in Sources */,
+				CE840248151DD86100BDC2D2 /* MDTimeProfiler.mm in Sources */,
+				CE84024A151DD86100BDC2D2 /* MDTimeProfilerOC.mm in Sources */,
+				CE84024C151DD86100BDC2D2 /* MarshmallowMathFunctions.c in Sources */,
+				CE84024E151DD86100BDC2D2 /* MPStopwatch.m in Sources */,
+				CE840250151DD86100BDC2D2 /* MUICrossfadeView.m in Sources */,
+				CE840252151DD86100BDC2D2 /* UIColor+Marshmallows.m in Sources */,
+				CE840254151DD86100BDC2D2 /* UIImage+Marshmallows.m in Sources */,
+				CE840256151DD86100BDC2D2 /* CEObjectiveCRuntime.m in Sources */,
+				A61CB97915CEE0D00054DBCE /* main.m in Sources */,
+				A61CB97E15CEE3850054DBCE /* MUIMultiToggleButton.m in Sources */,
+				A61CB97F15CEE3850054DBCE /* MUIPushButton.m in Sources */,
+				A664EFE615CEECB800182FFD /* MMAppDelegate.m in Sources */,
+				A6BE0C6615D017D000E0F43D /* UIView+Marshmallows.m in Sources */,
+				A6CBD2B815D273F700A7933E /* MRUncaughtExceptions.m in Sources */,
+				A6D69D3E15D52E44009828CF /* MUIDraggablePane.m in Sources */,
+				A6B582B815DC125900D1CA05 /* AUMFilePlaybackGenerator.mm in Sources */,
+				A6B582B915DC125900D1CA05 /* AUMGraph.m in Sources */,
+				A6B582BA15DC125900D1CA05 /* AUMMultichannelMixerUnit.m in Sources */,
+				A6B582BB15DC125900D1CA05 /* AUMRemoteIOUnit.m in Sources */,
+				A6B582BC15DC125900D1CA05 /* AUMTypes.m in Sources */,
+				A6B582BD15DC125900D1CA05 /* AUMUnitAbstract.m in Sources */,
+				A6434F8F161F4E2D00496EAC /* MCAtomicType.mm in Sources */,
+				A6434F97161F4E5B00496EAC /* AUMFilePlaybackGeneratorRCB.mm in Sources */,
+				A6434F9B161F50B200496EAC /* AUMAudioFileReader.m in Sources */,
+				A6434FA3161F532D00496EAC /* AUMRendererAudioSource.mm in Sources */,
+				A6434FA71622EB5F00496EAC /* NSInvocation+MMBlocks.m in Sources */,
+				A6434FAB16230F5100496EAC /* AUMCircularBuffer.c in Sources */,
+				A6FA09EA162D67D00094C279 /* MarshmallowDebug.c in Sources */,
+				A6FA09F2162DA5850094C279 /* AUMException.m in Sources */,
+				A636EDC0163011B00037F211 /* AUMAudioSession.m in Sources */,
+				A6ADEBE416330E7E00420769 /* AUMTesterViewController.m in Sources */,
+				A644CD2C1636D68900C34512 /* AUMFileRecordingProcessor.mm in Sources */,
+				A644CD301637DAA700C34512 /* AUMAtomicType.mm in Sources */,
+				A6D7D1271637DF6F0097BE06 /* NSString+Marshmallows.m in Sources */,
+				A6447576163947D000E15871 /* NSURL+Marshmallows.m in Sources */,
+				A644757B1639563C00E15871 /* AUMUtilityFunctions.m in Sources */,
+				A69F3A95165E2D2000116B0D /* MCachedModalStoryboardSegue.m in Sources */,
+				A656818A1666674B00836EFF /* MCompatibility.m in Sources */,
+				A63FF35C178735C900C2B674 /* NSDate+Marshmallows.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE2867A114B36EC5001E11D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE2868AB14BA1063001E11D7 /* UIImageMMPixelDataTests.m in Sources */,
+				CE42C2B414BDDF000049319C /* MMAnimatorTests.m in Sources */,
+				CE840229151DD86100BDC2D2 /* MMAnimator.m in Sources */,
+				CE84022B151DD86100BDC2D2 /* MMAnimatorTimingBlock.m in Sources */,
+				CE84022D151DD86100BDC2D2 /* MMSimpleAnimator.m in Sources */,
+				CE84022F151DD86100BDC2D2 /* MMSimplePinnedAnimator.m in Sources */,
+				CE840231151DD86100BDC2D2 /* MMGLK.m in Sources */,
+				CE840233151DD86100BDC2D2 /* MACrossfadeLayer.m in Sources */,
+				CE840235151DD86100BDC2D2 /* MAImageCrossfadeLayer.m in Sources */,
+				CE840237151DD86100BDC2D2 /* MAImageLayer.m in Sources */,
+				CE840239151DD86100BDC2D2 /* MWeakKeyMutableDictionary.m in Sources */,
+				CE84023B151DD86100BDC2D2 /* NSArray+Marshmallows.m in Sources */,
+				CE84023D151DD86100BDC2D2 /* NSError+Marshmallows.m in Sources */,
+				CE840241151DD86100BDC2D2 /* MCMainThreadProxy.m in Sources */,
+				CE840243151DD86100BDC2D2 /* MPerformanceThread.mm in Sources */,
+				CE840245151DD86100BDC2D2 /* MCThreadProxyAbstract.m in Sources */,
+				CE840247151DD86100BDC2D2 /* MDBulkLogger.m in Sources */,
+				CE840249151DD86100BDC2D2 /* MDTimeProfiler.mm in Sources */,
+				CE84024B151DD86100BDC2D2 /* MDTimeProfilerOC.mm in Sources */,
+				CE84024D151DD86100BDC2D2 /* MarshmallowMathFunctions.c in Sources */,
+				CE84024F151DD86100BDC2D2 /* MPStopwatch.m in Sources */,
+				CE840251151DD86100BDC2D2 /* MUICrossfadeView.m in Sources */,
+				CE840253151DD86100BDC2D2 /* UIColor+Marshmallows.m in Sources */,
+				CE840255151DD86100BDC2D2 /* UIImage+Marshmallows.m in Sources */,
+				CE840257151DD86100BDC2D2 /* CEObjectiveCRuntime.m in Sources */,
+				CE84025A151DDDE900BDC2D2 /* MPStopwatchTests.m in Sources */,
+				A611575016565CD20042C85D /* MarshmallowMathTests.mm in Sources */,
+				A69F3A96165E2D2000116B0D /* MCachedModalStoryboardSegue.m in Sources */,
+				A656818B1666674B00836EFF /* MCompatibility.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE28688514BA0D78001E11D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE28678A14B36EC5001E11D7 /* Marshmallows */;
+			targetProxy = CE28688414BA0D78001E11D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE28687914BA0D6C001E11D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE28687A14BA0D6C001E11D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CE28689B14BA1063001E11D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE28689C14BA1063001E11D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A664EFBF15CEEB8900182FFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/MarshmallowsStaticLib.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarshmallowsStaticLib/MarshmallowsStaticLib-Prefix.pch";
+				GCC_VERSION = "";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A664EFC015CEEB8900182FFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/MarshmallowsStaticLib.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarshmallowsStaticLib/MarshmallowsStaticLib-Prefix.pch";
+				GCC_VERSION = "";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CE2867B614B36EC5001E11D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CE2867B714B36EC5001E11D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE2867B914B36EC5001E11D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Project/Marshmallows-Prefix.pch";
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "Project/Marshmallows-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CE2867BA14B36EC5001E11D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Project/Marshmallows-Prefix.pch";
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "Project/Marshmallows-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CE2867BC14B36EC5001E11D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Marshmallows.app/Marshmallows";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Project/Marshmallows-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "Tests/MarshmallowsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		CE2867BD14B36EC5001E11D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Marshmallows.app/Marshmallows";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Project/Marshmallows-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "Tests/MarshmallowsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A664EFBE15CEEB8900182FFD /* Build configuration list for PBXNativeTarget "MarshmallowsStaticLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A664EFBF15CEEB8900182FFD /* Debug */,
+				A664EFC015CEEB8900182FFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE28678514B36EC5001E11D7 /* Build configuration list for PBXProject "Marshmallows" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE2867B614B36EC5001E11D7 /* Debug */,
+				CE2867B714B36EC5001E11D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE2867B814B36EC5001E11D7 /* Build configuration list for PBXNativeTarget "Marshmallows" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE2867B914B36EC5001E11D7 /* Debug */,
+				CE2867BA14B36EC5001E11D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE2867BB14B36EC5001E11D7 /* Build configuration list for PBXNativeTarget "MarshmallowsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE2867BC14B36EC5001E11D7 /* Debug */,
+				CE2867BD14B36EC5001E11D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE28678214B36EC5001E11D7 /* Project object */;
+}

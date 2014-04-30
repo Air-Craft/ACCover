@@ -25,11 +25,27 @@
 
 #endif
 
+
+/////////////////////////////////////////////////////////////////////////
+#pragma mark - Life Cycle
+/////////////////////////////////////////////////////////////////////////
+
 /** 
  Setup the GL context etc.
  @throws Exception on context or other init error
  @todo Proper exception type
  */
 - (void)setupWithMotionManager:(CMMotionManager *)motionManger;
+
+
+/////////////////////////////////////////////////////////////////////////
+#pragma mark - Properties
+/////////////////////////////////////////////////////////////////////////
+
+/** -1..1 for device rotation around x & y axes. Determines shadow offset */
+@property (nonatomic) CGPoint relativeAngleOffset;
+
+
+
 
 @end

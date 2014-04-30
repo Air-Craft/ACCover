@@ -1,0 +1,9 @@
+Marshmallows:
+    repo: git@github.com:Club15CC/Marshmallows.git
+    path: Vendor
+
+
+Overline: 
+    repo: git@github.com:yaakaito/Overline.git
+    path: Vendor
+    

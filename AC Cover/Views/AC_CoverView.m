@@ -8,6 +8,16 @@
 
 #import "AC_CoverView.h"
 #import "GLKView+AC_Additions.h"
+#import "MarshmallowMath.h"
+
+
+/////////////////////////////////////////////////////////////////////////
+#pragma mark - Consts
+/////////////////////////////////////////////////////////////////////////
+
+static const CGPoint _LIGHT_OFFSET_MIN = { -0.5, -0.5 };
+static const CGPoint _LIGHT_OFFSET_MAX = { 0.5, 0.5 };
+
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -104,13 +114,12 @@ GLfloat _glCubeVertexData[48] =
     GLKTextureInfo *_bladeTexSpecular;
     GLKTextureInfo *_bladeTexDisplacement;
     
-    BOOL _hasInitRotation;
-    
     CADisplayLink *_updateTimer;
     
     // Animation related
     GLfloat _globalRotation;        // The amount all blades are rotated
     GLfloat _globalRetraction;      // Used to shrink H the GL rects to simulate retracting into the centre
+    CGPoint _lightingOffset;
     
 }
 
@@ -136,14 +145,6 @@ GLfloat _glCubeVertexData[48] =
     
     _globalRotation = 0;
     _globalRetraction = 0;
-    
-    
-    /////////////////////////////////////////
-    // CORE MOTION
-    /////////////////////////////////////////
-    
-    _motionManager = motionManger;
-    // too soon: _initRotation = motionManger.deviceMotion.attitude.quaternion;
     
     
     /////////////////////////////////////////
@@ -333,6 +334,19 @@ GLfloat _glCubeVertexData[48] =
 
 //---------------------------------------------------------------------
 
+- (void)setRelativeAngleOffset:(CGPoint)relativeAngleOffset
+{
+    // Rotation around X offsets Y position of the shadow and vice versa
+    // Take note of the signs too...
+    _lightingOffset.x += MM_MapBilinearRange(relativeAngleOffset.y, -1, 0, 1, _LIGHT_OFFSET_MIN.x, 0, _LIGHT_OFFSET_MAX.x);
+    _lightingOffset.y += MM_MapBilinearRange(relativeAngleOffset.x, -1, 0, 1, _LIGHT_OFFSET_MIN.y, 0, _LIGHT_OFFSET_MAX.y);
+
+}
+
+//---------------------------------------------------------------------
+
+#ifdef AC_CALIBRATE
+
 - (void)setUniform:(NSString *)theName withFloat:(float)theValue
 {
     glUseProgram(_program);
@@ -346,6 +360,8 @@ GLfloat _glCubeVertexData[48] =
     glUseProgram(_program);
     glUniform4fv([_dbgUniformsDict[theName] intValue], 1, theValue.v);
 }
+
+#endif
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -403,28 +419,9 @@ skip:
     /////////////////////////////////////////
     // GLOBAL UNIFORMS
     /////////////////////////////////////////
-    
-    
-    // Lighting offset based on deviation from initial angular position
-    CMQuaternion newRotation = _motionManager.deviceMotion.attitude.quaternion;
 
-    // grab init rotation if first run
-    if (!_hasInitRotation) {
-        _initRotation = newRotation;
-        _hasInitRotation = YES;
-    }
-
-    
-    // rotation around X affects Y lighting position and vice versa
-    CGPoint lightingOffset = {
-//        (newRotation.y - 0.0) * 1.0/M_PI_4 * -2,
-//        (newRotation.x - M_PI/6.0) * 1.0/M_PI_4 * 2,
-        (newRotation.y - _initRotation.y) * 1.0/M_PI_4 * -0.8,
-        (newRotation.x - _initRotation.x) * 1.0/M_PI_4 * 1.5,
-    };
-
-    glUniform1f(_uniforms[u_lightOffsetX], lightingOffset.x);
-    glUniform1f(_uniforms[u_lightOffsetY], lightingOffset.y);
+    glUniform1f(_uniforms[u_lightOffsetX], _lightingOffset.x);
+    glUniform1f(_uniforms[u_lightOffsetY], _lightingOffset.y);
     
     
     /////////////////////////////////////////

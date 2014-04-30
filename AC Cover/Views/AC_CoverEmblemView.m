@@ -8,32 +8,18 @@
 
 #import "AC_CoverEmblemView.h"
 #import "UIColor+AC_Branding.h"
+#import "MarshmallowMath.h"
 
 
 /////////////////////////////////////////////////////////////////////////
 #pragma mark - Consts
 /////////////////////////////////////////////////////////////////////////
 
-static const CGPoint _INNER_SHADOW_INIT_OFFSET = { 0, 2 };
-static const CGPoint _INNER_SHADOW_OFFSET_MIN = { -3, -2 };
-static const CGPoint _INNER_SHADOW_OFFSET_MAX = { +3, 5 };
+static const CGPoint _INNER_SHADOW_INIT_OFFSET = { 0, 3 };
+static const CGPoint _INNER_SHADOW_OFFSET_MIN = { -3, -7 };
+static const CGPoint _INNER_SHADOW_OFFSET_MAX = { +2, 6 };
 
 static const CGFloat _MAX_SHADOW_SIZE = 75;
-
-
-static float _ACMapRange(float inVal, float inMin, float inMax, float outMin, float outMax)
-{
-    return ( (inVal-inMin) / (inMax-inMin) * (outMax-outMin) + outMin );
-}
-
-static float _ACMapBilinearRange(float inVal, float inMin, float inMed, float inMax, float outMin, float outMed, float outMax)
-{
-    if (inVal < inMed)
-        return ( (inVal-inMin) / (inMed-inMin) * (outMed-outMin) + outMin );
-    else
-        return ( (inVal-inMed) / (inMax-inMed) * (outMax-outMed) + outMed );
-}
-
 
 /////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -42,6 +28,7 @@ static float _ACMapBilinearRange(float inVal, float inMin, float inMed, float in
 @implementation AC_CoverEmblemView
 {
     CALayer *_innerShadowLayer;
+    CGPoint _initShadowPos;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -91,6 +78,7 @@ static float _ACMapBilinearRange(float inVal, float inMin, float inMed, float in
                                          _INNER_SHADOW_INIT_OFFSET.y,
                                          self.frame.size.width,
                                          self.frame.size.height);
+    _initShadowPos = _innerShadowLayer.position;
     
     
     // 3. Background circle
@@ -121,9 +109,9 @@ static float _ACMapBilinearRange(float inVal, float inMin, float inMed, float in
 {
     // Rotation around X offsets Y position of the shadow and vice versa
     // Take note of the signs too...
-    CGPoint newPos = _innerShadowLayer.position;
-    newPos.x += _ACMapBilinearRange(relativeAngleOffset.y, -1, 0, 1, _INNER_SHADOW_OFFSET_MIN.x, 0, _INNER_SHADOW_OFFSET_MAX.x);
-    newPos.y += _ACMapBilinearRange(relativeAngleOffset.x, -1, 0, 1, _INNER_SHADOW_OFFSET_MIN.y, 0, _INNER_SHADOW_OFFSET_MAX.y);
+    CGPoint newPos = _initShadowPos;
+    newPos.x += MM_MapBilinearRange(relativeAngleOffset.y, -1, 0, 1, _INNER_SHADOW_OFFSET_MIN.x, 0, _INNER_SHADOW_OFFSET_MAX.x);
+    newPos.y += MM_MapBilinearRange(relativeAngleOffset.x, -1, 0, 1, _INNER_SHADOW_OFFSET_MIN.y, 0, _INNER_SHADOW_OFFSET_MAX.y);
     _innerShadowLayer.position = newPos;
 }
 
@@ -132,8 +120,8 @@ static float _ACMapBilinearRange(float inVal, float inMin, float inMed, float in
 #pragma mark -
 /////////////////////////////////////////////////////////////////////////
 
-- (void)drawRect:(CGRect)rect
-{
+//- (void)drawRect:(CGRect)rect
+//{
 //    CGContextRef ctx = UIGraphicsGetCurrentContext();
 //
 //    UIColor *outerShadowColor = [UIColor.blackColor colorWithAlphaComponent:1.0];
@@ -171,7 +159,7 @@ static float _ACMapBilinearRange(float inVal, float inMin, float inMed, float in
 //    [_emblemImg drawAtPoint:CGPointMake(_MAX_SHADOW_SIZE, _MAX_SHADOW_SIZE)];
 //    
 //    
-}
+//}
 
 
 

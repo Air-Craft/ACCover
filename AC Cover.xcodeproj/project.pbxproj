@@ -31,6 +31,78 @@
 		A6CD00D41910FAC3003E6B1F /* emblem-inner-shadow@2x in Resources */ = {isa = PBXBuildFile; fileRef = A6CD00D01910FAC3003E6B1F /* emblem-inner-shadow@2x */; };
 		A6CD00D51910FAC3003E6B1F /* emblem-masked.png in Resources */ = {isa = PBXBuildFile; fileRef = A6CD00D11910FAC3003E6B1F /* emblem-masked.png */; };
 		A6CD00D61910FAC3003E6B1F /* emblem-masked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6CD00D21910FAC3003E6B1F /* emblem-masked@2x.png */; };
+		A6F29E3B1911582500BD5E8B /* MMAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D011911582500BD5E8B /* MMAnimator.m */; };
+		A6F29E3C1911582500BD5E8B /* MMAnimatorTimingBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D031911582500BD5E8B /* MMAnimatorTimingBlock.m */; };
+		A6F29E3D1911582500BD5E8B /* MMSimpleAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D051911582500BD5E8B /* MMSimpleAnimator.m */; };
+		A6F29E3E1911582500BD5E8B /* MMSimplePinnedAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D071911582500BD5E8B /* MMSimplePinnedAnimator.m */; };
+		A6F29E501911582500BD5E8B /* MMGLK.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D351911582500BD5E8B /* MMGLK.m */; };
+		A6F29E511911582500BD5E8B /* MACrossfadeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D381911582500BD5E8B /* MACrossfadeLayer.m */; };
+		A6F29E521911582500BD5E8B /* MAImageCrossfadeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D3A1911582500BD5E8B /* MAImageCrossfadeLayer.m */; };
+		A6F29E531911582500BD5E8B /* MAImageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D3C1911582500BD5E8B /* MAImageLayer.m */; };
+		A6F29E541911582500BD5E8B /* MStrongKeyMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D411911582500BD5E8B /* MStrongKeyMutableDictionary.m */; };
+		A6F29E551911582500BD5E8B /* MWeakKeyMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D431911582500BD5E8B /* MWeakKeyMutableDictionary.m */; };
+		A6F29E561911582500BD5E8B /* NSArray+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D451911582500BD5E8B /* NSArray+Marshmallows.m */; };
+		A6F29E571911582500BD5E8B /* NSDate+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D481911582500BD5E8B /* NSDate+Marshmallows.m */; };
+		A6F29E581911582500BD5E8B /* NSError+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D4A1911582500BD5E8B /* NSError+Marshmallows.m */; };
+		A6F29E591911582500BD5E8B /* NSInvocation+MMBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D4C1911582500BD5E8B /* NSInvocation+MMBlocks.m */; };
+		A6F29E5A1911582500BD5E8B /* NSString+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D4E1911582500BD5E8B /* NSString+Marshmallows.m */; };
+		A6F29E5B1911582500BD5E8B /* NSURL+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D501911582500BD5E8B /* NSURL+Marshmallows.m */; };
+		A6F29E5C1911582500BD5E8B /* MCAtomicType.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D541911582500BD5E8B /* MCAtomicType.mm */; };
+		A6F29E5D1911582500BD5E8B /* MCMainThreadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D561911582500BD5E8B /* MCMainThreadProxy.m */; };
+		A6F29E5E1911582500BD5E8B /* MCThreadProxyAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D581911582500BD5E8B /* MCThreadProxyAbstract.m */; };
+		A6F29E5F1911582500BD5E8B /* MPerformanceThread.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D5A1911582500BD5E8B /* MPerformanceThread.mm */; };
+		A6F29E601911582500BD5E8B /* MarshmallowDebug.c in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D5C1911582500BD5E8B /* MarshmallowDebug.c */; };
+		A6F29E611911582500BD5E8B /* MDBulkLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D611911582500BD5E8B /* MDBulkLogger.m */; };
+		A6F29E621911582500BD5E8B /* MDTimeProfiler.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D631911582500BD5E8B /* MDTimeProfiler.mm */; };
+		A6F29E631911582500BD5E8B /* MDTimeProfilerOC.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D651911582500BD5E8B /* MDTimeProfilerOC.mm */; };
+		A6F29E641911582500BD5E8B /* MarshmallowMathFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D681911582500BD5E8B /* MarshmallowMathFunctions.c */; };
+		A6F29E651911582500BD5E8B /* MCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D6D1911582500BD5E8B /* MCompatibility.m */; };
+		A6F29E661911582500BD5E8B /* MPStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D711911582500BD5E8B /* MPStopwatch.m */; };
+		A6F29E671911582500BD5E8B /* MRUncaughtExceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D751911582500BD5E8B /* MRUncaughtExceptions.m */; };
+		A6F29E681911582500BD5E8B /* MCachedModalStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D7A1911582500BD5E8B /* MCachedModalStoryboardSegue.m */; };
+		A6F29E691911582500BD5E8B /* MUICrossfadeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D7C1911582500BD5E8B /* MUICrossfadeView.m */; };
+		A6F29E6A1911582500BD5E8B /* MUIDraggablePane.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D7E1911582500BD5E8B /* MUIDraggablePane.m */; };
+		A6F29E6B1911582500BD5E8B /* MUIMultiToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D801911582500BD5E8B /* MUIMultiToggleButton.m */; };
+		A6F29E6C1911582500BD5E8B /* MUIPushButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D821911582500BD5E8B /* MUIPushButton.m */; };
+		A6F29E6D1911582500BD5E8B /* UIColor+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D851911582500BD5E8B /* UIColor+Marshmallows.m */; };
+		A6F29E6E1911582500BD5E8B /* UIImage+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D871911582500BD5E8B /* UIImage+Marshmallows.m */; };
+		A6F29E6F1911582500BD5E8B /* UIView+Marshmallows.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D891911582500BD5E8B /* UIView+Marshmallows.m */; };
+		A6F29E701911582500BD5E8B /* CEObjectiveCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29D8C1911582500BD5E8B /* CEObjectiveCRuntime.m */; };
+		A6F29E7A1911582500BD5E8B /* NSArray+OVCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DA51911582500BD5E8B /* NSArray+OVCore.m */; };
+		A6F29E7B1911582500BD5E8B /* NSDictionary+OVCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DA71911582500BD5E8B /* NSDictionary+OVCore.m */; };
+		A6F29E7C1911582500BD5E8B /* NSSet+OVCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DA91911582500BD5E8B /* NSSet+OVCore.m */; };
+		A6F29E7D1911582500BD5E8B /* NSArray+OVDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DAD1911582500BD5E8B /* NSArray+OVDifference.m */; };
+		A6F29E7E1911582500BD5E8B /* NSArray+OVEnumeration.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DAF1911582500BD5E8B /* NSArray+OVEnumeration.m */; };
+		A6F29E7F1911582500BD5E8B /* NSArray+OVInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DB11911582500BD5E8B /* NSArray+OVInitialize.m */; };
+		A6F29E801911582500BD5E8B /* NSArray+OVRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DB31911582500BD5E8B /* NSArray+OVRandom.m */; };
+		A6F29E811911582500BD5E8B /* NSArray+OVReverse.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DB51911582500BD5E8B /* NSArray+OVReverse.m */; };
+		A6F29E821911582500BD5E8B /* NSArray+OVSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DB71911582500BD5E8B /* NSArray+OVSelector.m */; };
+		A6F29E831911582500BD5E8B /* NSArray+OVShorthand.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DB91911582500BD5E8B /* NSArray+OVShorthand.m */; };
+		A6F29E841911582500BD5E8B /* NSArray+OVSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DBB1911582500BD5E8B /* NSArray+OVSorting.m */; };
+		A6F29E851911582500BD5E8B /* NSArray+OVSubArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DBD1911582500BD5E8B /* NSArray+OVSubArray.m */; };
+		A6F29E861911582500BD5E8B /* NSMutableArray+OVShorthand.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DC01911582500BD5E8B /* NSMutableArray+OVShorthand.m */; };
+		A6F29E871911582500BD5E8B /* NSMutableArray+OVSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DC21911582500BD5E8B /* NSMutableArray+OVSorting.m */; };
+		A6F29E881911582500BD5E8B /* NSBundle+OVShorthand.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DC51911582500BD5E8B /* NSBundle+OVShorthand.m */; };
+		A6F29E891911582500BD5E8B /* NSData+OVBase64Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DC81911582500BD5E8B /* NSData+OVBase64Encode.m */; };
+		A6F29E8A1911582500BD5E8B /* NSDate+OVComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DCB1911582500BD5E8B /* NSDate+OVComponents.m */; };
+		A6F29E8B1911582500BD5E8B /* NSDateFormatter+OVShorthand.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DCE1911582500BD5E8B /* NSDateFormatter+OVShorthand.m */; };
+		A6F29E8C1911582500BD5E8B /* NSDictionary+OVEnumeration.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DD11911582500BD5E8B /* NSDictionary+OVEnumeration.m */; };
+		A6F29E8D1911582500BD5E8B /* NSDictionary+OVPath.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DD31911582500BD5E8B /* NSDictionary+OVPath.m */; };
+		A6F29E8E1911582500BD5E8B /* NSDictionary+OVSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DD51911582500BD5E8B /* NSDictionary+OVSelector.m */; };
+		A6F29E8F1911582500BD5E8B /* NSNull+OVNatural.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DD81911582500BD5E8B /* NSNull+OVNatural.m */; };
+		A6F29E901911582500BD5E8B /* NSNumber+OVEquals.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DDB1911582500BD5E8B /* NSNumber+OVEquals.m */; };
+		A6F29E911911582500BD5E8B /* NSObject+Equals.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DDE1911582500BD5E8B /* NSObject+Equals.m */; };
+		A6F29E921911582500BD5E8B /* NSSet+OVEnumeration.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DE11911582500BD5E8B /* NSSet+OVEnumeration.m */; };
+		A6F29E931911582500BD5E8B /* NSString+OVBase64Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DE41911582500BD5E8B /* NSString+OVBase64Encode.m */; };
+		A6F29E941911582500BD5E8B /* NSString+OVComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DE61911582500BD5E8B /* NSString+OVComponents.m */; };
+		A6F29E951911582500BD5E8B /* NSString+OVDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DE81911582500BD5E8B /* NSString+OVDebugging.m */; };
+		A6F29E961911582500BD5E8B /* NSString+OVHash.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DEA1911582500BD5E8B /* NSString+OVHash.m */; };
+		A6F29E971911582500BD5E8B /* NSString+OVJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DEC1911582500BD5E8B /* NSString+OVJSON.m */; };
+		A6F29E981911582500BD5E8B /* NSString+OVRegularExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DEE1911582500BD5E8B /* NSString+OVRegularExpression.m */; };
+		A6F29E991911582500BD5E8B /* NSString+OVShorthand.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DF01911582500BD5E8B /* NSString+OVShorthand.m */; };
+		A6F29E9A1911582500BD5E8B /* NSString+OVURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DF21911582500BD5E8B /* NSString+OVURLEncode.m */; };
+		A6F29E9B1911582500BD5E8B /* NSURL+OVComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DF51911582500BD5E8B /* NSURL+OVComponents.m */; };
+		A6F29E9C1911582500BD5E8B /* NSURL+OVDirectories.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F29DF71911582500BD5E8B /* NSURL+OVDirectories.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +152,164 @@
 		A6CD00D01910FAC3003E6B1F /* emblem-inner-shadow@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "emblem-inner-shadow@2x"; sourceTree = "<group>"; };
 		A6CD00D11910FAC3003E6B1F /* emblem-masked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emblem-masked.png"; sourceTree = "<group>"; };
 		A6CD00D21910FAC3003E6B1F /* emblem-masked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emblem-masked@2x.png"; sourceTree = "<group>"; };
+		A6F29D001911582500BD5E8B /* MMAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAnimator.h; sourceTree = "<group>"; };
+		A6F29D011911582500BD5E8B /* MMAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAnimator.m; sourceTree = "<group>"; };
+		A6F29D021911582500BD5E8B /* MMAnimatorTimingBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAnimatorTimingBlock.h; sourceTree = "<group>"; };
+		A6F29D031911582500BD5E8B /* MMAnimatorTimingBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAnimatorTimingBlock.m; sourceTree = "<group>"; };
+		A6F29D041911582500BD5E8B /* MMSimpleAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSimpleAnimator.h; sourceTree = "<group>"; };
+		A6F29D051911582500BD5E8B /* MMSimpleAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSimpleAnimator.m; sourceTree = "<group>"; };
+		A6F29D061911582500BD5E8B /* MMSimplePinnedAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSimplePinnedAnimator.h; sourceTree = "<group>"; };
+		A6F29D071911582500BD5E8B /* MMSimplePinnedAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSimplePinnedAnimator.m; sourceTree = "<group>"; };
+		A6F29D341911582500BD5E8B /* MMGLK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMGLK.h; sourceTree = "<group>"; };
+		A6F29D351911582500BD5E8B /* MMGLK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMGLK.m; sourceTree = "<group>"; };
+		A6F29D371911582500BD5E8B /* MACrossfadeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACrossfadeLayer.h; sourceTree = "<group>"; };
+		A6F29D381911582500BD5E8B /* MACrossfadeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACrossfadeLayer.m; sourceTree = "<group>"; };
+		A6F29D391911582500BD5E8B /* MAImageCrossfadeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAImageCrossfadeLayer.h; sourceTree = "<group>"; };
+		A6F29D3A1911582500BD5E8B /* MAImageCrossfadeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAImageCrossfadeLayer.m; sourceTree = "<group>"; };
+		A6F29D3B1911582500BD5E8B /* MAImageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAImageLayer.h; sourceTree = "<group>"; };
+		A6F29D3C1911582500BD5E8B /* MAImageLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAImageLayer.m; sourceTree = "<group>"; };
+		A6F29D3D1911582500BD5E8B /* MarshmallowAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowAnimation.h; sourceTree = "<group>"; };
+		A6F29D3F1911582500BD5E8B /* MarshmallowCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowCocoa.h; sourceTree = "<group>"; };
+		A6F29D401911582500BD5E8B /* MStrongKeyMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MStrongKeyMutableDictionary.h; sourceTree = "<group>"; };
+		A6F29D411911582500BD5E8B /* MStrongKeyMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MStrongKeyMutableDictionary.m; sourceTree = "<group>"; };
+		A6F29D421911582500BD5E8B /* MWeakKeyMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWeakKeyMutableDictionary.h; sourceTree = "<group>"; };
+		A6F29D431911582500BD5E8B /* MWeakKeyMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWeakKeyMutableDictionary.m; sourceTree = "<group>"; };
+		A6F29D441911582500BD5E8B /* NSArray+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Marshmallows.h"; sourceTree = "<group>"; };
+		A6F29D451911582500BD5E8B /* NSArray+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Marshmallows.m"; sourceTree = "<group>"; };
+		A6F29D461911582500BD5E8B /* NSArray+NSDictionary+Subscripting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NSDictionary+Subscripting.h"; sourceTree = "<group>"; };
+		A6F29D471911582500BD5E8B /* NSDate+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Marshmallows.h"; sourceTree = "<group>"; };
+		A6F29D481911582500BD5E8B /* NSDate+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Marshmallows.m"; sourceTree = "<group>"; };
+		A6F29D491911582500BD5E8B /* NSError+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Marshmallows.h"; sourceTree = "<group>"; };
+		A6F29D4A1911582500BD5E8B /* NSError+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Marshmallows.m"; sourceTree = "<group>"; };
+		A6F29D4B1911582500BD5E8B /* NSInvocation+MMBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+MMBlocks.h"; sourceTree = "<group>"; };
+		A6F29D4C1911582500BD5E8B /* NSInvocation+MMBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+MMBlocks.m"; sourceTree = "<group>"; };
+		A6F29D4D1911582500BD5E8B /* NSString+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Marshmallows.h"; sourceTree = "<group>"; };
+		A6F29D4E1911582500BD5E8B /* NSString+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Marshmallows.m"; sourceTree = "<group>"; };
+		A6F29D4F1911582500BD5E8B /* NSURL+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Marshmallows.h"; sourceTree = "<group>"; };
+		A6F29D501911582500BD5E8B /* NSURL+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Marshmallows.m"; sourceTree = "<group>"; };
+		A6F29D521911582500BD5E8B /* MarshmallowConcurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowConcurrency.h; sourceTree = "<group>"; };
+		A6F29D531911582500BD5E8B /* MCAtomicType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAtomicType.h; sourceTree = "<group>"; };
+		A6F29D541911582500BD5E8B /* MCAtomicType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MCAtomicType.mm; sourceTree = "<group>"; };
+		A6F29D551911582500BD5E8B /* MCMainThreadProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMainThreadProxy.h; sourceTree = "<group>"; };
+		A6F29D561911582500BD5E8B /* MCMainThreadProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMainThreadProxy.m; sourceTree = "<group>"; };
+		A6F29D571911582500BD5E8B /* MCThreadProxyAbstract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCThreadProxyAbstract.h; sourceTree = "<group>"; };
+		A6F29D581911582500BD5E8B /* MCThreadProxyAbstract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCThreadProxyAbstract.m; sourceTree = "<group>"; };
+		A6F29D591911582500BD5E8B /* MPerformanceThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPerformanceThread.h; sourceTree = "<group>"; };
+		A6F29D5A1911582500BD5E8B /* MPerformanceThread.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPerformanceThread.mm; sourceTree = "<group>"; };
+		A6F29D5B1911582500BD5E8B /* MThreadProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MThreadProtocol.h; sourceTree = "<group>"; };
+		A6F29D5C1911582500BD5E8B /* MarshmallowDebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = MarshmallowDebug.c; path = Source/MarshmallowDebug.c; sourceTree = "<group>"; };
+		A6F29D5D1911582500BD5E8B /* MarshmallowDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarshmallowDebug.h; path = Source/MarshmallowDebug.h; sourceTree = "<group>"; };
+		A6F29D5F1911582500BD5E8B /* MarshmallowDiagnostics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowDiagnostics.h; sourceTree = "<group>"; };
+		A6F29D601911582500BD5E8B /* MDBulkLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBulkLogger.h; sourceTree = "<group>"; };
+		A6F29D611911582500BD5E8B /* MDBulkLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBulkLogger.m; sourceTree = "<group>"; };
+		A6F29D621911582500BD5E8B /* MDTimeProfiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTimeProfiler.h; sourceTree = "<group>"; };
+		A6F29D631911582500BD5E8B /* MDTimeProfiler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MDTimeProfiler.mm; sourceTree = "<group>"; };
+		A6F29D641911582500BD5E8B /* MDTimeProfilerOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTimeProfilerOC.h; sourceTree = "<group>"; };
+		A6F29D651911582500BD5E8B /* MDTimeProfilerOC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MDTimeProfilerOC.mm; sourceTree = "<group>"; };
+		A6F29D671911582500BD5E8B /* MarshmallowMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowMath.h; sourceTree = "<group>"; };
+		A6F29D681911582500BD5E8B /* MarshmallowMathFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MarshmallowMathFunctions.c; sourceTree = "<group>"; };
+		A6F29D691911582500BD5E8B /* MarshmallowMathFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowMathFunctions.h; sourceTree = "<group>"; };
+		A6F29D6B1911582500BD5E8B /* MarshmallowMisc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowMisc.h; sourceTree = "<group>"; };
+		A6F29D6C1911582500BD5E8B /* MCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCompatibility.h; sourceTree = "<group>"; };
+		A6F29D6D1911582500BD5E8B /* MCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCompatibility.m; sourceTree = "<group>"; };
+		A6F29D6F1911582500BD5E8B /* MarshmallowProfiling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowProfiling.h; sourceTree = "<group>"; };
+		A6F29D701911582500BD5E8B /* MPStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPStopwatch.h; sourceTree = "<group>"; };
+		A6F29D711911582500BD5E8B /* MPStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPStopwatch.m; sourceTree = "<group>"; };
+		A6F29D731911582500BD5E8B /* MarshmallowRecovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowRecovery.h; sourceTree = "<group>"; };
+		A6F29D741911582500BD5E8B /* MRUncaughtExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRUncaughtExceptions.h; sourceTree = "<group>"; };
+		A6F29D751911582500BD5E8B /* MRUncaughtExceptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRUncaughtExceptions.m; sourceTree = "<group>"; };
+		A6F29D761911582500BD5E8B /* Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Marshmallows.h; path = Source/Marshmallows.h; sourceTree = "<group>"; };
+		A6F29D781911582500BD5E8B /* MarshmallowUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarshmallowUIKit.h; sourceTree = "<group>"; };
+		A6F29D791911582500BD5E8B /* MCachedModalStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCachedModalStoryboardSegue.h; sourceTree = "<group>"; };
+		A6F29D7A1911582500BD5E8B /* MCachedModalStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCachedModalStoryboardSegue.m; sourceTree = "<group>"; };
+		A6F29D7B1911582500BD5E8B /* MUICrossfadeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUICrossfadeView.h; sourceTree = "<group>"; };
+		A6F29D7C1911582500BD5E8B /* MUICrossfadeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUICrossfadeView.m; sourceTree = "<group>"; };
+		A6F29D7D1911582500BD5E8B /* MUIDraggablePane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUIDraggablePane.h; sourceTree = "<group>"; };
+		A6F29D7E1911582500BD5E8B /* MUIDraggablePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUIDraggablePane.m; sourceTree = "<group>"; };
+		A6F29D7F1911582500BD5E8B /* MUIMultiToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUIMultiToggleButton.h; sourceTree = "<group>"; };
+		A6F29D801911582500BD5E8B /* MUIMultiToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUIMultiToggleButton.m; sourceTree = "<group>"; };
+		A6F29D811911582500BD5E8B /* MUIPushButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUIPushButton.h; sourceTree = "<group>"; };
+		A6F29D821911582500BD5E8B /* MUIPushButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUIPushButton.m; sourceTree = "<group>"; };
+		A6F29D831911582500BD5E8B /* MUITypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUITypes.h; sourceTree = "<group>"; };
+		A6F29D841911582500BD5E8B /* UIColor+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Marshmallows.h"; sourceTree = "<group>"; };
+		A6F29D851911582500BD5E8B /* UIColor+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Marshmallows.m"; sourceTree = "<group>"; };
+		A6F29D861911582500BD5E8B /* UIImage+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Marshmallows.h"; sourceTree = "<group>"; };
+		A6F29D871911582500BD5E8B /* UIImage+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Marshmallows.m"; sourceTree = "<group>"; };
+		A6F29D881911582500BD5E8B /* UIView+Marshmallows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Marshmallows.h"; sourceTree = "<group>"; };
+		A6F29D891911582500BD5E8B /* UIView+Marshmallows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Marshmallows.m"; sourceTree = "<group>"; };
+		A6F29D8B1911582500BD5E8B /* CEObjectiveCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEObjectiveCRuntime.h; sourceTree = "<group>"; };
+		A6F29D8C1911582500BD5E8B /* CEObjectiveCRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEObjectiveCRuntime.m; sourceTree = "<group>"; };
+		A6F29DA41911582500BD5E8B /* NSArray+OVCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+OVCore.h"; sourceTree = "<group>"; };
+		A6F29DA51911582500BD5E8B /* NSArray+OVCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OVCore.m"; sourceTree = "<group>"; };
+		A6F29DA61911582500BD5E8B /* NSDictionary+OVCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+OVCore.h"; sourceTree = "<group>"; };
+		A6F29DA71911582500BD5E8B /* NSDictionary+OVCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+OVCore.m"; sourceTree = "<group>"; };
+		A6F29DA81911582500BD5E8B /* NSSet+OVCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+OVCore.h"; sourceTree = "<group>"; };
+		A6F29DA91911582500BD5E8B /* NSSet+OVCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+OVCore.m"; sourceTree = "<group>"; };
+		A6F29DAC1911582500BD5E8B /* NSArray+OVDifference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+OVDifference.h"; sourceTree = "<group>"; };
+		A6F29DAD1911582500BD5E8B /* NSArray+OVDifference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OVDifference.m"; sourceTree = "<group>"; };
+		A6F29DAE1911582500BD5E8B /* NSArray+OVEnumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+OVEnumeration.h"; sourceTree = "<group>"; };
+		A6F29DAF1911582500BD5E8B /* NSArray+OVEnumeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OVEnumeration.m"; sourceTree = "<group>"; };
+		A6F29DB01911582500BD5E8B /* NSArray+OVInitialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+OVInitialize.h"; sourceTree = "<group>"; };
+		A6F29DB11911582500BD5E8B /* NSArray+OVInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OVInitialize.m"; sourceTree = "<group>"; };
+		A6F29DB21911582500BD5E8B /* NSArray+OVRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+OVRandom.h"; sourceTree = "<group>"; };
+		A6F29DB31911582500BD5E8B /* NSArray+OVRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OVRandom.m"; sourceTree = "<group>"; };
+		A6F29DB41911582500BD5E8B /* NSArray+OVReverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+OVReverse.h"; sourceTree = "<group>"; };
+		A6F29DB51911582500BD5E8B /* NSArray+OVReverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OVReverse.m"; sourceTree = "<group>"; };
+		A6F29DB61911582500BD5E8B /* NSArray+OVSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+OVSelector.h"; sourceTree = "<group>"; };
+		A6F29DB71911582500BD5E8B /* NSArray+OVSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OVSelector.m"; sourceTree = "<group>"; };
+		A6F29DB81911582500BD5E8B /* NSArray+OVShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+OVShorthand.h"; sourceTree = "<group>"; };
+		A6F29DB91911582500BD5E8B /* NSArray+OVShorthand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OVShorthand.m"; sourceTree = "<group>"; };
+		A6F29DBA1911582500BD5E8B /* NSArray+OVSorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+OVSorting.h"; sourceTree = "<group>"; };
+		A6F29DBB1911582500BD5E8B /* NSArray+OVSorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OVSorting.m"; sourceTree = "<group>"; };
+		A6F29DBC1911582500BD5E8B /* NSArray+OVSubArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+OVSubArray.h"; sourceTree = "<group>"; };
+		A6F29DBD1911582500BD5E8B /* NSArray+OVSubArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OVSubArray.m"; sourceTree = "<group>"; };
+		A6F29DBF1911582500BD5E8B /* NSMutableArray+OVShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+OVShorthand.h"; sourceTree = "<group>"; };
+		A6F29DC01911582500BD5E8B /* NSMutableArray+OVShorthand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+OVShorthand.m"; sourceTree = "<group>"; };
+		A6F29DC11911582500BD5E8B /* NSMutableArray+OVSorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+OVSorting.h"; sourceTree = "<group>"; };
+		A6F29DC21911582500BD5E8B /* NSMutableArray+OVSorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+OVSorting.m"; sourceTree = "<group>"; };
+		A6F29DC41911582500BD5E8B /* NSBundle+OVShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+OVShorthand.h"; sourceTree = "<group>"; };
+		A6F29DC51911582500BD5E8B /* NSBundle+OVShorthand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+OVShorthand.m"; sourceTree = "<group>"; };
+		A6F29DC71911582500BD5E8B /* NSData+OVBase64Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+OVBase64Encode.h"; sourceTree = "<group>"; };
+		A6F29DC81911582500BD5E8B /* NSData+OVBase64Encode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+OVBase64Encode.m"; sourceTree = "<group>"; };
+		A6F29DCA1911582500BD5E8B /* NSDate+OVComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+OVComponents.h"; sourceTree = "<group>"; };
+		A6F29DCB1911582500BD5E8B /* NSDate+OVComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+OVComponents.m"; sourceTree = "<group>"; };
+		A6F29DCD1911582500BD5E8B /* NSDateFormatter+OVShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+OVShorthand.h"; sourceTree = "<group>"; };
+		A6F29DCE1911582500BD5E8B /* NSDateFormatter+OVShorthand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+OVShorthand.m"; sourceTree = "<group>"; };
+		A6F29DD01911582500BD5E8B /* NSDictionary+OVEnumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+OVEnumeration.h"; sourceTree = "<group>"; };
+		A6F29DD11911582500BD5E8B /* NSDictionary+OVEnumeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+OVEnumeration.m"; sourceTree = "<group>"; };
+		A6F29DD21911582500BD5E8B /* NSDictionary+OVPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+OVPath.h"; sourceTree = "<group>"; };
+		A6F29DD31911582500BD5E8B /* NSDictionary+OVPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+OVPath.m"; sourceTree = "<group>"; };
+		A6F29DD41911582500BD5E8B /* NSDictionary+OVSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+OVSelector.h"; sourceTree = "<group>"; };
+		A6F29DD51911582500BD5E8B /* NSDictionary+OVSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+OVSelector.m"; sourceTree = "<group>"; };
+		A6F29DD71911582500BD5E8B /* NSNull+OVNatural.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+OVNatural.h"; sourceTree = "<group>"; };
+		A6F29DD81911582500BD5E8B /* NSNull+OVNatural.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+OVNatural.m"; sourceTree = "<group>"; };
+		A6F29DDA1911582500BD5E8B /* NSNumber+OVEquals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+OVEquals.h"; sourceTree = "<group>"; };
+		A6F29DDB1911582500BD5E8B /* NSNumber+OVEquals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+OVEquals.m"; sourceTree = "<group>"; };
+		A6F29DDD1911582500BD5E8B /* NSObject+Equals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Equals.h"; sourceTree = "<group>"; };
+		A6F29DDE1911582500BD5E8B /* NSObject+Equals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Equals.m"; sourceTree = "<group>"; };
+		A6F29DE01911582500BD5E8B /* NSSet+OVEnumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+OVEnumeration.h"; sourceTree = "<group>"; };
+		A6F29DE11911582500BD5E8B /* NSSet+OVEnumeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+OVEnumeration.m"; sourceTree = "<group>"; };
+		A6F29DE31911582500BD5E8B /* NSString+OVBase64Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OVBase64Encode.h"; sourceTree = "<group>"; };
+		A6F29DE41911582500BD5E8B /* NSString+OVBase64Encode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OVBase64Encode.m"; sourceTree = "<group>"; };
+		A6F29DE51911582500BD5E8B /* NSString+OVComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OVComponents.h"; sourceTree = "<group>"; };
+		A6F29DE61911582500BD5E8B /* NSString+OVComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OVComponents.m"; sourceTree = "<group>"; };
+		A6F29DE71911582500BD5E8B /* NSString+OVDebugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OVDebugging.h"; sourceTree = "<group>"; };
+		A6F29DE81911582500BD5E8B /* NSString+OVDebugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OVDebugging.m"; sourceTree = "<group>"; };
+		A6F29DE91911582500BD5E8B /* NSString+OVHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OVHash.h"; sourceTree = "<group>"; };
+		A6F29DEA1911582500BD5E8B /* NSString+OVHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OVHash.m"; sourceTree = "<group>"; };
+		A6F29DEB1911582500BD5E8B /* NSString+OVJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OVJSON.h"; sourceTree = "<group>"; };
+		A6F29DEC1911582500BD5E8B /* NSString+OVJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OVJSON.m"; sourceTree = "<group>"; };
+		A6F29DED1911582500BD5E8B /* NSString+OVRegularExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OVRegularExpression.h"; sourceTree = "<group>"; };
+		A6F29DEE1911582500BD5E8B /* NSString+OVRegularExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OVRegularExpression.m"; sourceTree = "<group>"; };
+		A6F29DEF1911582500BD5E8B /* NSString+OVShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OVShorthand.h"; sourceTree = "<group>"; };
+		A6F29DF01911582500BD5E8B /* NSString+OVShorthand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OVShorthand.m"; sourceTree = "<group>"; };
+		A6F29DF11911582500BD5E8B /* NSString+OVURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OVURLEncode.h"; sourceTree = "<group>"; };
+		A6F29DF21911582500BD5E8B /* NSString+OVURLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OVURLEncode.m"; sourceTree = "<group>"; };
+		A6F29DF41911582500BD5E8B /* NSURL+OVComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+OVComponents.h"; sourceTree = "<group>"; };
+		A6F29DF51911582500BD5E8B /* NSURL+OVComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+OVComponents.m"; sourceTree = "<group>"; };
+		A6F29DF61911582500BD5E8B /* NSURL+OVDirectories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+OVDirectories.h"; sourceTree = "<group>"; };
+		A6F29DF71911582500BD5E8B /* NSURL+OVDirectories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+OVDirectories.m"; sourceTree = "<group>"; };
+		A6F29DF81911582500BD5E8B /* OVBase64Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVBase64Encode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +373,7 @@
 		A6CB5ADF18F7ED3400C2709F = {
 			isa = PBXGroup;
 			children = (
+				A6F29CE61911582500BD5E8B /* Vendor */,
 				A6CB5AF518F7ED3400C2709F /* AC Cover */,
 				A6CB5B1818F7ED3400C2709F /* AC CoverTests */,
 				A6CB5AE918F7ED3400C2709F /* Products */,
@@ -204,6 +435,417 @@
 				A6CB5B1B18F7ED3400C2709F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6F29CE61911582500BD5E8B /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29CE71911582500BD5E8B /* Marshmallows */,
+				A6F29D9C1911582500BD5E8B /* Overline */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		A6F29CE71911582500BD5E8B /* Marshmallows */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29CFF1911582500BD5E8B /* Animator */,
+				A6F29D331911582500BD5E8B /* GLKit */,
+				A6F29D361911582500BD5E8B /* MarshmallowAnimation */,
+				A6F29D3E1911582500BD5E8B /* MarshmallowCocoa */,
+				A6F29D511911582500BD5E8B /* MarshmallowConcurrency */,
+				A6F29D5C1911582500BD5E8B /* MarshmallowDebug.c */,
+				A6F29D5D1911582500BD5E8B /* MarshmallowDebug.h */,
+				A6F29D5E1911582500BD5E8B /* MarshmallowDiagnostics */,
+				A6F29D661911582500BD5E8B /* MarshmallowMath */,
+				A6F29D6A1911582500BD5E8B /* MarshmallowMisc */,
+				A6F29D6E1911582500BD5E8B /* MarshmallowProfiling */,
+				A6F29D721911582500BD5E8B /* MarshmallowRecovery */,
+				A6F29D761911582500BD5E8B /* Marshmallows.h */,
+				A6F29D771911582500BD5E8B /* MarshmallowUIKit */,
+				A6F29D8A1911582500BD5E8B /* ObjC */,
+			);
+			path = Marshmallows;
+			sourceTree = "<group>";
+		};
+		A6F29CFF1911582500BD5E8B /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D001911582500BD5E8B /* MMAnimator.h */,
+				A6F29D011911582500BD5E8B /* MMAnimator.m */,
+				A6F29D021911582500BD5E8B /* MMAnimatorTimingBlock.h */,
+				A6F29D031911582500BD5E8B /* MMAnimatorTimingBlock.m */,
+				A6F29D041911582500BD5E8B /* MMSimpleAnimator.h */,
+				A6F29D051911582500BD5E8B /* MMSimpleAnimator.m */,
+				A6F29D061911582500BD5E8B /* MMSimplePinnedAnimator.h */,
+				A6F29D071911582500BD5E8B /* MMSimplePinnedAnimator.m */,
+			);
+			name = Animator;
+			path = Source/Animator;
+			sourceTree = "<group>";
+		};
+		A6F29D331911582500BD5E8B /* GLKit */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D341911582500BD5E8B /* MMGLK.h */,
+				A6F29D351911582500BD5E8B /* MMGLK.m */,
+			);
+			name = GLKit;
+			path = Source/GLKit;
+			sourceTree = "<group>";
+		};
+		A6F29D361911582500BD5E8B /* MarshmallowAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D371911582500BD5E8B /* MACrossfadeLayer.h */,
+				A6F29D381911582500BD5E8B /* MACrossfadeLayer.m */,
+				A6F29D391911582500BD5E8B /* MAImageCrossfadeLayer.h */,
+				A6F29D3A1911582500BD5E8B /* MAImageCrossfadeLayer.m */,
+				A6F29D3B1911582500BD5E8B /* MAImageLayer.h */,
+				A6F29D3C1911582500BD5E8B /* MAImageLayer.m */,
+				A6F29D3D1911582500BD5E8B /* MarshmallowAnimation.h */,
+			);
+			name = MarshmallowAnimation;
+			path = Source/MarshmallowAnimation;
+			sourceTree = "<group>";
+		};
+		A6F29D3E1911582500BD5E8B /* MarshmallowCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D3F1911582500BD5E8B /* MarshmallowCocoa.h */,
+				A6F29D401911582500BD5E8B /* MStrongKeyMutableDictionary.h */,
+				A6F29D411911582500BD5E8B /* MStrongKeyMutableDictionary.m */,
+				A6F29D421911582500BD5E8B /* MWeakKeyMutableDictionary.h */,
+				A6F29D431911582500BD5E8B /* MWeakKeyMutableDictionary.m */,
+				A6F29D441911582500BD5E8B /* NSArray+Marshmallows.h */,
+				A6F29D451911582500BD5E8B /* NSArray+Marshmallows.m */,
+				A6F29D461911582500BD5E8B /* NSArray+NSDictionary+Subscripting.h */,
+				A6F29D471911582500BD5E8B /* NSDate+Marshmallows.h */,
+				A6F29D481911582500BD5E8B /* NSDate+Marshmallows.m */,
+				A6F29D491911582500BD5E8B /* NSError+Marshmallows.h */,
+				A6F29D4A1911582500BD5E8B /* NSError+Marshmallows.m */,
+				A6F29D4B1911582500BD5E8B /* NSInvocation+MMBlocks.h */,
+				A6F29D4C1911582500BD5E8B /* NSInvocation+MMBlocks.m */,
+				A6F29D4D1911582500BD5E8B /* NSString+Marshmallows.h */,
+				A6F29D4E1911582500BD5E8B /* NSString+Marshmallows.m */,
+				A6F29D4F1911582500BD5E8B /* NSURL+Marshmallows.h */,
+				A6F29D501911582500BD5E8B /* NSURL+Marshmallows.m */,
+			);
+			name = MarshmallowCocoa;
+			path = Source/MarshmallowCocoa;
+			sourceTree = "<group>";
+		};
+		A6F29D511911582500BD5E8B /* MarshmallowConcurrency */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D521911582500BD5E8B /* MarshmallowConcurrency.h */,
+				A6F29D531911582500BD5E8B /* MCAtomicType.h */,
+				A6F29D541911582500BD5E8B /* MCAtomicType.mm */,
+				A6F29D551911582500BD5E8B /* MCMainThreadProxy.h */,
+				A6F29D561911582500BD5E8B /* MCMainThreadProxy.m */,
+				A6F29D571911582500BD5E8B /* MCThreadProxyAbstract.h */,
+				A6F29D581911582500BD5E8B /* MCThreadProxyAbstract.m */,
+				A6F29D591911582500BD5E8B /* MPerformanceThread.h */,
+				A6F29D5A1911582500BD5E8B /* MPerformanceThread.mm */,
+				A6F29D5B1911582500BD5E8B /* MThreadProtocol.h */,
+			);
+			name = MarshmallowConcurrency;
+			path = Source/MarshmallowConcurrency;
+			sourceTree = "<group>";
+		};
+		A6F29D5E1911582500BD5E8B /* MarshmallowDiagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D5F1911582500BD5E8B /* MarshmallowDiagnostics.h */,
+				A6F29D601911582500BD5E8B /* MDBulkLogger.h */,
+				A6F29D611911582500BD5E8B /* MDBulkLogger.m */,
+				A6F29D621911582500BD5E8B /* MDTimeProfiler.h */,
+				A6F29D631911582500BD5E8B /* MDTimeProfiler.mm */,
+				A6F29D641911582500BD5E8B /* MDTimeProfilerOC.h */,
+				A6F29D651911582500BD5E8B /* MDTimeProfilerOC.mm */,
+			);
+			name = MarshmallowDiagnostics;
+			path = Source/MarshmallowDiagnostics;
+			sourceTree = "<group>";
+		};
+		A6F29D661911582500BD5E8B /* MarshmallowMath */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D671911582500BD5E8B /* MarshmallowMath.h */,
+				A6F29D681911582500BD5E8B /* MarshmallowMathFunctions.c */,
+				A6F29D691911582500BD5E8B /* MarshmallowMathFunctions.h */,
+			);
+			name = MarshmallowMath;
+			path = Source/MarshmallowMath;
+			sourceTree = "<group>";
+		};
+		A6F29D6A1911582500BD5E8B /* MarshmallowMisc */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D6B1911582500BD5E8B /* MarshmallowMisc.h */,
+				A6F29D6C1911582500BD5E8B /* MCompatibility.h */,
+				A6F29D6D1911582500BD5E8B /* MCompatibility.m */,
+			);
+			name = MarshmallowMisc;
+			path = Source/MarshmallowMisc;
+			sourceTree = "<group>";
+		};
+		A6F29D6E1911582500BD5E8B /* MarshmallowProfiling */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D6F1911582500BD5E8B /* MarshmallowProfiling.h */,
+				A6F29D701911582500BD5E8B /* MPStopwatch.h */,
+				A6F29D711911582500BD5E8B /* MPStopwatch.m */,
+			);
+			name = MarshmallowProfiling;
+			path = Source/MarshmallowProfiling;
+			sourceTree = "<group>";
+		};
+		A6F29D721911582500BD5E8B /* MarshmallowRecovery */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D731911582500BD5E8B /* MarshmallowRecovery.h */,
+				A6F29D741911582500BD5E8B /* MRUncaughtExceptions.h */,
+				A6F29D751911582500BD5E8B /* MRUncaughtExceptions.m */,
+			);
+			name = MarshmallowRecovery;
+			path = Source/MarshmallowRecovery;
+			sourceTree = "<group>";
+		};
+		A6F29D771911582500BD5E8B /* MarshmallowUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D781911582500BD5E8B /* MarshmallowUIKit.h */,
+				A6F29D791911582500BD5E8B /* MCachedModalStoryboardSegue.h */,
+				A6F29D7A1911582500BD5E8B /* MCachedModalStoryboardSegue.m */,
+				A6F29D7B1911582500BD5E8B /* MUICrossfadeView.h */,
+				A6F29D7C1911582500BD5E8B /* MUICrossfadeView.m */,
+				A6F29D7D1911582500BD5E8B /* MUIDraggablePane.h */,
+				A6F29D7E1911582500BD5E8B /* MUIDraggablePane.m */,
+				A6F29D7F1911582500BD5E8B /* MUIMultiToggleButton.h */,
+				A6F29D801911582500BD5E8B /* MUIMultiToggleButton.m */,
+				A6F29D811911582500BD5E8B /* MUIPushButton.h */,
+				A6F29D821911582500BD5E8B /* MUIPushButton.m */,
+				A6F29D831911582500BD5E8B /* MUITypes.h */,
+				A6F29D841911582500BD5E8B /* UIColor+Marshmallows.h */,
+				A6F29D851911582500BD5E8B /* UIColor+Marshmallows.m */,
+				A6F29D861911582500BD5E8B /* UIImage+Marshmallows.h */,
+				A6F29D871911582500BD5E8B /* UIImage+Marshmallows.m */,
+				A6F29D881911582500BD5E8B /* UIView+Marshmallows.h */,
+				A6F29D891911582500BD5E8B /* UIView+Marshmallows.m */,
+			);
+			name = MarshmallowUIKit;
+			path = Source/MarshmallowUIKit;
+			sourceTree = "<group>";
+		};
+		A6F29D8A1911582500BD5E8B /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29D8B1911582500BD5E8B /* CEObjectiveCRuntime.h */,
+				A6F29D8C1911582500BD5E8B /* CEObjectiveCRuntime.m */,
+			);
+			name = ObjC;
+			path = Source/ObjC;
+			sourceTree = "<group>";
+		};
+		A6F29D9C1911582500BD5E8B /* Overline */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DA31911582500BD5E8B /* Core */,
+				A6F29DAA1911582500BD5E8B /* Over */,
+			);
+			path = Overline;
+			sourceTree = "<group>";
+		};
+		A6F29DA31911582500BD5E8B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DA41911582500BD5E8B /* NSArray+OVCore.h */,
+				A6F29DA51911582500BD5E8B /* NSArray+OVCore.m */,
+				A6F29DA61911582500BD5E8B /* NSDictionary+OVCore.h */,
+				A6F29DA71911582500BD5E8B /* NSDictionary+OVCore.m */,
+				A6F29DA81911582500BD5E8B /* NSSet+OVCore.h */,
+				A6F29DA91911582500BD5E8B /* NSSet+OVCore.m */,
+			);
+			name = Core;
+			path = Overline/Core;
+			sourceTree = "<group>";
+		};
+		A6F29DAA1911582500BD5E8B /* Over */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DAB1911582500BD5E8B /* NSArray */,
+				A6F29DC31911582500BD5E8B /* NSBundle */,
+				A6F29DC61911582500BD5E8B /* NSData */,
+				A6F29DC91911582500BD5E8B /* NSDate */,
+				A6F29DCC1911582500BD5E8B /* NSDateFormatter */,
+				A6F29DCF1911582500BD5E8B /* NSDictionary */,
+				A6F29DD61911582500BD5E8B /* NSNull */,
+				A6F29DD91911582500BD5E8B /* NSNumber */,
+				A6F29DDC1911582500BD5E8B /* NSObject */,
+				A6F29DDF1911582500BD5E8B /* NSSet */,
+				A6F29DE21911582500BD5E8B /* NSString */,
+				A6F29DF31911582500BD5E8B /* NSURL */,
+				A6F29DF81911582500BD5E8B /* OVBase64Encode.h */,
+			);
+			name = Over;
+			path = Overline/Over;
+			sourceTree = "<group>";
+		};
+		A6F29DAB1911582500BD5E8B /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DAC1911582500BD5E8B /* NSArray+OVDifference.h */,
+				A6F29DAD1911582500BD5E8B /* NSArray+OVDifference.m */,
+				A6F29DAE1911582500BD5E8B /* NSArray+OVEnumeration.h */,
+				A6F29DAF1911582500BD5E8B /* NSArray+OVEnumeration.m */,
+				A6F29DB01911582500BD5E8B /* NSArray+OVInitialize.h */,
+				A6F29DB11911582500BD5E8B /* NSArray+OVInitialize.m */,
+				A6F29DB21911582500BD5E8B /* NSArray+OVRandom.h */,
+				A6F29DB31911582500BD5E8B /* NSArray+OVRandom.m */,
+				A6F29DB41911582500BD5E8B /* NSArray+OVReverse.h */,
+				A6F29DB51911582500BD5E8B /* NSArray+OVReverse.m */,
+				A6F29DB61911582500BD5E8B /* NSArray+OVSelector.h */,
+				A6F29DB71911582500BD5E8B /* NSArray+OVSelector.m */,
+				A6F29DB81911582500BD5E8B /* NSArray+OVShorthand.h */,
+				A6F29DB91911582500BD5E8B /* NSArray+OVShorthand.m */,
+				A6F29DBA1911582500BD5E8B /* NSArray+OVSorting.h */,
+				A6F29DBB1911582500BD5E8B /* NSArray+OVSorting.m */,
+				A6F29DBC1911582500BD5E8B /* NSArray+OVSubArray.h */,
+				A6F29DBD1911582500BD5E8B /* NSArray+OVSubArray.m */,
+				A6F29DBE1911582500BD5E8B /* NSMutableArray */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
+		A6F29DBE1911582500BD5E8B /* NSMutableArray */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DBF1911582500BD5E8B /* NSMutableArray+OVShorthand.h */,
+				A6F29DC01911582500BD5E8B /* NSMutableArray+OVShorthand.m */,
+				A6F29DC11911582500BD5E8B /* NSMutableArray+OVSorting.h */,
+				A6F29DC21911582500BD5E8B /* NSMutableArray+OVSorting.m */,
+			);
+			path = NSMutableArray;
+			sourceTree = "<group>";
+		};
+		A6F29DC31911582500BD5E8B /* NSBundle */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DC41911582500BD5E8B /* NSBundle+OVShorthand.h */,
+				A6F29DC51911582500BD5E8B /* NSBundle+OVShorthand.m */,
+			);
+			path = NSBundle;
+			sourceTree = "<group>";
+		};
+		A6F29DC61911582500BD5E8B /* NSData */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DC71911582500BD5E8B /* NSData+OVBase64Encode.h */,
+				A6F29DC81911582500BD5E8B /* NSData+OVBase64Encode.m */,
+			);
+			path = NSData;
+			sourceTree = "<group>";
+		};
+		A6F29DC91911582500BD5E8B /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DCA1911582500BD5E8B /* NSDate+OVComponents.h */,
+				A6F29DCB1911582500BD5E8B /* NSDate+OVComponents.m */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
+		A6F29DCC1911582500BD5E8B /* NSDateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DCD1911582500BD5E8B /* NSDateFormatter+OVShorthand.h */,
+				A6F29DCE1911582500BD5E8B /* NSDateFormatter+OVShorthand.m */,
+			);
+			path = NSDateFormatter;
+			sourceTree = "<group>";
+		};
+		A6F29DCF1911582500BD5E8B /* NSDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DD01911582500BD5E8B /* NSDictionary+OVEnumeration.h */,
+				A6F29DD11911582500BD5E8B /* NSDictionary+OVEnumeration.m */,
+				A6F29DD21911582500BD5E8B /* NSDictionary+OVPath.h */,
+				A6F29DD31911582500BD5E8B /* NSDictionary+OVPath.m */,
+				A6F29DD41911582500BD5E8B /* NSDictionary+OVSelector.h */,
+				A6F29DD51911582500BD5E8B /* NSDictionary+OVSelector.m */,
+			);
+			path = NSDictionary;
+			sourceTree = "<group>";
+		};
+		A6F29DD61911582500BD5E8B /* NSNull */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DD71911582500BD5E8B /* NSNull+OVNatural.h */,
+				A6F29DD81911582500BD5E8B /* NSNull+OVNatural.m */,
+			);
+			path = NSNull;
+			sourceTree = "<group>";
+		};
+		A6F29DD91911582500BD5E8B /* NSNumber */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DDA1911582500BD5E8B /* NSNumber+OVEquals.h */,
+				A6F29DDB1911582500BD5E8B /* NSNumber+OVEquals.m */,
+			);
+			path = NSNumber;
+			sourceTree = "<group>";
+		};
+		A6F29DDC1911582500BD5E8B /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DDD1911582500BD5E8B /* NSObject+Equals.h */,
+				A6F29DDE1911582500BD5E8B /* NSObject+Equals.m */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
+		A6F29DDF1911582500BD5E8B /* NSSet */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DE01911582500BD5E8B /* NSSet+OVEnumeration.h */,
+				A6F29DE11911582500BD5E8B /* NSSet+OVEnumeration.m */,
+			);
+			path = NSSet;
+			sourceTree = "<group>";
+		};
+		A6F29DE21911582500BD5E8B /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DE31911582500BD5E8B /* NSString+OVBase64Encode.h */,
+				A6F29DE41911582500BD5E8B /* NSString+OVBase64Encode.m */,
+				A6F29DE51911582500BD5E8B /* NSString+OVComponents.h */,
+				A6F29DE61911582500BD5E8B /* NSString+OVComponents.m */,
+				A6F29DE71911582500BD5E8B /* NSString+OVDebugging.h */,
+				A6F29DE81911582500BD5E8B /* NSString+OVDebugging.m */,
+				A6F29DE91911582500BD5E8B /* NSString+OVHash.h */,
+				A6F29DEA1911582500BD5E8B /* NSString+OVHash.m */,
+				A6F29DEB1911582500BD5E8B /* NSString+OVJSON.h */,
+				A6F29DEC1911582500BD5E8B /* NSString+OVJSON.m */,
+				A6F29DED1911582500BD5E8B /* NSString+OVRegularExpression.h */,
+				A6F29DEE1911582500BD5E8B /* NSString+OVRegularExpression.m */,
+				A6F29DEF1911582500BD5E8B /* NSString+OVShorthand.h */,
+				A6F29DF01911582500BD5E8B /* NSString+OVShorthand.m */,
+				A6F29DF11911582500BD5E8B /* NSString+OVURLEncode.h */,
+				A6F29DF21911582500BD5E8B /* NSString+OVURLEncode.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		A6F29DF31911582500BD5E8B /* NSURL */ = {
+			isa = PBXGroup;
+			children = (
+				A6F29DF41911582500BD5E8B /* NSURL+OVComponents.h */,
+				A6F29DF51911582500BD5E8B /* NSURL+OVComponents.m */,
+				A6F29DF61911582500BD5E8B /* NSURL+OVDirectories.h */,
+				A6F29DF71911582500BD5E8B /* NSURL+OVDirectories.m */,
+			);
+			path = NSURL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,14 +960,86 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6F29E861911582500BD5E8B /* NSMutableArray+OVShorthand.m in Sources */,
+				A6F29E631911582500BD5E8B /* MDTimeProfilerOC.mm in Sources */,
+				A6F29E8C1911582500BD5E8B /* NSDictionary+OVEnumeration.m in Sources */,
+				A6F29E3E1911582500BD5E8B /* MMSimplePinnedAnimator.m in Sources */,
+				A6F29E821911582500BD5E8B /* NSArray+OVSelector.m in Sources */,
+				A6F29E581911582500BD5E8B /* NSError+Marshmallows.m in Sources */,
+				A6F29E3C1911582500BD5E8B /* MMAnimatorTimingBlock.m in Sources */,
 				A62CB11619002A1800B38B3A /* UIColor+AC_Branding.m in Sources */,
+				A6F29E531911582500BD5E8B /* MAImageLayer.m in Sources */,
+				A6F29E5A1911582500BD5E8B /* NSString+Marshmallows.m in Sources */,
+				A6F29E941911582500BD5E8B /* NSString+OVComponents.m in Sources */,
+				A6F29E911911582500BD5E8B /* NSObject+Equals.m in Sources */,
+				A6F29E7E1911582500BD5E8B /* NSArray+OVEnumeration.m in Sources */,
+				A6F29E561911582500BD5E8B /* NSArray+Marshmallows.m in Sources */,
+				A6F29E8D1911582500BD5E8B /* NSDictionary+OVPath.m in Sources */,
+				A6F29E951911582500BD5E8B /* NSString+OVDebugging.m in Sources */,
+				A6F29E601911582500BD5E8B /* MarshmallowDebug.c in Sources */,
+				A6F29E611911582500BD5E8B /* MDBulkLogger.m in Sources */,
+				A6F29E571911582500BD5E8B /* NSDate+Marshmallows.m in Sources */,
+				A6F29E3D1911582500BD5E8B /* MMSimpleAnimator.m in Sources */,
 				A6AE52E818F840850081B4CE /* AC_CoverViewGLDelegate.m in Sources */,
+				A6F29E641911582500BD5E8B /* MarshmallowMathFunctions.c in Sources */,
+				A6F29E7D1911582500BD5E8B /* NSArray+OVDifference.m in Sources */,
+				A6F29E851911582500BD5E8B /* NSArray+OVSubArray.m in Sources */,
+				A6F29E9C1911582500BD5E8B /* NSURL+OVDirectories.m in Sources */,
+				A6F29E981911582500BD5E8B /* NSString+OVRegularExpression.m in Sources */,
+				A6F29E5B1911582500BD5E8B /* NSURL+Marshmallows.m in Sources */,
+				A6F29E691911582500BD5E8B /* MUICrossfadeView.m in Sources */,
+				A6F29E651911582500BD5E8B /* MCompatibility.m in Sources */,
+				A6F29E681911582500BD5E8B /* MCachedModalStoryboardSegue.m in Sources */,
+				A6F29E701911582500BD5E8B /* CEObjectiveCRuntime.m in Sources */,
+				A6F29E6E1911582500BD5E8B /* UIImage+Marshmallows.m in Sources */,
+				A6F29E9A1911582500BD5E8B /* NSString+OVURLEncode.m in Sources */,
+				A6F29E5E1911582500BD5E8B /* MCThreadProxyAbstract.m in Sources */,
+				A6F29E8F1911582500BD5E8B /* NSNull+OVNatural.m in Sources */,
+				A6F29E881911582500BD5E8B /* NSBundle+OVShorthand.m in Sources */,
+				A6F29E871911582500BD5E8B /* NSMutableArray+OVSorting.m in Sources */,
+				A6F29E801911582500BD5E8B /* NSArray+OVRandom.m in Sources */,
+				A6F29E7B1911582500BD5E8B /* NSDictionary+OVCore.m in Sources */,
+				A6F29E671911582500BD5E8B /* MRUncaughtExceptions.m in Sources */,
+				A6F29E931911582500BD5E8B /* NSString+OVBase64Encode.m in Sources */,
+				A6F29E8E1911582500BD5E8B /* NSDictionary+OVSelector.m in Sources */,
+				A6F29E541911582500BD5E8B /* MStrongKeyMutableDictionary.m in Sources */,
+				A6F29E891911582500BD5E8B /* NSData+OVBase64Encode.m in Sources */,
+				A6F29E9B1911582500BD5E8B /* NSURL+OVComponents.m in Sources */,
+				A6F29E6F1911582500BD5E8B /* UIView+Marshmallows.m in Sources */,
+				A6F29E831911582500BD5E8B /* NSArray+OVShorthand.m in Sources */,
+				A6F29E551911582500BD5E8B /* MWeakKeyMutableDictionary.m in Sources */,
+				A6F29E501911582500BD5E8B /* MMGLK.m in Sources */,
+				A6F29E991911582500BD5E8B /* NSString+OVShorthand.m in Sources */,
+				A6F29E5D1911582500BD5E8B /* MCMainThreadProxy.m in Sources */,
+				A6F29E961911582500BD5E8B /* NSString+OVHash.m in Sources */,
 				A6CB5B0018F7ED3400C2709F /* ACAppDelegate.m in Sources */,
+				A6F29E971911582500BD5E8B /* NSString+OVJSON.m in Sources */,
+				A6F29E661911582500BD5E8B /* MPStopwatch.m in Sources */,
 				A6CB5B2D18F7F27500C2709F /* GLKView+AC_Additions.m in Sources */,
+				A6F29E6C1911582500BD5E8B /* MUIPushButton.m in Sources */,
+				A6F29E6D1911582500BD5E8B /* UIColor+Marshmallows.m in Sources */,
+				A6F29E921911582500BD5E8B /* NSSet+OVEnumeration.m in Sources */,
+				A6F29E5C1911582500BD5E8B /* MCAtomicType.mm in Sources */,
+				A6F29E811911582500BD5E8B /* NSArray+OVReverse.m in Sources */,
+				A6F29E901911582500BD5E8B /* NSNumber+OVEquals.m in Sources */,
+				A6F29E5F1911582500BD5E8B /* MPerformanceThread.mm in Sources */,
 				A6CB5B0A18F7ED3400C2709F /* AC_CoverVC.m in Sources */,
+				A6F29E621911582500BD5E8B /* MDTimeProfiler.mm in Sources */,
 				A62CB11318FFDD5B00B38B3A /* AC_CoverEmblemView.m in Sources */,
+				A6F29E591911582500BD5E8B /* NSInvocation+MMBlocks.m in Sources */,
+				A6F29E3B1911582500BD5E8B /* MMAnimator.m in Sources */,
+				A6F29E7C1911582500BD5E8B /* NSSet+OVCore.m in Sources */,
 				A6CB5B2A18F7EE5400C2709F /* AC_CoverView.m in Sources */,
+				A6F29E841911582500BD5E8B /* NSArray+OVSorting.m in Sources */,
+				A6F29E7A1911582500BD5E8B /* NSArray+OVCore.m in Sources */,
+				A6F29E6A1911582500BD5E8B /* MUIDraggablePane.m in Sources */,
+				A6F29E511911582500BD5E8B /* MACrossfadeLayer.m in Sources */,
+				A6F29E7F1911582500BD5E8B /* NSArray+OVInitialize.m in Sources */,
+				A6F29E521911582500BD5E8B /* MAImageCrossfadeLayer.m in Sources */,
 				A6CB5AFC18F7ED3400C2709F /* main.m in Sources */,
+				A6F29E8A1911582500BD5E8B /* NSDate+OVComponents.m in Sources */,
+				A6F29E8B1911582500BD5E8B /* NSDateFormatter+OVShorthand.m in Sources */,
+				A6F29E6B1911582500BD5E8B /* MUIMultiToggleButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

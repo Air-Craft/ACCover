@@ -20,3 +20,7 @@ DerivedData
 *.orig
 
 Documentation/Output
+
+Vendor/Marshmallows
+
+Vendor/Overline
