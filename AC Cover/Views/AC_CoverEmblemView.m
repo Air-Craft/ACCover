@@ -16,8 +16,8 @@
 /////////////////////////////////////////////////////////////////////////
 
 static const CGPoint _INNER_SHADOW_INIT_OFFSET = { 0, 3 };
-static const CGPoint _INNER_SHADOW_OFFSET_MIN = { -3, -7 };
-static const CGPoint _INNER_SHADOW_OFFSET_MAX = { +2, 6 };
+static const CGPoint _INNER_SHADOW_OFFSET_MIN = { -2, -5 };
+static const CGPoint _INNER_SHADOW_OFFSET_MAX = { +2, 1};
 
 static const CGFloat _MAX_SHADOW_SIZE = 75;
 
@@ -72,6 +72,10 @@ static const CGFloat _MAX_SHADOW_SIZE = 75;
     // 2. Inner shadow image
     _innerShadowLayer = [CALayer layer];
     _innerShadowLayer.contentsScale = self.layer.contentsScale;
+    // disable layer actions
+    NSDictionary *newActions = @{@"position": [NSNull null]};
+    _innerShadowLayer.actions = newActions;
+    
     _innerShadowLayer.contents = (__bridge id)[UIImage imageNamed:@"emblem-inner-shadow"].CGImage;
     [self.layer insertSublayer:_innerShadowLayer below:emblemLayer];
     _innerShadowLayer.frame = CGRectMake(_INNER_SHADOW_INIT_OFFSET.x,
@@ -113,6 +117,7 @@ static const CGFloat _MAX_SHADOW_SIZE = 75;
     newPos.x += MM_MapBilinearRange(relativeAngleOffset.y, -1, 0, 1, _INNER_SHADOW_OFFSET_MIN.x, 0, _INNER_SHADOW_OFFSET_MAX.x);
     newPos.y += MM_MapBilinearRange(relativeAngleOffset.x, -1, 0, 1, _INNER_SHADOW_OFFSET_MIN.y, 0, _INNER_SHADOW_OFFSET_MAX.y);
     _innerShadowLayer.position = newPos;
+
 }
 
 

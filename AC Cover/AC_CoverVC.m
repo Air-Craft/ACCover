@@ -138,7 +138,6 @@ static float shine=4.10;
     };
     rotOffsetNormed.x = MIN(1.0, MAX(-1.0, rotOffsetNormed.x));
     rotOffsetNormed.y = MIN(1.0, MAX(-1.0, rotOffsetNormed.y));
-    NSLog(@"%.2f %.2f", rotOffsetNormed.x, rotOffsetNormed.y);
     
     _emblemView.relativeAngleOffset = rotOffsetNormed;
     

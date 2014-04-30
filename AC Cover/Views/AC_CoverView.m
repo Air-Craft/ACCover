@@ -338,8 +338,8 @@ GLfloat _glCubeVertexData[48] =
 {
     // Rotation around X offsets Y position of the shadow and vice versa
     // Take note of the signs too...
-    _lightingOffset.x += MM_MapBilinearRange(relativeAngleOffset.y, -1, 0, 1, _LIGHT_OFFSET_MIN.x, 0, _LIGHT_OFFSET_MAX.x);
-    _lightingOffset.y += MM_MapBilinearRange(relativeAngleOffset.x, -1, 0, 1, _LIGHT_OFFSET_MIN.y, 0, _LIGHT_OFFSET_MAX.y);
+    _lightingOffset.x = MM_MapBilinearRange(relativeAngleOffset.y, -1, 0, 1, _LIGHT_OFFSET_MIN.x, 0, _LIGHT_OFFSET_MAX.x);
+    _lightingOffset.y = MM_MapBilinearRange(relativeAngleOffset.x, -1, 0, 1, _LIGHT_OFFSET_MIN.y, 0, _LIGHT_OFFSET_MAX.y);
 
 }
 
