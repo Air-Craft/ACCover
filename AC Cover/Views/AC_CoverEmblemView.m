@@ -19,7 +19,7 @@ static const CGPoint _INNER_SHADOW_INIT_OFFSET = { 0, 3 };
 static const CGPoint _INNER_SHADOW_OFFSET_MIN = { -2, -5 };
 static const CGPoint _INNER_SHADOW_OFFSET_MAX = { +2, 1};
 
-static const CGFloat _MAX_SHADOW_SIZE = 75;
+static const CGFloat _OUTER_SHADOW_SIZE = 90;
 
 /////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -55,51 +55,59 @@ static const CGFloat _MAX_SHADOW_SIZE = 75;
     // 0. View bounds
     UIImage *emblem = [UIImage imageNamed:@"emblem-masked"];
     NSParameterAssert(emblem);
-    CGSize frameSize = CGSizeMake(emblem.size.width,
-                                  emblem.size.height);
+    
+    CGSize frameSize = CGSizeMake(emblem.size.width + 2 * _OUTER_SHADOW_SIZE,
+                                  emblem.size.height + 2 * _OUTER_SHADOW_SIZE);
     CGRect f = {0, 0, frameSize};
     self.frame = f;
     self.backgroundColor = [UIColor clearColor];
     
+    // Prep the layer to the correct size and center
+    CALayer *(^layerWithImage)(CGSize size, UIImage *contents) = ^CALayer *(CGSize size, UIImage *contents) {
+        CALayer *l = [CALayer layer];
+        l.frame = CGRectMake(0, 0, size.width, size.height);
+        l.contentsScale = self.layer.contentsScale;
+        l.anchorPoint = CGPointMake(0.5, 0.5);
+        l.position = CGPointMake(frameSize.width/2, frameSize.height/2);
+        l.contents = (__bridge id)contents.CGImage;
+        return l;
+    };
     
     // 1. Emblem/mask
-    CALayer *emblemLayer = [CALayer layer];
-    emblemLayer.frame = self.frame;
-    emblemLayer.contents = (__bridge id)(emblem.CGImage);
+    CALayer *emblemLayer = layerWithImage(emblem.size, emblem);
     [self.layer addSublayer:emblemLayer];
     
     
     // 2. Inner shadow image
-    _innerShadowLayer = [CALayer layer];
-    _innerShadowLayer.contentsScale = self.layer.contentsScale;
-    // disable layer actions
+    _innerShadowLayer = layerWithImage(emblem.size, [UIImage imageNamed:@"emblem-inner-shadow"]);
+    // disable layer animation actions
     NSDictionary *newActions = @{@"position": [NSNull null]};
     _innerShadowLayer.actions = newActions;
+    _innerShadowLayer.position = CGPointMake(_innerShadowLayer.position.x + _INNER_SHADOW_INIT_OFFSET.x,
+                                             _innerShadowLayer.position.y + _INNER_SHADOW_INIT_OFFSET.y);
     
-    _innerShadowLayer.contents = (__bridge id)[UIImage imageNamed:@"emblem-inner-shadow"].CGImage;
     [self.layer insertSublayer:_innerShadowLayer below:emblemLayer];
-    _innerShadowLayer.frame = CGRectMake(_INNER_SHADOW_INIT_OFFSET.x,
-                                         _INNER_SHADOW_INIT_OFFSET.y,
-                                         self.frame.size.width,
-                                         self.frame.size.height);
     _initShadowPos = _innerShadowLayer.position;
     
     
     // 3. Background circle
     CGFloat inset = 39;
-    CGRect circBounds = {0, 0, self.frame.size.width-inset, self.frame.size.height-inset};
-    CALayer *colorLayer = [CALayer layer];
-    colorLayer.contentsScale = self.layer.contentsScale;
-    colorLayer.bounds = circBounds;
-    colorLayer.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
-    colorLayer.anchorPoint = CGPointMake(0.5, 0.5);
+    CGSize circSize = {emblem.size.width-inset, emblem.size.height-inset};
     
-    UIBezierPath *circle = [UIBezierPath bezierPathWithOvalInRect:circBounds];
-    UIGraphicsBeginImageContext(circBounds.size);
+    UIBezierPath *circle = [UIBezierPath bezierPathWithOvalInRect:CGRectMake((frameSize.width-circSize.width)/2, (frameSize.height-circSize.height)/2, circSize.width, circSize.height)];
+    CALayer *colorLayer;
+    
+    UIGraphicsBeginImageContextWithOptions(frameSize, NO, 0.0);
     {
+        CGContextRef ctx = UIGraphicsGetCurrentContext();
+        
+        [[UIColor blackColor] setFill];
+        
         [[UIColor ac_yellowColor] setFill];
-        [circle fill];
-        colorLayer.contents = (__bridge id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
+        CGContextAddPath(ctx, circle.CGPath);
+        CGContextSetShadowWithColor(ctx, CGSizeZero, _OUTER_SHADOW_SIZE, [[UIColor blackColor] colorWithAlphaComponent:1.0].CGColor);
+        CGContextFillPath(ctx);
+        colorLayer = layerWithImage(frameSize, UIGraphicsGetImageFromCurrentImageContext());
     }
     UIGraphicsEndImageContext();
     [self.layer insertSublayer:colorLayer below:_innerShadowLayer];

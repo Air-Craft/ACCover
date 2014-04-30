@@ -32,10 +32,10 @@ typedef struct {
 
 
 
-static float attnConst=0.0, attnLin=3.97, attnQuad=3.49;
-static float light0X=0.36,/*2.72,*/ light0Y=0.89,/*3.98,*/ light0Z=-1.20/*-0.30*/;
-static float diffInts=0.44, specInts=3.96, edgeFaceSplit=6.5;
-static float shine=4.10;
+static float attnConst=0.0, attnLin=15.97, attnQuad=9.81;
+static float light0X=0.19,/*2.72,*/ light0Y=0.45,/*3.98,*/ light0Z=-1.20/*-0.30*/;
+static float diffInts=2.78, specInts=13.05, edgeFaceSplit=6.5;
+static float shine=20.00;
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -230,7 +230,7 @@ static float shine=4.10;
         case 3: // INTENSITIES & SPLIT FACTOR
             
             if (touchIdx == 0) {
-                diffInts = nX * 20;
+                diffInts = nX * 10;
                 specInts = nY * 20;
                 [coverView setUniform:@"u_diffuseIntensity" withFloat:diffInts];
                 [coverView setUniform:@"u_specularIntensity" withFloat:specInts];
@@ -247,7 +247,7 @@ static float shine=4.10;
         case 4: // SPECULAR SHININESS
             
             if (touchIdx == 0) {
-                shine = nY * 10;
+                shine = nY * 30;
                 [coverView setUniform:@"u_shininess" withFloat:shine];
             }
             else if (touchIdx == 1) {

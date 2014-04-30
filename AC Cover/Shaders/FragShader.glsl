@@ -84,7 +84,7 @@ const vec4 paleBlue = vec4(0.82, 0.98, 0.97, 0.0);
 const vec4 darkBlue = vec4(0.34, 0.40, 0.40, 0.0);
 const vec4 darkYellow = vec4(0.1, 0.1, 0.08, 0.0);
 const vec4 blueGreen = vec4(0.519, 0.997, 0.7, 0.0);
-const vec4 DIFFUSE_COLOR = grey;
+const vec4 DIFFUSE_COLOR = paleYellow;
 const vec4 SPECULAR_COLOR = paleYellow;
 
 
@@ -159,9 +159,10 @@ void main()
         vec3 positionToLightSource = vec3(lightPos - texpos);
         lightDistance = length(positionToLightSource);
         lightDirection = normalize(positionToLightSource);
-        attenuation = 1.0 / (u_attnConst   // constant
+    attenuation = 1.0 / (u_attnConst   // constant
                              + u_attnLinear * lightDistance
-                             + u_attnQuad * lightDistance * lightDistance);
+                             + u_attnQuad * lightDistance * lightDistance * lightDistance * lightDistance);
+    
 //    }
 
     
@@ -191,8 +192,8 @@ void main()
     /////////////////////////////////////////
     // OUTPUT
     /////////////////////////////////////////
-
-    gl_FragColor = baseColor * u_colorMix + outDiffuse + outSpecular;
+    vec2 lo = vec2(1.0, 0.0);
+    gl_FragColor = baseColor * lo.yyyx * u_colorMix  + outDiffuse + outSpecular;
     
 //    gl_FragColor = vec4(vec3(angleAtten), 1.0);
 //    gl_FragColor = vec4(normalDirection.yyy+0.5, 1.0);

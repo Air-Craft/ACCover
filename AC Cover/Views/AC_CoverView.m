@@ -207,7 +207,8 @@ GLfloat _glCubeVertexData[48] =
                       textureWithContentsOfFile:f
                       options:@{
                                 GLKTextureLoaderOriginBottomLeft: @YES,
-                                GLKTextureLoaderApplyPremultiplication: @NO
+                                GLKTextureLoaderApplyPremultiplication: @NO,
+                                GLKTextureLoaderSRGB: @NO
                                 }
                       error:&err];
 
@@ -221,7 +222,8 @@ GLfloat _glCubeVertexData[48] =
                        textureWithContentsOfFile:f
                        options:@{
                                  GLKTextureLoaderOriginBottomLeft: @YES,
-                                 GLKTextureLoaderApplyPremultiplication: @YES
+                                 GLKTextureLoaderApplyPremultiplication: @YES,
+                                 GLKTextureLoaderSRGB: @NO
                                  }
                        error:&err];
     
@@ -235,7 +237,8 @@ GLfloat _glCubeVertexData[48] =
                          textureWithContentsOfFile:f
                          options:@{
                                    GLKTextureLoaderOriginBottomLeft: @YES,
-                                   GLKTextureLoaderApplyPremultiplication: @NO
+                                   GLKTextureLoaderApplyPremultiplication: @NO,
+                                   GLKTextureLoaderSRGB: @YES
                                    }
                          error:&err];
     
