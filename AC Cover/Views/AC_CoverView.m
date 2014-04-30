@@ -104,8 +104,6 @@ GLfloat _glCubeVertexData[48] =
     GLKTextureInfo *_bladeTexSpecular;
     GLKTextureInfo *_bladeTexDisplacement;
     
-    CMMotionManager *_motionManager;
-    CMQuaternion _initRotation;
     BOOL _hasInitRotation;
     
     CADisplayLink *_updateTimer;

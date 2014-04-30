@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A629122C1909866800980912 /* cover_emblem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A629122A1909866800980912 /* cover_emblem@2x.png */; };
-		A629122D1909866800980912 /* cover_emblem.png in Resources */ = {isa = PBXBuildFile; fileRef = A629122B1909866800980912 /* cover_emblem.png */; };
 		A629122F190E96A000980912 /* tex-blade-norm.png in Resources */ = {isa = PBXBuildFile; fileRef = A629122E190E96A000980912 /* tex-blade-norm.png */; };
 		A6291231190EFF9C00980912 /* tex-blade-norm-disp.png in Resources */ = {isa = PBXBuildFile; fileRef = A6291230190EFF9C00980912 /* tex-blade-norm-disp.png */; };
 		A6291233190F029500980912 /* tex-blade-disp.png in Resources */ = {isa = PBXBuildFile; fileRef = A6291232190F029500980912 /* tex-blade-disp.png */; };
@@ -29,6 +27,10 @@
 		A6CB5B1F18F7ED3400C2709F /* AC_CoverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B1E18F7ED3400C2709F /* AC_CoverTests.m */; };
 		A6CB5B2A18F7EE5400C2709F /* AC_CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B2918F7EE5400C2709F /* AC_CoverView.m */; };
 		A6CB5B2D18F7F27500C2709F /* GLKView+AC_Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB5B2C18F7F27500C2709F /* GLKView+AC_Additions.m */; };
+		A6CD00D31910FAC3003E6B1F /* emblem-inner-shadow in Resources */ = {isa = PBXBuildFile; fileRef = A6CD00CF1910FAC3003E6B1F /* emblem-inner-shadow */; };
+		A6CD00D41910FAC3003E6B1F /* emblem-inner-shadow@2x in Resources */ = {isa = PBXBuildFile; fileRef = A6CD00D01910FAC3003E6B1F /* emblem-inner-shadow@2x */; };
+		A6CD00D51910FAC3003E6B1F /* emblem-masked.png in Resources */ = {isa = PBXBuildFile; fileRef = A6CD00D11910FAC3003E6B1F /* emblem-masked.png */; };
+		A6CD00D61910FAC3003E6B1F /* emblem-masked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6CD00D21910FAC3003E6B1F /* emblem-masked@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A629122A1909866800980912 /* cover_emblem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cover_emblem@2x.png"; sourceTree = "<group>"; };
-		A629122B1909866800980912 /* cover_emblem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover_emblem.png; sourceTree = "<group>"; };
 		A629122E190E96A000980912 /* tex-blade-norm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-norm.png"; sourceTree = "<group>"; };
 		A6291230190EFF9C00980912 /* tex-blade-norm-disp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-norm-disp.png"; sourceTree = "<group>"; };
 		A6291232190F029500980912 /* tex-blade-disp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tex-blade-disp.png"; sourceTree = "<group>"; };
@@ -76,6 +76,10 @@
 		A6CB5B2918F7EE5400C2709F /* AC_CoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AC_CoverView.m; path = Views/AC_CoverView.m; sourceTree = "<group>"; };
 		A6CB5B2B18F7F27500C2709F /* GLKView+AC_Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GLKView+AC_Additions.h"; path = "Categories/GLKView+AC_Additions.h"; sourceTree = "<group>"; };
 		A6CB5B2C18F7F27500C2709F /* GLKView+AC_Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GLKView+AC_Additions.m"; path = "Categories/GLKView+AC_Additions.m"; sourceTree = "<group>"; };
+		A6CD00CF1910FAC3003E6B1F /* emblem-inner-shadow */ = {isa = PBXFileReference; lastKnownFileType = file; path = "emblem-inner-shadow"; sourceTree = "<group>"; };
+		A6CD00D01910FAC3003E6B1F /* emblem-inner-shadow@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "emblem-inner-shadow@2x"; sourceTree = "<group>"; };
+		A6CD00D11910FAC3003E6B1F /* emblem-masked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emblem-masked.png"; sourceTree = "<group>"; };
+		A6CD00D21910FAC3003E6B1F /* emblem-masked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emblem-masked@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,11 +114,13 @@
 		A662CA6C18FAA01700E5F4F4 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				A6CD00CF1910FAC3003E6B1F /* emblem-inner-shadow */,
+				A6CD00D01910FAC3003E6B1F /* emblem-inner-shadow@2x */,
+				A6CD00D11910FAC3003E6B1F /* emblem-masked.png */,
+				A6CD00D21910FAC3003E6B1F /* emblem-masked@2x.png */,
 				A6291232190F029500980912 /* tex-blade-disp.png */,
 				A6291230190EFF9C00980912 /* tex-blade-norm-disp.png */,
 				A629122E190E96A000980912 /* tex-blade-norm.png */,
-				A629122A1909866800980912 /* cover_emblem@2x.png */,
-				A629122B1909866800980912 /* cover_emblem.png */,
 				A6690CE5190814B000B5F62C /* tex-blade-color.png */,
 				A6690CE6190814B000B5F62C /* tex-blade-spec.png */,
 			);
@@ -281,17 +287,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A629122F190E96A000980912 /* tex-blade-norm.png in Resources */,
+				A6CD00D61910FAC3003E6B1F /* emblem-masked@2x.png in Resources */,
 				A6CB5B0718F7ED3400C2709F /* VertShader.glsl in Resources */,
 				A6CB5B0C18F7ED3400C2709F /* Images.xcassets in Resources */,
 				A6291231190EFF9C00980912 /* tex-blade-norm-disp.png in Resources */,
+				A6CD00D31910FAC3003E6B1F /* emblem-inner-shadow in Resources */,
 				A6291233190F029500980912 /* tex-blade-disp.png in Resources */,
 				A6690CE8190814B000B5F62C /* tex-blade-color.png in Resources */,
 				A6690CE9190814B000B5F62C /* tex-blade-spec.png in Resources */,
 				A6CB5B0518F7ED3400C2709F /* FragShader.glsl in Resources */,
 				A6CB5AFA18F7ED3400C2709F /* InfoPlist.strings in Resources */,
-				A629122C1909866800980912 /* cover_emblem@2x.png in Resources */,
+				A6CD00D51910FAC3003E6B1F /* emblem-masked.png in Resources */,
+				A6CD00D41910FAC3003E6B1F /* emblem-inner-shadow@2x in Resources */,
 				A6CB5B0318F7ED3400C2709F /* Main.storyboard in Resources */,
-				A629122D1909866800980912 /* cover_emblem.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +455,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AC Cover/AC Cover-Prefix.pch";
 				INFOPLIST_FILE = "AC Cover/AC Cover-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -464,7 +472,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AC Cover/AC Cover-Prefix.pch";
 				INFOPLIST_FILE = "AC Cover/AC Cover-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

@@ -13,7 +13,10 @@
 
 
 /** Designated initialiser for fixed size view */
-+ (instancetype)coverEmblemViewWithMotionManager:(CMMotionManager *)motionManger;
++ (instancetype)coverEmblemView;
+
+/** -1..1 for device rotation around x & y axes. Determines shadow offset */
+@property (nonatomic) CGPoint relativeAngleOffset;
 
 
 @end

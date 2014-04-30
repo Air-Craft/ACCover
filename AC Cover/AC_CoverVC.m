@@ -43,6 +43,9 @@ static float shine=4.10;
     CADisplayLink *_updater;
     
     NSMutableArray *_activeTouches;
+    
+    CMQuaternion _initRotation;
+
 }
 
 - (void)viewDidLoad
@@ -53,10 +56,11 @@ static float shine=4.10;
     
     _motionManager = [[CMMotionManager alloc] init];
     [_motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryCorrectedZVertical];
-
+    _initRotation = _motionManager.deviceMotion.attitude.quaternion;
+    
     [(AC_CoverView *)self.view setupWithMotionManager:_motionManager];
 
-    _emblemView = [AC_CoverEmblemView coverEmblemViewWithMotionManager:_motionManager];
+    _emblemView = [AC_CoverEmblemView coverEmblemView];
     [_emblemView setMultipleTouchEnabled:YES];
 
     [_emblemView setCenter:self.view.center];
@@ -101,6 +105,18 @@ static float shine=4.10;
 
 - (void)_updateWithSender:(id)sender
 {
+    // Get the tilt offset and normalise/cap it to our MIN/MAX
+    CMQuaternion newRotation = _motionManager.deviceMotion.attitude.quaternion;
+    
+    CGPoint rotOffsetNormed = {
+        (newRotation.y - _initRotation.y) / (0.5 * M_PI_4),
+        (newRotation.x - _initRotation.x) / (0.5 * M_PI_4),
+    };
+    rotOffsetNormed.x = MIN(1.0, MAX(-1.0, rotOffsetNormed.x));
+    rotOffsetNormed.y = MIN(1.0, MAX(-1.0, rotOffsetNormed.y));
+    
+    _emblemView.relativeAngleOffset = rotOffsetNormed;
+    
 //    [_emblemView setNeedsDisplay];
 }
 
