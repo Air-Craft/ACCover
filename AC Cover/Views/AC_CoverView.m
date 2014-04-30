@@ -459,7 +459,11 @@ skip:
         GLfloat delZ = i * BLADE_Z_OFFSET;
         GLfloat rot = i * BLADE_SEPARATION + _globalRotation + BLADE_ROTATION_OFFSET;
         
+        GLfloat gDelX = _globalPositionOffset.x/self.bounds.size.width * 1.0;
+        GLfloat gDelY = -_globalPositionOffset.y/self.bounds.size.height * 1.95;
+        
         GLKMatrix4 vMatrix = _viewMatrixBase;
+        vMatrix = GLKMatrix4Translate(vMatrix, gDelX, gDelY, 0);
         vMatrix = GLKMatrix4Rotate(vMatrix, BLADE_TILT, 0, 1.0, 0);
         vMatrix = GLKMatrix4Rotate(vMatrix, rot, 0, 0, 1.0);
         vMatrix = GLKMatrix4Translate(vMatrix, delX, delY, delZ);

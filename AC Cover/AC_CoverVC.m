@@ -65,6 +65,8 @@ static float shine=20.00;
     NSMutableArray *_activeTouches;
     
     ACTiltOrientation _initTilt;
+    
+    UIPanGestureRecognizer *_emblemPan;
 
 }
 
@@ -84,7 +86,10 @@ static float shine=20.00;
     [(AC_CoverView *)self.view setupWithMotionManager:_motionManager];
 
     _emblemView = [AC_CoverEmblemView coverEmblemView];
-    [_emblemView setMultipleTouchEnabled:YES];
+//    [_emblemView setMultipleTouchEnabled:YES];
+    _emblemPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(_handleEmblemPan:)];
+    [_emblemView addGestureRecognizer:_emblemPan];
+    
 
     [_emblemView setCenter:self.view.center];
     [self.view addSubview:_emblemView];
@@ -125,6 +130,19 @@ static float shine=20.00;
     _paramSelector.hidden = !_paramSelector.hidden;
     _console.hidden = !_console.hidden;
 }
+
+- (void)_handleEmblemPan:(UIPanGestureRecognizer *)gr
+{
+    CGPoint delta = [gr translationInView:self.view];
+    _emblemView.center = CGPointMake(self.view.frame.size.width/2 + delta.x, self.view.frame.size.height/2 + delta.y);
+    AC_CoverView *coverView = (AC_CoverView *)self.view;
+    coverView.globalPositionOffset = delta;
+    CGFloat retraction = (delta.x * delta.x + delta.y * delta.y) / (2 * (self.view.frame.size.width/4 * self.view.frame.size.width/4));
+    retraction = MAX(0.0, MIN(1.0, retraction));
+    coverView.retraction = retraction;
+    NSLog(@"%.2f %.2f, %.2f", delta.x, delta.y, retraction);
+}
+
 
 - (void)_updateWithSender:(id)sender
 {

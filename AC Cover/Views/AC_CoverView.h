@@ -45,6 +45,8 @@
 /** -1..1 for device rotation around x & y axes. Determines shadow offset */
 @property (nonatomic) CGPoint relativeAngleOffset;
 
+/** In points. Converted internally */
+@property (nonatomic) CGPoint globalPositionOffset;
 
 
 
